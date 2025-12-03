@@ -1,0 +1,57 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduzione}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Postulati della Meccanica Quantistica}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduzione alla Meccanica Quantistica}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Primo Postulato della Meccanica Quantistica}{6}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Secondo Postulato della Meccanica Quantistica}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Terzo Postulato della Meccanica Quantistica}{8}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Quarto Postulato della Meccanica Quantistica}{9}{section.2.5}%
+\contentsline {chapter}{\numberline {3}Quantum Bit}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Dal Bit al Qubit}{10}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Proprietà del Qubit}{11}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Sovrapposizione}{11}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Entanglement}{12}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Interferenza}{13}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Effetto Tunnel}{13}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Sfera di Bloch}{14}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Vantaggi computazionali del Qubit}{15}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Quantum Annealing}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduzione alla Computazione Quantistica}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Problemi di Ottimizzazione}{19}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Modello di Ising}{20}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Quadratic Unconstrained Binary Optimization}{22}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Teorema Adiabatico e Processo Adiabatico}{25}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Campo Trasversale e Matrici di Pauli}{29}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Effetto Tunnel nel Quantum Annealing}{31}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Un confronto con il Simulated Annealing}{32}{section.4.8}%
+\contentsline {chapter}{\numberline {5}Topologie Hardware e \\ Architettura del Quantum Annealing}{37}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Quantum Annealer}{37}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Distinzione fra Qubit Logico e Qubit Fisico}{37}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Grafo Chimera}{38}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Embedding}{39}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Tool per l'Embedding}{40}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Quantum Annealing per il Problema del Commesso Viaggiatore}{41}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Problema del Commesso Viaggiatore}{41}{section.6.1}%
+\contentsline {section}{\numberline {6.2}TSP nella forma QUBO}{42}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Progettazione Algoritmo}{45}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Esempio pratico di risoluzione di un TSP}{47}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Passo 1: Definizione del Problema}{47}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Passo 2: Rappresentazione della Soluzione}{48}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}Passo 3: Definizione dei Vincoli}{48}{subsection.6.4.3}%
+\contentsline {subsection}{\numberline {6.4.4}Passo 4: Costruzione della matrice QUBO}{49}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}Passo 5: Conversione nel Modello di Ising}{50}{subsection.6.4.5}%
+\contentsline {subsection}{\numberline {6.4.6}Passo 6: Embedding con grafico Chimera}{50}{subsection.6.4.6}%
+\contentsline {subsection}{\numberline {6.4.7}Passo 7: Determinazione del Minimo di Energia}{52}{subsection.6.4.7}%
+\contentsline {subsection}{\numberline {6.4.8}Passo 8: Interpretazione della soluzione}{52}{subsection.6.4.8}%
+\contentsline {chapter}{\numberline {7}Implementazione dell'Algoritmo di Grover attraverso il Quantum Annealing}{54}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Introduzione all'Algoritmo di Grover}{54}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Porta di Hadamard}{56}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Oracolo Quantistico}{57}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Iterazione di Grover}{60}{section.7.4}%
+\contentsline {section}{\numberline {7.5}Applicazione dell'Algoritmo di Grover}{64}{section.7.5}%
+\contentsline {section}{\numberline {7.6}Algoritmo di Grover con Quantum Annealing}{67}{section.7.6}%
+\contentsline {section}{\numberline {7.7}Perché implementare l'Algoritmo di Grover con il Quantum Annealing}{73}{section.7.7}%
+\contentsline {chapter}{\numberline {8}Conclusioni}{74}{chapter.8}%
+\contentsline {chapter}{\numberline {A}Appendice A: Codice di risoluzione del TSP}{75}{appendix.Alph1}%
+\contentsline {chapter}{\numberline {B}Appendice B: Prova che QUBO e Ising sono Isomorfi}{81}{appendix.Alph2}%

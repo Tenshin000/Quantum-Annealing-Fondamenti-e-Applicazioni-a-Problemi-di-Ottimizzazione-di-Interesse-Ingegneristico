@@ -1,0 +1,375 @@
+\chapter{Quantum Annealing}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 0.8\textwidth]{images/D-Wave.jpg} 
+	\caption{Quantum Annealer della D-Wave} 
+	\label{fig:D-Wave}
+\end{figure}
+
+\section{Introduzione alla Computazione Quantistica}
+Il modello predominante di computazione quantistica è il \textbf{Gate-Based Quantum Computing}, che rappresenta un'estensione quantistica del paradigma classico dei circuiti logici. In questo approccio, i calcoli e le trasformazioni vengono eseguiti applicando una sequenza di operazioni ai qubit, attraverso \textbf{porte logiche quantistiche}. Queste operazioni manipolano lo stato quantistico dei qubit, sfruttando fenomeni come la sovrapposizione e l'entanglement, che permettono di elaborare informazioni in modi impossibili per i computer classici. 
+
+Il processo inizia con l'inizializzazione dei qubit in uno stato noto. Successivamente, le porte quantistiche vengono applicate per modificare gli stati dei qubit, codificando il problema e realizzando il calcolo desiderato. 
+
+\pagebreak
+
+Grazie a un insieme definito di operazioni logiche di base, è possibile progettare algoritmi scalabili e, teoricamente, universali.
+
+Tuttavia, questo approccio richiede un controllo estremamente preciso e costante degli stati dei qubit. Una delle principali sfide consiste nel mantenere la coerenza quantistica, ossia la capacità dei qubit di conservare la sovrapposizione di stati per tempi sufficientemente lunghi. Questa caratteristica è essenziale per il corretto funzionamento del calcolo quantistico, ma al momento rappresenta una sfida tecnica significativa. 
+
+In alternativa al modello a porte quantistiche, si distingue il \textbf{\textit{Quantum Annealing}} \cite{Label7.5}, un approccio euristico specializzato per la risoluzione di problemi di ottimizzazione combinatoria (sebbene possa essere applicato anche ad altre classi di problemi).
+
+Questo metodo si basa sul principio dell'\textbf{evoluzione adiabatica}, che sfrutta anche l'\textbf{effetto tunnel} per esplorare lo spazio delle soluzioni. Il problema di ottimizzazione viene formulato come la minimizzazione di un \textbf{paesaggio energetico}, una rappresentazione geometrica in cui ogni configurazione del sistema (ossia ogni possibile soluzione) è associata a un livello di energia specifico. In questa rappresentazione, le soluzioni corrispondono a punti del paesaggio e l'altezza di ogni punto rappresenta il valore di energia associato. Il \textit{minimo globale}, che identifica la soluzione ottimale, corrisponde al punto più basso del paesaggio, mentre i \textit{minimi locali} rappresentano soluzioni subottimali che non soddisfano il criterio di globalità.
+
+Il \textit{Quantum Annealing} sfrutta la naturale tendenza dei sistemi fisici a evolvere verso lo stato ad energia minima. Il problema da risolvere viene codificato in un \textbf{Hamiltoniano}, che descrive la dinamica del sistema quantistico e lo spettro degli stati energetici associati. L'obiettivo è identificare lo stato fondamentale del sistema, corrispondente al minimo globale del paesaggio energetico. In termini formali, l’Hamiltoniano $H$ è un operatore hermitiano che agisce nello spazio di Hilbert e definisce sia i possibili valori di energia del sistema (i suoi autovalori) sia la sua evoluzione temporale (come visto nella sezione dedicata al \textbf{secondo postulato della meccanica quantistica}).  
+
+Nel \textit{Quantum Annealing}, il sistema parte da un \textbf{Hamiltoniano iniziale} $H_{i}$, noto e facile da preparare, ed evolve gradualmente verso un \textbf{Hamiltoniano finale} $H_{f}$, che codifica il problema di interesse. Se l'evoluzione è sufficientemente lenta, il sistema rimarrà nello stato fondamentale durante l'intero processo, consentendo di identificare il minimo globale una volta completato il processo. 
+
+Un elemento distintivo del \textit{Quantum Annealing}, rispetto agli approcci classici, è l’utilizzo dell’\textbf{effetto tunnel}, che permette al sistema di attraversare le barriere energetiche anziché scalarle, riducendo il rischio di rimanere bloccato nei minimi locali. Per analogia, si può immaginare un viaggiatore che attraversa un paesaggio collinare per raggiungere la valle più profonda: un algoritmo classico dovrebbe "scalare" ogni collina e "discendere" in ogni valle, rischiando di fermarsi in una valle che non è quella più bassa. Il \textit{Quantum Annealing}, invece, sfrutta il tunnel quantistico per "passare attraverso" le colline, raggiungendo con maggiore efficienza il punto più basso. 
+
+Un'altra differenza significativa rispetto al Gate-Based Quantum Computing  risiede nella natura del paradigma operativo. Mentre il Gate-Based si basa su sequenze discrete di operazioni logiche applicate ai qubit, il \textit{Quantum Annealing} opera in modo continuo e analogico, modificando gradualmente l’Hamiltoniano del sistema. Questo approccio è inoltre più robusto rispetto agli effetti di rumore e decoerenza, poiché non richiede un controllo preciso di sequenze logiche, ma solo la preservazione delle condizioni per il \textbf{processo adiabatico}. 
+
+\section{Problemi di Ottimizzazione}
+Il \textit{Quantum Annealing} si è dimostrato particolarmente efficace nella risoluzione di \textbf{problemi di ottimizzazione combinatoria}, ma è utile chiarire cosa si intenda esattamente per questo tipo di problemi.
+
+Un \textbf{problema di ottimizzazione} consiste nel determinare la soluzione ottimale, ossia il massimo o il minimo di una funzione obiettivo, rispettando un insieme di vincoli. Formalmente, può essere espresso come segue:
+\begin{equation*}
+	\begin{cases} 
+		\min_{x \in S}(f(x)) \\ 
+		g_{i}(x) \leq 0 \\ 
+		h_{i}(x) = 0
+	\end{cases}
+\end{equation*}
+Dove:
+\begin{itemize}
+	\item $x$ rappresenta la variabile, che può essere un vettore multidimensionale; 
+	\item $f(x)$ è la funzione obiettivo da ottimizzare;
+	\item $S$ è lo spazio delle possibili soluzioni;
+	\item $g(x)$ e $h(x)$  definiscono i vincoli del problema, rispettivamente, come disuguaglianze e uguaglianze. 
+\end{itemize} 
+Nel caso specifico dei problemi di ottimizzazione combinatoria, l’obiettivo è trovare la migliore combinazione tra un insieme finito (o numerabile) di soluzioni. Un esempio tipico è il \textbf{problema del Commesso Viaggiatore} (\textit{Travelling Salesman Problem}, o \textbf{TSP}), che consiste nel determinare il percorso più breve che attraversa un insieme di città, visitandole una sola volta ciascuna, per poi tornare al punto di partenza. 
+
+\pagebreak
+
+La difficoltà di risoluzione è descritta dalla \textbf{teoria della complessità computazionale}, che classifica i problemi in base al tempo e alla memoria richiesti dagli algoritmi per risolverli. 
+
+I problemi di classe \textbf{P} includono i problemi che possono essere risolti da un algoritmo deterministico in tempo polinomiale rispetto alla dimensione dell'input. 
+I problemi di classe \textbf{NP} includono  i problemi per cui una soluzione può essere verificata in tempo polinomiale da un algoritmo deterministico, anche se trovarla potrebbe richiedere un tempo non polinomiale. Tra questi rientrano anche i problemi \textbf{NP-Completi}. Sono quelli più difficili della classe NP. Se uno di questi problemi può essere risolto in tempo polinomiale, allora tutti i problemi NP possono esserlo. Tuttavia, la dimostrazione che un problema NP-Completo possa essere risolto in tempo polinomiale, è uno dei \textbf{problemi del millennio}, tutt'ora irrisolto.  
+Poi ci sono i problemi \textbf{NP-Hard}, che sono almeno tanto difficili quanto i problemi NP-completi, ma non appartengono necessariamente alla classe NP. Il problema del Commesso Viaggiatore è un problema \textit{NP-Hard}. 
+
+
+\section{Modello di Ising}
+Il \textbf{modello di Ising} è il fondamento teorico su cui si basa il \textit{Quantum Annealing} ed è stato originariamente introdotto per descrivere il comportamento dei materiali ferromagnetici \cite{Label8}. Questo modello rappresenta un sistema di N spin, ognuno dei quali può assumere due stati (-1 o +1), interagenti tra loro attraverso un reticolo. La configurazione del sistema è descritta da un Hamiltoniano che include le interazioni tra spin adiacenti e un campo magnetico esterno (se presente):
+
+\begin{equation*}
+	H = -\frac{1}{2} \sum_{i,j} J_{ij} \, s_i \cdot s_j - \sum_i h_i \, s_i
+\end{equation*}
+Dove:
+\begin{itemize}
+	\item $s_{i} \in \{-1; 1\}$  è lo stato dello spin \( i \);
+	\item \( J_{ij} \) è un parametro che rappresenta la forza di interazione tra gli spin \( i \) e \( j \):
+	\begin{itemize}
+		\item Se \( J_{ij} > 0 \), gli spin tendono ad allinearsi, promuovendo il \textit{ferromagnetismo};
+		\item Se \( J_{ij} < 0 \), si tende all'\textit{antiferromagnetismo}, in cui gli spin tendono ad orientarsi in direzioni opposte. 
+	\end{itemize}
+	\item \( h_i \) è un campo magnetico esterno che agisce sullo spin \( i \), influenzando la probabilità che lo spin si orienti in una direzione.
+\end{itemize}
+
+\pagebreak
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 0.8\textwidth]{images/Modello_di_Ising.png} 
+	\caption{Raffigurazione grafica del Modello di Ising} 
+	\label{fig:Modello di Ising}
+\end{figure}
+
+Il fattore $\frac{1}{2}$ viene introdotto questa formulazione per evitare di contare due volte le interazioni tra coppie di spin. L'obiettivo è trovare la configurazione degli spin che minimizza l’Hamiltoniano, corrispondente al minimo globale dell’energia del sistema.
+
+In pratica, la configurazione di ciascun spin dipende dalle interazioni con gli spin adiacenti e dai campi magnetici esterni. Il modello di Ising descrive il sistema in termini energetici, dove lo stato fondamentale è la configurazione che minimizza l'energia complessiva. A temperature elevate, gli spin si distribuiscono casualmente, mentre a basse temperature il sistema tende a ridurre l'energia totale, favorendo l'allineamento degli spin. Questo processo porta a una transizione di fase tra uno stato disordinato a temperatura alta e uno ordinato a temperatura bassa. 
+
+Il modello di Ising è particolarmente adatto per rappresentare problemi di ottimizzazione combinatoria, poiché molte funzioni di costo possono essere tradotte in termini di interazioni tra spin. Le interazioni $J_{ij} $ e i campi magnetici $h_{i} $ sono scelti in modo da modellare i vincoli e gli obiettivi del problema. Il \textit{Quantum Annealing} sfrutta proprio questo formalismo: l’ottimizzazione viene formulata come la minimizzazione di un paesaggio energetico, e questo modello fornisce una rappresentazione efficace di tale paesaggio. In altre parole, il problema di ottimizzazione è tradotto in un sistema fisico che evolve verso il minimo energetico, attraverso un processo (adiabatico) che consente di esplorare lo spazio delle soluzioni. 
+
+\pagebreak
+
+Il modello di Ising può essere rappresentato in una forma alternativa che ci risulta particolarmente utile per la trattazione di problemi di ottimizzazione:
+\begin{equation*}
+	H = \sum_{i=1}^N \sum_{j<i}^N x_i x_j Q_{ij} + \sum_{i=1}^N x_i Q_{ii} 
+\end{equation*}
+
+In questa versione,  $x_i $ rappresenta lo stato dell'$i $-esimo spin ($s_i $) e il prodotto \( s_i s_j \) è ora espresso come \( x_i x_j \) senza modificare la natura dell'interazione tra gli spin. 
+
+$Q$ è una matrice quadrata di dimensione NxN, definita come:
+\begin{equation*}
+Q_{ij} = 
+	\begin{cases} 
+		-\frac{1}{2} J_{ij}, & \text{se } i \neq j, \\
+		-h_i, & \text{se } i = j.
+	\end{cases}
+\end{equation*}
+In questa rappresentazione, $Q $ incapsula sia le interazioni $J_{ij}$ (nei termini non diagonali), sia i campi esterni $h_i $ (nei termini diagonali). In pratica, $Q$ rappresenta il paesaggio energetico del sistema. 
+
+Questa formulazione compatta semplifica notevolmente il trattamento computazionale del problema, rendendo più efficienti le operazioni di calcolo e facilitando l'implementazione in contesti di ottimizzazione quantistica. 
+
+\section{Quadratic Unconstrained Binary Optimization}
+Il modello di Ising, sebbene utile per rappresentare vari problemi di ottimizzazione, presenta alcune limitazioni pratiche. In primo luogo, la formulazione di problemi utilizzando questo modello può risultare laboriosa e poco intuitiva, specialmente quando si cerca di tradurre un problema in termini di interazioni tra spin. Inoltre, una delle principali restrizioni di questo modello è che le variabili di stato possono assumere solo i valori +1 e -1, escludendo la possibilità dello stato 0. 
+
+Un'alternativa al modello di Ising è il \textbf{Quadratic Unconstrained Binary Optimization}, abbreviato in \textbf{QUBO}, un altro modello matematico che si presta particolarmente bene alla formulazione di problemi di ottimizzazione combinatoria \cite{Label8.5}. La funzione obiettivo di un problema QUBO è espressa come: 
+\begin{equation*}
+f(x) = x^T Q x = \sum_{i=1}^{n} \sum_{j=i}^{n} Q_{ij} \cdot x_i \cdot x_j
+\end{equation*}
+dove:
+\begin{itemize}
+	\item $x$ è un vettore binario ($x_{i} \in \{0; 1\}$);
+	\item $Q$ è una matrice simmetrica di dimensioni NxN, che definisce le interazioni tra le variabili $x_{i}$  e $x_{j}$.
+\end{itemize}
+
+\pagebreak
+
+Gli elementi $Q_{ij}$ rappresentano i pesi associati a ciascuna coppia di indici $i$ e $j$ del vettore binario $x$. In modo intuitivo, il peso $Q_{ij}$ contribuisce al valore complessivo della funzione obiettivo solo se entrambe le variabili $x_{i}$  e $x_{j}$ sono uguali a 1. 
+
+Questo tipo di problema è definito senza vincoli ("\textit{unconstrained}"), in quanto la formulazione non include esplicitamente vincoli, sebbene essi possano essere incorporati indirettamente all'interno della matrice $Q$, sotto forma di \textit{ricompense} e \textit{penalità}.
+
+Nel caso del QUBO, l'obiettivo è minimizzare una funzione quadratica con variabili binarie. Nel modello di Ising, invece, si cerca di minimizzare un Hamiltoniano che descrive le interazioni tra spin binari. Nonostante le differenze apparenti, i due modelli sono sostanzialmente equivalenti dal punto di vista formale: l'unica differenza significativa riguarda i valori che le variabili di stato possono assumere. Infatti, la formulazione QUBO e il modello di Ising sono \textbf{isomorfi} (\textit{vedi Appendice B}), ossia un problema in forma QUBO può essere espresso attraverso il modello di Ising e viceversa.
+
+La formulazione QUBO è spesso preferita rispetto al modello di Ising, in quanto risulta generalmente più intuitiva e conveniente per esprimere un problema di ottimizzazione. In pratica, i problemi vengono inizialmente formulati in forma QUBO, dopodiché questa viene trasformata nel modello di Ising per applicare il processo di \textit{Quantum Annealing}. Una volta trovata la soluzione nel modello di Ising, è possibile riconvertirla in una soluzione per il problema QUBO originale.
+
+Esiste un algoritmo in grado di portare una matrice $Q$ in  forma QUBO ad una in forma di Ising. 
+\lstinputlisting[language=python]{listings/qubo_to_ising.py} 
+
+\pagebreak
+
+Una volta applicato il \textit{Quantum Annealing}, otterremo la soluzione del problema nella forma del modello di Ising, che indicheremo come $x_{I}$. Per ottenere la soluzione corrispondente nel formato del QUBO, denotata come $x_{Q}$, è possibile utilizzare la seguente trasformazione:\\
+
+
+\begin{equation*}
+	x_{Q} =  \frac{x_{I}+1}{2}
+\end{equation*}
+\\
+
+Abbiamo già specificato che il QUBO è particolarmente efficace per rappresentare i problemi di ottimizzazione combinatoria, ma non è l'unica classe di problemi che è in grado di formalizzare. Ad esempio i problemi di Machine Learning (Clustering, Feature Selection) e i problemi di teoria dei grafi (Max-Cut Problem, il Graph Coloring, la Community Detection) sono formalizzabili attraverso il QUBO. \\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.0\textwidth]{images/Qubo_Ising.png} 
+	\caption{Analogia tra il Modello di Ising e il QUBO} 
+	\label{fig:Ising e QUBO}
+\end{figure}
+
+\pagebreak
+\section{Teorema Adiabatico e Processo Adiabatico}
+\begin{theorem*}[Teorema Adiabatico]
+	Se un sistema quantistico è inizialmente in uno degli autostati (ad esempio lo stato fondamentale) di un Hamiltoniano $H_{i}$ e se l'Hamiltoniano cambia abbastanza lentamente nel tempo, il sistema rimarrà in uno degli autostati corrispondenti dell’Hamiltoniano istantaneo $H(t)$ per tutta l'evoluzione.
+\end{theorem*}
+
+Introdotto formalmente da Born e Fock nel 1928, il \textbf{Teorema Adiabatico} è un principio fondamentale della meccanica quantistica che descrive il comportamento di un sistema quantistico sottoposto a un'evoluzione lenta e continua del suo Hamiltoniano \cite{Label9}. Abbiamo visto con il \textbf{secondo postulato della meccanica quantistica} che l'Hamiltoniano rappresenta l'energia totale del sistema e governa la sua dinamica, determinando l'evoluzione dello stato quantistico nel tempo. 
+
+Lo \textbf{stato fondamentale} rappresenta la configurazione ad energia minima del sistema e corrisponde alla soluzione ottimale del problema di ottimizzazione. In pratica è lo stato ad energia minima descritto dall'Hamiltoniano. Gli \textbf{stati eccitati}, invece, sono configurazioni di energia superiore che rappresentano soluzioni subottimali o non valide.  
+
+Il \textit{\textbf{Quantum Annealing}} si fonda sull’applicazione del Teorema Adiabatico. Questo approccio prevede l’evoluzione di un sistema quantistico descritto da un Hamiltoniano dipendente dal tempo, noto come \textbf{Hamiltoniano totale}, il quale cambia gradualmente seguendo un’evoluzione adiabatica. 
+
+All’inizio del processo, il sistema è caratterizzato da un \textbf{Hamiltoniano iniziale} $H_{i}$, il cui stato fondamentale è noto e facilmente preparabile. Generalmente, questo Hamiltoniano è indipendente dal problema specifico e descrive uno stato quantistico "neutro", ma stabile. Ad esempio, un campo magnetico uniforme applicato ai qubit può indurli in uno stato di sovrapposizione, in cui ognuno ha la stessa probabilità di trovarsi negli stati $\lvert 0 \rangle$ e $\lvert 1 \rangle$. 
+
+Durante l’evoluzione, l’Hamiltoniano totale viene lentamente modificato fino a raggiungere l’\textbf{Hamiltoniano finale} $H_{f}$ (o \textbf{Hamiltoniano del problema}). Questo Hamiltoniano rappresenta il problema di ottimizzazione da risolvere e descrive la funzione obiettivo che il sistema deve minimizzare \cite{Label9.25}. A differenza dell'Hamiltoniano iniziale, che è progettato per essere semplice e facilmente preparabile, $H_{f}$ incorpora le specificità del problema da risolvere, includendo i vincoli e le caratteristiche che definiscono le soluzioni ammissibili. In particolare, l'Hamiltoniano finale è strutturato secondo il \textbf{modello di Ising}. In questo contesto, lo stato fondamentale di $H_{f}$ rappresenta la configurazione di spin che minimizza l’energia totale del sistema. Tale configurazione corrisponde alla soluzione ottimale del problema di ottimizzazione.
+
+\pagebreak 
+\begin{figure}
+	\centering
+	\includegraphics[width= 0.8\textwidth]{images/Eigenspectrum.png} 
+	\caption{\textit{Grafico dell'energia in funzione del tempo durante un processo di Quantum Annealing.L'origine degli assi è lo stato fondamentale (ground state) dell'Hamiltoniano iniziale, lo stato di partenza dell'Hamiltoniano totale. Se l'evoluzione è adiabatica seguiremo la curva tracciata dallo stato fondamentale, supereremo il gap minimo (minimum gap) fino ad arrivare allo stato fondamentale dell'Hamiltoniano finale, senza "salti" energetici a stati eccitati.}} 
+	\label{fig:Spettro degli Autovalori}
+\end{figure}
+
+Il comportamento del sistema è governato dall’evoluzione dell'Hamiltoniano totale, che può essere formalizzata come segue:
+
+\begin{equation*}
+	H(t)=s(t)\cdot H_{f} + [1-s(t)] \cdot H_{i}
+\end{equation*}
+
+Dove è $s(t)$ la funzione di programmazione, o \textbf{scheduling function}, e $T$ rappresenta il tempo totale di evoluzione. $s(t):[0; T] \rightarrow [0; 1]$ è una funzione temporale monotona crescente con $s(0) = 0$ e $s(T) = 1$. Essa determina la transizione dall'Hamiltoniano iniziale all'Hamiltoniano finale. 
+
+La transizione da $H_{i}$ a $H_{f}$ deve avvenire lentamente, in modo da garantire che il sistema rimanga nello stato fondamentale durante tutto il processo, come previsto dal Teorema Adiabatico. Inizialmente lo stato fondamentale di $H_{i}$ è ben separato dagli stati eccitati. Una volta introdotto l’hamiltoniano del problema, gli stati eccitati si avvicinano allo stato fondamentale e viceversa. In prossimità di queste transizioni, si verificano fenomeni di \textbf{Avoided Crossing}  \cite{Label9.5}, ovvero situazioni in cui il gap energetico tra due livelli si riduce notevolmente senza che i due livelli si intersechino completamente. 
+
+\pagebreak
+
+Matematicamente, ciò significa che, durante l'evoluzione temporale dell'Hamiltoniano totale, due autovalori si avvicinano sempre più senza mai toccarsi, ma si allontanano evitando effettivamente un'intersezione diretta. Un gap energetico ridotto aumenta il rischio di transizioni non adiabatiche, in cui il sistema potrebbe passare dallo stato fondamentale a uno degli stati eccitati, compromettendo la soluzione ottimale. Per minimizzare questo rischio, il processo evolutivo deve essere sufficientemente adiabatico, permettendo al sistema di rimanere nello stato fondamentale e garantire la corretta evoluzione verso la soluzione ottimale. 
+
+Per analizzare la probabilità che il sistema attraversi un Avoided Crossing, si utilizza la \textbf{teoria di Landau-Zener} \cite{Label9.75}, che fornisce una stima di tale probabilità in relazione alla velocità di variazione dell’Hamiltoniano e al gap energetico. Secondo questa teoria, se il sistema attraversa rapidamente un Avoided Crossing, la probabilità di transizione a uno stato eccitato aumenta significativamente. Al contrario, se il sistema evolve lentamente, la probabilità di rimanere nello stato fondamentale resta elevata. La probabilità di transizione $P_{LZ}$ è data dalla formula:
+\begin{equation*}
+	P_{LZ} = e^{-\frac{\pi g^2}{2 \hbar v}}
+\end{equation*}
+dove:
+\begin{itemize}
+	\item $g$ è il gap energetico minimo;
+	\item $\hbar$ è la costante di Planck ridotta;
+	\item $v$ è la velocità di variazione dell’Hamiltoniano totale. 
+\end{itemize}
+Si osserva facilmente come una transizione lenta (piccolo $v$) favorisca l’evoluzione adiabatica, mentre una transizione rapida aumenti la probabilità di errori.
+
+Il \textbf{Gap Minimo} è la minima separazione energetica tra lo stato fondamentale e il livello eccitato più vicino e rappresenta un caso particolare di Avoided Crossing. Se tale gap è troppo piccolo, il sistema può facilmente saltare a uno stato eccitato a causa di fluttuazioni energetiche. 
+
+Il gap minimo riveste un’importanza cruciale nell’analisi delle transizioni adiabatiche, poiché fornisce una condizione fondamentale per garantire che il processo evolutivo avvenga in maniera adiabatica. In particolare, per evitare transizioni non adiabatiche e mantenere il sistema nello stato fondamentale, è necessario che il tempo di evoluzione $T$ sia sufficientemente grande rispetto all'inverso del quadrato del gap minimo.
+
+\pagebreak
+
+Formalmente, questo requisito può essere espresso come:
+\begin{equation*}
+	T \approx O\left(\frac{1}{g_{min}^2}\right)
+\end{equation*}
+dove $g_{min}$ rappresenta il gap minimo tra lo stato fondamentale e il livello eccitato più vicino. Un gap molto piccolo, perciò, richiede tempi di evoluzione più lunghi per mantenere l'adiabaticità del processo e prevenire transizioni verso stati eccitati.
+
+Nei sistemi di grandi dimensioni, la riduzione del gap energetico rappresenta una sfida, poiché il gap minimo diminuisce esponenzialmente all’aumentare del numero di qubit. Quando questo gap diventa troppo piccolo, il tempo necessario per mantenere l'evoluzione adiabatica in condizioni praticabili diventa estremamente lungo, poiché la separazione energetica tra lo stato fondamentale e gli stati eccitati si riduce drasticamente. In tali circostanze, per evitare che il sistema salti a stati eccitati durante l'evoluzione, il tempo di evoluzione $T$ dovrebbe essere sufficientemente lungo. Tuttavia, se il tempo disponibile è insufficiente, il sistema rischia di transitare a stati non ottimali, compromettendo la qualità della soluzione trovata. 
+
+I dispositivi che implementano il \textit{Quantum Annealing}, come quelli prodotti dalla \textit{D-Wave}, affrontano questa sfida utilizzando una versione approssimata del processo adiabatico. Questi dispositivi sono progettati per ottimizzare la rapidità e la scalabilità delle soluzioni, sacrificando però una perfetta aderenza al Teorema Adiabatico.  
+
+\pagebreak
+\section{Campo Trasversale e Matrici di Pauli}
+Il \textbf{campo trasversale} è una componente dell’Hamiltoniano iniziale e rappresenta un termine che introduce \textbf{fluttuazioni quantistiche} nel sistema. Questo campo serve a inizializzare il sistema quantistico in uno stato fondamentale ben definito, che è una sovrapposizione uniforme di tutti gli stati possibili nello spazio delle soluzioni. 
+
+Per rappresentare l'effetto del campo trasversale, è necessario introdurre le \textbf{matrici di Pauli} \cite{Label10}. Esse sono definite come matrici $2$x$2$ e rappresentano gli operatori di spin lungo tre direzioni ortogonali. 
+\begin{equation*}
+	\sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad
+	\sigma_y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}, \quad
+	\sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}
+\end{equation*}
+\begin{itemize}
+	\item $\sigma_x$: rappresenta le transizioni tra stati di spin opposti. È associata al campo trasversale, che induce fluttuazioni quantistiche;
+	\item $\sigma_y$: utilizzata in altri contesti della meccanica quantistica, ma meno rilevante nel contesto trattato;
+	\item $\sigma_z$: rappresenta lo stato dello spin lungo l'asse $z$, che corrisponde ai valori discreti +1 (spin up $\uparrow$) o -1 (spin down $\downarrow$). È usata per descrivere l'Hamiltoniano finale.
+\end{itemize}
+
+L’Hamiltoniano iniziale, che include il campo trasversale, è comunemente espresso come:
+\begin{equation*}
+	H_i = \Gamma(t) \sum_i \sigma_i^x
+\end{equation*}
+dove:
+\begin{itemize}
+	\item $\Gamma(t)$ è la forza del campo trasversale, una funzione monotona decrescente;
+	\item $\sigma_i^x$ è una matrice di Pauli che descrive le interazioni lungo l'asse $x$ per il qubit $i$.
+\end{itemize}
+All’inizio del processo il campo trasversale è molto forte. Questo introduce una sovrapposizione tra stati quantistici, incoraggiando la ricerca di soluzioni globali nel paesaggio energetico. Durante il processo, il campo trasversale viene ridotto gradualmente fino ad essere nullo. Con la diminuzione del campo trasversale, il sistema diventa sempre più dominato dall'Hamiltoniano del problema, che rappresenta la funzione obiettivo da ottimizzare. 
+
+\pagebreak
+
+Il modello di Ising è formalizzato utilizzando la matrice di Pauli $\sigma_{z}$, che per l'appunto caratterizza le interazioni tra gli spin:
+
+\begin{equation*}
+	H_f = \sum_{i=0}^{N} \sum_{j=i}^{N} J_{ij} \sigma_i^z \sigma_j^z + \sum_{i=0}^{N} h_i \sigma_i^z
+\end{equation*}
+
+dove:
+\begin{itemize}
+	\item $J_{ij}$: Coefficiente di accoppiamento tra i qubit $i$ e $j$, che descrive l'interazione tra di essi;
+	\item $h_i$: Campo magnetico locale applicato al qubit $i$;
+	\item $\sigma_i^z$: Matrice di Pauli lungo l'asse $z$, che descrive l'orientamento dello spin (valori +1 o -1).
+\end{itemize}
+
+Quando la forza del campo trasversale $\Gamma(T)$ diventa trascurabile, cioè tende a zero ($\Gamma(T) \approx 0$), il sistema cessa di evolversi in modo dinamico e raggiunge uno stato di equilibrio. In questa fase, il sistema si "\textit{congela}" nel suo stato fondamentale, corrispondente al minimo energetico dell'Hamiltoniano finale $H_{f}$. 
+
+Considerando gli effetti del campo trasversale e utilizzando il formalismo delle matrici di Pauli, possiamo esprimere l'evoluzione temporale dell'Hamiltoniano totale come segue:
+\begin{equation*}
+	H(t) = s(t) \cdot H_f + [1-s(t)]\cdot H_i = s(t) \left[ \sum_{i=0}^{N} \sum_{j=i}^{N} J_{ij} \sigma_i^z \sigma_j^z + \sum_{i=0}^{N} h_i \sigma_i^z \right] + [1-s(t)] \sum_{i=0}^{N} \sigma_i^x
+\end{equation*}
+Il termine $[1-s(t)]$ modula l'intensità dell'interazione tra i qubit mediante il campo trasversale. Poiché il campo trasversale è già integrato nella formulazione tramite $[1-s(t)]$, non è necessario introdurre un altro parametro, come $\Gamma(t)$, per controllare l'intensità di tale campo. In altre parole, la funzione $s(t)$ assorbe già il ruolo di $\Gamma(t)$, rendendo superfluo un ulteriore fattore di moltiplicazione per il termine $\sum_{i=0}^{N} \sigma_i^x$. 
+
+Riassumendo, il campo trasversale consente di inizializzare il sistema e introdurre fluttuazioni quantistiche, mentre le matrici di Pauli forniscono il formalismo matematico per descrivere sia le interazioni tra qubit sia la dinamica dello stato quantistico.
+
+\pagebreak
+
+\section{Effetto Tunnel nel Quantum Annealing}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.0\textwidth]{images/Quantum_Tunneling.jpg} 
+	\caption{Illustrazione grafica dell'Effetto Tunnel} 
+	\label{fig:Effetto Tunnel}
+\end{figure}
+
+Le \textit{fluttuazioni quantistiche}, introdotte dal \textit{campo trasversale}, permettono agli spin di "ruotare" e di non essere confinati negli stati classici 
+$\{-1; +1\}$ del \textit{modello di Ising}. Questo facilita il \textbf{tunneling}. 
+
+Nella meccanica quantistica, una particella è descritta da una funzione d’onda che non è limitata a valori distinti o a una regione dello spazio ben definita, ma si estende potenzialmente in tutto lo spazio, con un'ampiezza che può essere diversa da zero anche in quelle regioni che, secondo la meccanica classica, sarebbero inaccessibili per la particella, note come \textbf{regioni proibite}. 
+
+Quando una particella si trova in prossimità di una barriera di potenziale (una regione dello spazio in cui l'energia potenziale è superiore all'energia cinetica della particella) la funzione d’onda non si annulla immediatamente al di là della barriera. Al contrario, la funzione d'onda mostra un decadimento esponenziale all'interno della barriera, mantenendo però una probabilità finita di attraversarla. Questo fenomeno, chiamato \textbf{effetto tunnel}, permette alla particella di superare la barriera senza dover possedere l'energia necessaria per scalarla, come invece sarebbe richiesto dalla meccanica classica \cite{Label11}. 
+
+Come già detto, \textit{nel Quantum Annealing}, l’effetto tunnel consente al sistema quantistico di attraversare barriere energetiche che separano i minimi locali dal minimo globale del paesaggio energetico. Questo è particolarmente vantaggioso nella risoluzione dei problemi di ottimizzazione. 
+
+\pagebreak
+
+La probabilità di tunneling è determinata da tre fattori principali: 
+\begin{itemize}
+	\item \textbf{Altezza della barriera} (\(\Delta\)): rappresenta la differenza di energia tra il minimo locale e il picco della barriera potenziale. Barriere più alte riducono la probabilità che il sistema attraversi il picco energetico per raggiungere un minimo globale;
+	\item \textbf{Larghezza della barriera} (\(\omega\)): corrisponde alla distanza che il sistema deve percorrere nello spazio delle configurazioni degli stati per attraversare la barriera. Una barriera più larga rende il tunneling meno probabile;
+	\item \textbf{Forza del campo trasversale} (\(\Gamma(t)\)): controlla la probabilità di tunneling e viene ridotta durante il processo di \textit{Quantum Annealing}. Maggiore è \(\Gamma(t)\), maggiore è la capacità del sistema di "tunnelizzare" attraverso le barriere.
+\end{itemize}
+
+Può essere espressa come:
+
+\begin{equation*}
+	P \approx e^{-\frac{\sqrt{\Delta}\omega}{\Gamma(t)}}
+\end{equation*}
+
+\section{Un confronto con il Simulated Annealing}
+La ricottura (o annealing), è una tecnica metallurgica finalizzata a migliorare le proprietà meccaniche e strutturali di un materiale, come l'aumento della duttilità e la riduzione delle tensioni interne. Questo processo viene utilizzato per ottimizzare la microstruttura dei metalli, riducendo difetti cristallini e migliorandone sia la lavorabilità che le prestazioni meccaniche.
+
+Il processo di annealing si articola in tre fasi principali:
+\begin{enumerate}
+	\item \textbf{Riscaldamento:} Il materiale viene portato a una temperatura sufficientemente alta da consentire il movimento degli atomi all'interno della struttura cristallina. La temperatura raggiunta è tipicamente vicina al punto di ricristallizzazione del materiale. 
+	\item \textbf{Mantenimento della temperatura:} Durante questa fase, il materiale viene mantenuto ad un'alta temperatura per un periodo di tempo specifico. Questo permette agli atomi di stabilirsi in configurazioni energetiche più favorevoli, riducendo difetti strutturali.
+	\item \textbf{Raffreddamento lento:} Dopo il periodo di mantenimento, la temperatura viene gradualmente ridotta in modo controllato. Questo consente al materiale di raggiungere uno stato stabile con una struttura cristallina migliorata e minime tensioni residue. Un raffreddamento lento è fondamentale per evitare la formazione di nuovi difetti. 
+\end{enumerate}
+
+\pagebreak
+
+Sia il \textbf{Simulated Annealing} che il \textit{\textbf{Quantum Annealing}} prendono spunto da questo processo, solo che il primo utilizza dei metodi classici per trovare la soluzione ad un problema di ottimizzazione, mentre il secondo usa delle proprietà della meccanica quantistica \cite{Label11.5}. 
+
+Il Simulated Annealing è un algoritmo euristico che affronta problemi di ottimizzazione formulati tramite una funzione obiettivo di molte variabili, soggetta a vincoli matematici. Il principio di funzionamento simula un processo di raffreddamento lento per individuare il minimo globale della funzione obiettivo. Ogni configurazione del sistema è associata a un valore di "energia" e l’obiettivo è minimizzare tale energia individuando la configurazione ottimale. 
+
+La temperatura simula l'energia termica. Inizialmente è alta, permettendo al sistema di esplorare configurazioni meno favorevoli. Gradualmente, la temperatura viene ridotta, restringendo la ricerca a configurazioni energeticamente favorevoli. 
+
+L'algoritmo inizia con una configurazione iniziale generata casualmente e un valore di temperatura elevato. La configurazione rappresenta uno stato specifico del sistema da ottimizzare, associato a un valore della funzione obiettivo, interpretato nel contesto dell'algoritmo come energia (cioè il costo della soluzione). 
+
+Dopo l’\textbf{inizializzazione}, l’algoritmo procede secondo i seguenti passi:
+
+\begin{enumerate}
+	\item \textbf{Generazione di una nuova configurazione:} Una nuova configurazione viene ottenuta applicando una modifica locale a quella corrente. Ad esempio, nel problema del Commesso Viaggiatore (TSP), ciò potrebbe consistere nello scambiare due città nell'ordine di visita.
+	
+	\item \textbf{Calcolo della variazione di energia:} La differenza di energia, $\Delta E$, tra la nuova configurazione e quella corrente viene calcolata utilizzando la funzione obiettivo.
+	
+	\item \textbf{Accettazione o rifiuto della nuova configurazione:}
+	\begin{itemize}
+		\item Se $\Delta E \leq 0$: La nuova configurazione, avendo un’energia minore o uguale, viene accettata e sostituisce quella corrente.
+		\item Se $\Delta E > 0$: La configurazione con energia maggiore viene accettata con probabilità 
+		\[
+		P \approx e^{- \frac{\Delta E}{T}}
+		\]
+		dove $T$ è la temperatura corrente. Questa probabilità segue la \textbf{distribuzione di Boltzmann}, che descrive la probabilità di trovare un sistema fisico in uno stato di energia $E$ a una temperatura $T$. Ciò consente al sistema di saltare occasionalmente verso configurazioni meno vantaggiose, evitando di rimanere bloccato in minimi locali.
+	\end{itemize}
+	
+	\item \textbf{Aggiornamento della temperatura:} La temperatura viene ridotta seguendo una legge di raffreddamento, tipicamente: $T_i = \alpha \cdot T_{i-1}$ dove $\alpha \in (0; 1)$ è il fattore di raffreddamento. Valori di $\alpha$ vicini a 1 garantiscono un raffreddamento lento, essenziale per esplorare efficacemente lo spazio delle soluzioni.
+	
+	\item \textbf{Condizione di arresto:} L’algoritmo termina quando la temperatura raggiunge una soglia minima prestabilita. A questo punto, l’ultima configurazione accettata viene presa come soluzione finale. In caso contrario, si ritorna al passo 1.
+\end{enumerate}
+\lstinputlisting[language=python]{listings/simulated_annealing.py}
+
+\pagebreak
+\begin{figure}
+	\centering
+	\includegraphics[width= 0.8\textwidth]{images/Confronto.png} 
+	\caption{\textit{Confronto fra l'applicazione del Simulated Annealing e del Quantum Annealing, mostrando il vantaggio dell'effetto tunnel rispetto al salto termico}} 
+	\label{fig:D-Wave}
+\end{figure}
+
+La convergenza ad una soluzione dipende dalla strategia di raffreddamento, che regola come la temperatura diminuisce nel corso del processo. Inizialmente, è accettato un numero significativo di soluzioni meno ottimali, tipicamente circa il $50\%$ delle soluzioni peggiori. Durante ogni fase del processo di raffreddamento, la temperatura viene ridotta progressivamente, solitamente di un $10\%$ rispetto al valore precedente.
+
+Il numero di iterazioni per ogni fase di raffreddamento è generalmente compreso tra 1 e 10, permettendo al sistema di esplorare adeguatamente lo spazio delle soluzioni. Al termine del processo, la temperatura raggiunge un livello tale che non vengono più accettate soluzioni peggiori, simile a un algoritmo di \textbf{greedy search}. Questo approccio garantisce che, nelle fasi finali, il sistema esplori più selettivamente le configurazioni, dirigendosi verso il minimo globale.
+
+Le principali similitudini tra Simulated Annealing e \textit{Quantum Annealing} riguardano il loro obiettivo comune di trovare il minimo globale di una funzione obiettivo, esplorando diverse configurazioni per evitare minimi locali. Entrambi gli algoritmi seguono un comportamento esponenziale per passare a stati energeticamente sfavorevoli, simile alla distribuzione di Boltzmann, e la temperatura (per il Simulated Annealing) o il campo trasversale (per il \textit{Quantum Annealing}) controllano l'esplorazione dello spazio delle soluzioni. 
+
+\pagebreak 
+
+Le principali differenze tra i due metodi risiedono nel tipo di fluttuazioni utilizzate: il Simulated Annealing si basa su fluttuazioni termiche, mentre il \textit{Quantum Annealing} sfrutta fluttuazioni quantistiche. Nell'approccio classico, la probabilità di superare una barriera energetica dipende dalla temperatura, mentre nell'approccio quantistico la probabilità di attraversarla dipende anche dalle dimensioni della barriera e dalle proprietà quantistiche dei qubit (effetto tunnel). 
+
+Il \textit{Quantum Annealing} può risultare più efficace del Simulated Annealing, soprattutto in contesti complessi, grazie alla capacità di attraversare barriere alte tramite fenomeni quantistici, rendendo l'ottimizzazione più veloce ed efficiente su computer quantistici. Tuttavia, la sua efficacia dipende dalle specifiche del problema e dell'implementazione del dispositivo. In ambienti con pochi minimi locali e con spazi di soluzioni di dimensioni relativamente piccole il Simulated Annealing può essere una scelta preferibile.
+
+
+
+

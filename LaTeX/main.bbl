@@ -1,0 +1,195 @@
+\begin{thebibliography}{10}
+
+\bibitem{Label0}
+Wim van~Dam Dorit~Aharonov and Julia Kempe.
+\newblock Adiabatic quantum computation is equivalent to standard quantum
+computation.
+\newblock November 2004.
+\newblock Available at
+\url{https://www.researchgate.net/publication/4109376_Adiabatic_Quantum_Computation_is_Equivalent_to_Standard_Quantum_Computation}.
+
+\bibitem{Label0.5}
+T.~Kadowaki e~H.~Nishimori.
+\newblock Quantum annealing in the transverse ising model.
+\newblock November 1998.
+\newblock Available at
+\url{https://journals.aps.org/pre/pdf/10.1103/PhysRevE.58.5355}.
+
+\bibitem{Label1}
+Michael A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em State space}, pages 80--81, October 2000.
+
+\bibitem{Label2}
+Michael A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em Evolution}, page~82, October 2000.
+
+\bibitem{Label3}
+Michael A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em Quantum Measurement}, pages 84--85, October 2000.
+
+\bibitem{Label4}
+Michael A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em Composite systems}, page~94, October 2000.
+
+\bibitem{Label5}
+Michael A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em Quantum bits}, page~13, October 2000.
+
+\bibitem{Label6}
+Michael A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em Quantum bits}, page~14, October 2000.
+
+\bibitem{Label7}
+Michael A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em Quantum bits}, page~15, October 2000.
+
+\bibitem{Label7.5}
+Differences between quantum annealers and gate-based quantum computing.
+\newblock January 2023.
+\newblock Available at
+\url{https://quantumzeitgeist.com/differences-between-quantum-annealers-and-gate-based-quantum-computing/}.
+
+\bibitem{Label8}
+Wikipedia.
+\newblock Ising model.
+\newblock June 2023.
+\newblock Available at \url{https://en.wikipedia.org/wiki/Ising_model}.
+
+\bibitem{Label8.5}
+Wikipedia.
+\newblock Quadratic unconstrained binary optimization.
+\newblock November 2022.
+\newblock Available at
+\url{https://en.wikipedia.org/wiki/Quadratic_unconstrained_binary_optimization}.
+
+\bibitem{Label9}
+Dr.~Steven Herbert.
+\newblock Quantum Computing (CST Part II) - Lecture 15: Adiabatic Quantum Computing.
+\newblock pages 3--4.
+\newblock Available at
+\url{https://www.cl.cam.ac.uk/teaching/1920/QuantComp/Quantum_Computing_Lecture_15.pdf}.
+
+\bibitem{Label9.25}
+D-Wave.
+\newblock What is quantum annealing?
+\newblock Available at \url{https://docs.dwavesys.com/docs/latest/c_gs_2.html}.
+
+\bibitem{Label9.5}
+Bernard Zygelman.
+\newblock A first introduction to quantum computing and information.
+\newblock {\em Avoided Crossings}, pages 249--250, October 2019.
+
+\bibitem{Label9.75}
+Bernard Zygelman.
+\newblock A first introduction to quantum computing and information.
+\newblock {\em Landau-Zener Transitions, and the Scheduling Function}, pages
+250--252, October 2019.
+
+\bibitem{Label10}
+Michael A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em The Pauli matrices}, pages 65--68, October 2000.
+
+\bibitem{Label11}
+Dr.~Steven Herbert.
+\newblock Quantum computing (cst part ii) - lecture 15: Adiabatic quantum
+computing.
+\newblock page~14.
+\newblock Available at
+\url{https://www.cl.cam.ac.uk/teaching/1920/QuantComp/Quantum_Computing_Lecture_15.pdf}.
+
+\bibitem{Label11.5}
+Wikipedia.
+\newblock Quantum annealing.
+\newblock August 2021.
+\newblock Available at \url{https://en.wikipedia.org/wiki/Quantum_annealing}.
+
+\bibitem{Label12}
+Hristo Djidjev, Stefanie Zbinden, Andreas Bärtschi and Stephan Eidenbenz.
+\newblock Embedding algorithms for quantum annealers with chimera and pegasus
+connection topologies.
+\newblock 2019.
+\newblock Available at
+\url{https://public.lanl.gov/djidjev/papers/2019__QUBO_Embeddings_on_Chimera_and_Pegasus_Host_Graphs.pdf}.
+
+\bibitem{Label12.25}
+D-Wave Systems.
+\newblock Minorminer.
+\newblock Available at \url{https://github.com/dwavesystems/minorminer}.
+
+\bibitem{Label12.5}
+D-Wave Systems.
+\newblock D-wave api.
+\newblock Available at
+\url{https://docs.dwavesys.com/docs/latest/doc_rest_api.html}.
+
+\bibitem{Label12.75}
+D-Wave Systems.
+\newblock Sdk.
+\newblock Available at \url{https://github.com/dwavesystems/dwave-ocean-sdk}.
+
+\bibitem{Label13}
+Massimo Pappalardo and Mauro Passacantando.
+\newblock Ricerca operativa.
+\newblock {\em Commesso Viaggiatore}, pages 275--281, May 2013.
+
+\bibitem{Label14}
+Dr.~Sebastian Feld.
+\newblock Quantum annealing for operation research and machine learning.
+\newblock {\em QA from a CS/CE perspective}, April 2022.
+\newblock Provided by Professor Cococcioni.
+
+\bibitem{Label15}
+Lov~K. Grover.
+\newblock A fast quantum mechanical algorithm for database search.
+\newblock July 2022.
+\newblock Available at \url{https://dl.acm.org/doi/10.1145/237814.237866}.
+
+\bibitem{Label16}
+Michael~A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em The Procedure}, pages 250--251, October 2000.
+
+\bibitem{Label17}
+Michael~A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em The Oracle}, page 248, October 2000.
+
+\bibitem{Label18}
+Michael~A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em Geometric Visualization}, page 252, October 2000.
+
+\bibitem{Label19}
+Michael~A. Nielsen and Isaac~L. Chuang.
+\newblock Quantum computation and quantum information.
+\newblock {\em Performance}, pages 253--255, October 2000.
+
+\bibitem{Label20}
+Bernard Zygelman.
+\newblock A first introduction to quantum computing and information.
+\newblock {\em The Grover Algorithm}, pages 252--255, October 2019.
+
+\bibitem{Label21}
+Wimvan~Dam, Michele~Mosca, Umesh~Vazirani.
+\newblock How powerful is adiabatic quantum computation?
+\newblock March 2007.
+\newblock Available at
+\url{https://people.eecs.berkeley.edu/~vazirani/pubs/adiabatic.pdf}.
+
+\bibitem{Label22}
+Tameem Albash and Daniel Lidar.
+\newblock Adiabatic quantum computation.
+\newblock November 2016.
+\newblock Available at
+\url{https://www.researchgate.net/publication/310235960_Adiabatic_Quantum_Computing}.
+
+
+\end{thebibliography}

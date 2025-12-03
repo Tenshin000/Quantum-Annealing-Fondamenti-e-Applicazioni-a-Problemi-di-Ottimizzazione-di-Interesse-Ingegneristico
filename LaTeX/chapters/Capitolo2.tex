@@ -1,0 +1,99 @@
+\chapter{Postulati della Meccanica Quantistica}
+\section{Introduzione alla Meccanica Quantistica}
+La \textbf{meccanica quantistica} è una delle teorie fondamentali per la descrizione del comportamento della materia e dell'energia a scale microscopiche. Contrariamente alla meccanica classica, che si basa sull’evoluzione deterministica di variabili osservabili (come posizione e velocità), la meccanica quantistica introduce una descrizione probabilistica dei sistemi fisici, basata su una struttura matematica fortemente astratta. 
+
+I principi fondamentali della meccanica quantistica sono formalizzati attraverso quattro postulati, che stabiliscono le regole matematiche e fisiche per la rappresentazione degli stati quantistici, la loro evoluzione nel tempo e il processo di misurazione. 
+
+
+\section{Primo Postulato della Meccanica Quantistica}
+\begin{quotation}
+\textit{Lo stato di un sistema quantistico isolato è completamente descritto da un vettore di stato (o funzione d'onda) in uno spazio di Hilbert associato al sistema.}
+\end{quotation}
+
+Il primo postulato \cite{Label1} stabilisce che ogni sistema quantistico può essere rappresentato matematicamente da un vettore di stato $\lvert \psi \rangle$, appartenente a uno spazio vettoriale complesso, detto \textbf{spazio di Hilbert}. Questo spazio, dotato di un prodotto scalare, permette di calcolare lunghezze e angoli tra i vettori, conferendo così una struttura geometrica ai concetti di probabilità e sovrapposizione quantistica. 
+
+Il vettore $\lvert \psi \rangle$ è detto anche \textbf{ket} ed è espresso secondo la \textit{notazione di Dirac}. 
+
+
+\pagebreak
+
+Un vettore di stato può essere scritto come una combinazione lineare di stati base ortonormali, detti autostati, secondo la relazione:
+\begin{equation*}
+\lvert \psi \rangle = \sum_{i=1}^{N} \lambda_{i} \lvert e_{i} \rangle
+\end{equation*}
+dove $\lvert e_{i} \rangle$ rappresenta una base ortonormale dello spazio di Hilbert e $\lambda_{i}$ sono coefficienti complessi che esprimono le ampiezze di probabilità. 
+
+La normalizzazione di un ket richiede che la somma delle probabilità su tutti gli stati possibili sia pari a 1, il che si traduce nella condizione:
+\begin{equation*}
+	\int_{-\infty}^{\infty} |\lvert \psi \rangle| ^{2} \, dx = 1
+\end{equation*}
+Questo requisito riflette il fatto che la probabilità totale di trovare la particella da qualche parte nello spazio deve essere uguale a 1. Il modulo quadro della funzione d'onda o del vettore di stato fornisce una misura della probabilità di trovare il sistema in un particolare stato. 
+
+Un esempio pratico riguarda il caso di un sistema a una dimensione, dove $\lvert \psi \rangle$ rappresenta la funzione d'onda di una particella. La probabilità di trovare la particella in un intervallo specifico è proporzionale al valore di $|\lvert \psi \rangle| ^{2}$. 
+
+\section{Secondo Postulato della Meccanica Quantistica}
+\begin{quotation}
+	\textit{L'evoluzione temporale di un sistema quantistico isolato è descritta da un'operazione unitaria governata dall'equazione di Schrödinger.}
+\end{quotation}
+
+L'equazione di Schrödinger \cite{Label2} può essere espressa come:
+\begin{align*}
+i \hbar \frac{d \left| \psi(t) \right\rangle}{dt} = H \left| \psi(t) \right\rangle
+\end{align*}
+Dove:
+\begin{itemize}
+	\item \( \left| \psi(t) \right\rangle \) il vettore di stato del sistema quantistico in funzione del tempo \( t \);
+	\item \( \hbar \) è la \textbf{costante di Planck ridotta}. Il valore esatto non è importante ed è comune assorbire il fattore $\hbar\ $ in $H$ ponendo  $\hbar\ = 1$. Per completezza: $\hbar = 1.0545718 \times 10^{-34} \, \text{J} \cdot \text{s}$;
+	\item \( i \) è l'unità immaginaria;
+	\item \( H \) è l'\textbf{Hamiltoniano}, un operatore hermitiano che rappresenta l'energia totale del sistema e agisce sullo spazio degli stati del sistema stesso, combinando l'energia cinetica e potenziale.
+\end{itemize}
+
+\pagebreak
+
+L'evoluzione temporale unitaria implica che la norma del vettore di stato sia preservata nel tempo, assicurando la conservazione della probabilità totale del sistema.
+
+Se uno stato iniziale $\lvert \psi(0) \rangle$ evolve fino a uno stato $\lvert \psi(t) \rangle$ dopo un tempo t, la relazione tra i due stati è data da un operatore unitario U(t), tale che:
+\begin{equation*}
+	\left| \psi(t) \right\rangle = U(t) \left| \psi(0) \right\rangle = e^{-\frac{i}{\hbar} H t} \left| \psi(0) \right\rangle
+\end{equation*}
+In conclusione, risulta ovvio che se si conosce l'Hamiltoniano di un sistema, insieme al valore della costante di Planck ridotta $\hbar $ (che per l'appunto è una costante), è possibile determinare l'evoluzione temporale dello stato quantistico del sistema attraverso l'equazione di Schrödinger. Questa equazione, infatti, descrive come lo stato del sistema evolva nel tempo, fornendo un quadro teorico completo per prevedere la dinamica del sistema. 
+
+Tuttavia, la determinazione precisa dell'Hamiltoniano di un sistema fisico specifico risulta essere un compito estremamente complesso, in quanto richiede una conoscenza approfondita delle forze e delle interazioni che governano il comportamento delle sue componenti. Infatti gran parte della fisica del ventesimo secolo è stata incentrata sulla determinazione dell'Hamiltoniano di un sistema, o almeno sulla comprensione di come costruire e approssimare correttamente l'Hamiltoniano per descrivere vari sistemi fisici. 
+
+L'Hamiltoniano è oggetto di particolare attenzione in quanto rappresenta uno strumento fondamentale nell'analisi e nella formulazione del \textit{Quantum Annealing}.
+
+\section{Terzo Postulato della Meccanica Quantistica}
+\begin{quotation}
+	\textit{In un sistema quantistico isolato, ogni grandezza fisica misurabile è rappresentata da un operatore hermitiano $\hat{O} $ che agisce nello spazio di Hilbert. Questo operatore, chiamato osservabile, ha autovettori che formano una base per lo spazio di Hilbert, che corrispondono a stati quantistici. I risultati della misurazione di un'osservabile sono dati dagli autovalori di questo operatore. Quando si effettua una misurazione, lo stato del sistema collassa in uno degli autovettori associati all'autovalore misurato.}
+\end{quotation}
+
+Sebbene i sistemi quantistici isolati seguano un'evoluzione unitaria determinata dall'equazione di Schrödinger, è fondamentale prevedere momenti in cui uno strumento di \textbf{misura} (che rappresenta un'interazione con un sistema fisico esterno) interviene per osservare il comportamento del sistema. Questo processo interrompe l'isolamento del sistema, trasformandolo in un sistema aperto e introducendo un'interazione che altera la sua evoluzione, rendendola non più unitaria. 
+
+\pagebreak
+
+Il terzo postulato \cite{Label3} formalizza questo concetto tramite l'\textbf{osservabile}, un operatore hermitiano $\hat{O} $ i cui autovalori (reali, poiché hermitiano) rappresentano i possibili risultati della misura e i cui autovettori formano una base dello spazio di Hilbert. Questo implica che \textbf{il processo di misura è intrinsecamente probabilistico}. 
+
+La probabilità di ottenere un particolare autovalore $ \lambda_{i} $ dell'osservabile durante la misura è data da: 
+\begin{equation*}
+P(\lambda_i) = \left| \langle \phi_i | \psi \rangle \right|^2
+\end{equation*}
+dove $\lvert \phi_{i} \rangle$ è l'autovettore associato a $\lambda_{i} $ e  $\lvert \psi \rangle$ è lo stato quantistico del sistema prima della misurazione. Una volta effettuata la misura, lo stato del sistema collassa nello stato $\lvert \phi_{i} \rangle$, perdendo la sovrapposizione originaria. Questo fenomeno rende la misurazione un atto non neutro, che modifica irreversibilmente lo stato del sistema. 
+
+\section{Quarto Postulato della Meccanica Quantistica}
+\begin{quotation}
+	\textit{Lo spazio degli stati di un sistema composto è il prodotto tensore degli spazi degli stati dei sottosistemi componenti.}
+\end{quotation}
+Per descrivere sistemi quantistici composti, il quarto postulato \cite{Label4} stabilisce che lo stato totale è ottenuto combinando gli stati dei sottosistemi attraverso il prodotto tensore:
+\begin{equation*}
+\lvert\psi \rangle = \lvert\psi_1 \rangle \otimes \lvert\psi_2 \rangle \otimes \dots \otimes \lvert\psi_n \rangle 
+\end{equation*}
+Il prodotto tensore tra due spazi vettoriali \( V \) e \( W \) è uno spazio vettoriale che contiene combinazioni lineari di elementi della forma $v \otimes w, \quad \text{con} \quad v \in V \quad \text{e} \quad w \in W$. In pratica è un modo per unire spazi vettoriali per formare spazi vettoriali più grandi.
+
+Ciò consente di rappresentare stati di sistemi composti da più sottosistemi. Tuttavia l'\textbf{entanglement} si verifica proprio quando lo stato del sistema totale non può essere separato in stati separabili dei singoli sottosistemi, cioè non può essere scritto come il prodotto tensore degli stati dei sottosistemi:
+\begin{equation*} 
+	\lvert \psi \rangle \neq \lvert \psi_1 \rangle \otimes \lvert \psi_2 \rangle \text{ se entangled}
+\end{equation*} 
+
+Questo implica che le misurazioni su uno dei sottosistemi possono influenzare istantaneamente lo stato dell'altro sottosistema, anche se separato spazialmente.
+
+L'entanglement è un fenomeno che è alla base di molte applicazioni della computazione quantistica, come la crittografia quantistica. 

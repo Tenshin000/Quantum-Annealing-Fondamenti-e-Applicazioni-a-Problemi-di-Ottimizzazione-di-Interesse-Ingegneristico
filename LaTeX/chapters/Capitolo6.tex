@@ -1,0 +1,307 @@
+\chapter{Quantum Annealing per il Problema del Commesso Viaggiatore}
+\section{Problema del Commesso Viaggiatore}
+Il \textbf{problema del Commesso Viaggiatore} (\textit{Traveling Salesman Problem}, \textbf{TSP}) è un classico problema di ottimizzazione combinatoria \cite{Label13}. Esso richiede di determinare il percorso più breve che permette a un commesso viaggiatore di visitare un insieme di città, passando per ciascuna esattamente una volta, per poi tornare al punto di partenza. 
+
+Il TSP è noto per la sua rilevanza sia teorica che pratica, ed è classificato come problema \textit{NP-hard}, il che implica che non esistono algoritmi noti in grado di risolverlo in tempo polinomiale per ogni caso possibile (a meno che $P=NP$, ma ricordo che determinarlo è uno dei \textit{problemi del millennio}). 
+
+
+Può essere descritto matematicamente come segue:
+\begin{itemize}
+	\item Siano $G = (N, A)$ un grafo completo, $N = \{1, 2, \dots, n\}$ l’insieme delle città e $A$ l’insieme degli archi; 
+	\item A ciascun arco $(i; j) \in A$ è associato un costo $c_{ij}$, che rappresenta la distanza o il peso del collegamento tra le città $i$ e $j$.
+\end{itemize}
+
+Un \textbf{ciclo hamiltoniano} è un percorso in un grafo che visita ciascun nodo esattamente una volta e ritorna al nodo di partenza, formando così un ciclo chiuso. L'obiettivo del TSP è determinare un ciclo hamiltoniano $x= (x_1, x_2, \dots, x_n)$, dove ogni città è visitata esattamente una volta, minimizzando la somma totale dei costi associati al percorso. 
+
+Il TSP è \textbf{simmetrico} se \( c_{ij} = c_{ji} \ \forall (i; j) \), altrimenti si dice \textbf{asimmetrico}. 
+
+
+\pagebreak
+
+\( x_{ij} \) è la generica variabile binaria del problema. In pratica \( x_{ij} = 1 \) se l'arco \((i; j)\) appartiene al circuito, altrimenti \( x_{ij} = 0 \). Una possibile formulazione matematica del problema è:
+\begin{equation*}
+	\begin{aligned}
+		& min(\sum_{i=1}^{N} \sum_{j=1}^{N} c_{ij} x_{ij}), \\
+		& \sum_{j=1, j \neq i}^{N} x_{ij} = 1 \quad \forall i \in N, \\
+		& \sum_{i=1, i \neq j}^{N} x_{ij} = 1 \quad \forall j \in N, \\
+		& \sum_{(i,j)\in A, i \in S} \sum_{j \notin S} x_{ij} \geq 1 \quad \forall S \subset N, S \neq 0, S \neq N, \\
+		& x_{ij} \in \{0, 1\} \quad \forall i, j \in N.
+	\end{aligned}
+\end{equation*}
+I primi due tipi di vincoli mi assicurano che ogni città sia visitata una sola volta e sono detti \textbf{vincoli di assegnazione}. Il primo nello specifico mi dice che ogni città deve essere lasciata una sola volta, il secondo che ogni città deve essere raggiunta una sola volta. 
+
+Il terzo tipo di vincoli evita cicli interni che non coprono tutte le città, garantendo un unico ciclo hamiltoniano e l'assenza di sottocicli. Sono detti \textbf{vincoli di connessione}. In particolare essi definiscono che, comunque si scelga un sottoinsieme proprio di nodi $S$, deve esistere almeno un arco che colleghi un nodo di $S$ con un nodo non appartenente a $S$.
+
+\section{TSP nella forma QUBO}
+Per risolvere il problema tramite il \textit{Quantum Annealing}, è necessario prima rappresentarlo in forma \textbf{QUBO}. Tuttavia, il TSP, nella sua formulazione classica, è difficile da esprimere in questa forma.
+
+Questo limite deriva dalla difficoltà di rappresentare esplicitamente i \textbf{vincoli di connessione}. La modellazione di tali vincoli spesso richiede espressioni matematiche più complesse di quelle quadratiche e comporta un aumento significativo del numero di variabili, rendendo il problema inefficiente da risolvere.
+
+Nei metodi classici, come l'ottimizzazione lineare, questi vincoli vengono gestiti iterativamente durante il processo di ottimizzazione. Nel caso del QUBO, invece, tutti i vincoli devono essere incorporati direttamente nella funzione obiettivo sotto forma di \textbf{penalità} e/o \textbf{ricompense}. 
+
+\pagebreak
+
+Rappresentare in modo efficace vincoli complessi, come quelli relativi agli archi nel TSP, risulta quindi impraticabile senza introdurre semplificazioni o approssimazioni. Per superare queste difficoltà, è possibile adottare una formulazione alternativa del problema, basata \textbf{sull'ordine di visita delle città}. 
+
+In questa nuova rappresentazione, il problema viene modellato utilizzando variabili binarie $x_{ip}$ che assumono il valore 1 se una città $i$ occupa una posizione $p$ lungo il percorso e 0 altrimenti. La funzione obiettivo e i vincoli del problema si possono così esprimere nella forma seguente:
+\begin{equation*}
+	\begin{aligned}
+		& min(\sum_{i=1}^{N} \sum_{j=1}^{N} \sum_{p=1}^{N} c_{ij} \cdot x_{ip} \cdot x_{j(p+1)}), \\
+		& \sum_{p=1}^{N} x_{ip} = 1 \quad \forall i \in N, \\
+		& \sum_{i=1}^{N} x_{ip} = 1 \quad \forall p = \{1, \dots, n\}, \\
+		& x_{ip} \in \{0, 1\} \quad \forall i \in N, \forall p = \{1, \dots, n\}.
+	\end{aligned}
+\end{equation*}
+dove:
+\begin{itemize}
+	\item $c_{ij}$ rappresenta la distanza (il costo) tra le città $i$ e $j$; 
+	\item Il primo tipo di vincoli assicura che ogni città $i$ sia visitata esattamente una volta e occupi una posizione unica nel percorso;
+	\item Il secondo tipo di vincoli garantisce che ogni posizione $p$ nel percorso sia assegnata a una sola città.
+\end{itemize}
+
+Inoltre, per completare il ciclo, si impone $x_{j,n+1} = x_{j,1}$ per tornare al punto di partenza. 
+
+Per passare dal problema del TSP alla formulazione QUBO, costruiamo una matrice Q che incorpora la funzione obiettivo e i vincoli sotto forma di penalità e ricompense. 
+
+La \textbf{ricompensa} $R$ è un numero positivo, il cui valore deve essere maggiore della distanza più grande, mentre la \textbf{penalità} $P$ è un numero positivo, che deve essere maggiore o uguale alla ricompensa. Questo requisito garantisce che le penalità associate alla violazione dei vincoli prevalgano sui contributi positivi della ricompensa nella funzione obiettivo.
+
+Sebbene la ricompensa sia un valore positivo, essa viene successivamente sottratta nella formulazione matematica, contribuendo così a bilanciare l'influenza del termine di ottimizzazione e dei vincoli. 
+
+\pagebreak
+
+La matrice $Q$ del QUBO viene aggiornata con i costi effettivi se due città $i$ e $j$ occupano posizioni adiacenti:
+\begin{equation*}
+	Q_{ip,jq}= c_{ij} \, \quad \text{se } i \neq j \text{ e } q=p+1
+\end{equation*}
+
+Se una città $i$ appare in due posizioni diverse $p$ e $q$, questa combinazione è vietata:  
+\begin{equation*}
+	Q_{ip,jq}= P \, \quad \text{se } i=j \text{ e } p \neq q
+\end{equation*}
+
+Se due città $i$ e $j$ occupano la stessa posizione $p$, questa combinazione è vietata:
+\begin{equation*}
+	Q_{ip,jq}= P \, \quad \text{se } i \neq j \text{ e } p=q
+\end{equation*}
+
+Infine per evitare che la soluzione imponga la stessa città su più posizioni, togliamo la ricompensa sulla diagonale: 
+\begin{equation*}
+	Q_{ip,jq} = -R \, \quad \text{se } i = j \text{ e } p = q
+\end{equation*}
+
+Se non rientra in nessuno dei precedenti casi:
+\begin{equation*}
+	Q_{ip,jq}= 0
+\end{equation*}\\
+
+Riassumendo: 
+\begin{equation*}
+	Q_{ip,jq} = 
+	\begin{cases} 
+		Q_{ip,jq}= c_{ij} & \quad \text{se } i \neq j \text{ e } q=p+1 \text{;}\\
+		Q_{ip,jq}= P & \quad \text{se } i=j \text{ e } p \neq q \text{;}\\
+		Q_{ip,jq}= P & \quad \text{se } i \neq j \text{ e } p=q \text{;}\\
+		Q_{ip,jq} = -R & \quad \text{se } i = j \text{ e } p = q \text{;}\\
+		Q_{ip,jq}= 0 & \text{ altrimenti}
+	\end{cases}
+\end{equation*}
+
+Non entreremo nel dettaglio della scelta dei termini $P$ ed $R$, in quanto questa parte del processo dipende da considerazioni specifiche che esulano dallo scopo di questo lavoro. Tuttavia, è importante sottolineare che, generalmente, il calcolo di questi termini si basa sulla dimensione del problema e sui pesi delle connessioni del grafo.
+
+\pagebreak
+
+\section{Progettazione Algoritmo}
+La \textbf{progettazione di un algoritmo di Quantum Annealing} segue una serie di passi strutturati che permettono di tradurre un problema di ottimizzazione in un modello risolvibile tramite il quantum annealer. 
+
+La prima fase consiste nella \textbf{definizione del problema}. Ogni problema deve essere espresso come una funzione obiettivo che rappresenti un costo da minimizzare o una qualità da massimizzare. Il \textit{Quantum Annealing} è progettato per risolvere problemi di minimo, quindi se si ha un problema di massimo si applica questa formula alla funzione obiettivo:
+\begin{equation*}
+	max(f(x)) = - min(-f(x))
+\end{equation*}
+I vincoli del problema rimangono invariati durante questa conversione. Se sono presenti penalità associate ai vincoli, anch'esse restano additive nella funzione obiettivo trasformata. Le ricompense restano sottrattive.  
+
+Successivamente, si passa alla \textbf{rappresentazione della soluzione}. Nel \textit{Quantum Annealing} è determinata dal numero di qubit necessari per modellare tutte le possibili configurazioni del problema. Ogni qubit rappresenta una decisione binaria o uno stato del sistema. Bisogna porre particolare attenzione a questo step, perché è necessario per rendere più facile la costruzione della matrice QUBO. 
+
+La fase seguente riguarda la \textbf{definizione dei vincoli}, che deve garantire che le soluzioni candidate rispettino le regole del problema. Questi vincoli vengono tradotti in termini matematici attraverso penalizzazioni e/o ricompense inseriti nella funzione obiettivo. 
+
+Una volta definiti i vincoli, è necessario \textbf{costruire la matrice QUBO}, che rappresenta matematicamente il problema sotto forma di una matrice quadrata simmetrica. Gli elementi diagonali della matrice descrivono i costi o i premi associati alle decisioni individuali, mentre gli elementi non diagonali rappresentano le interazioni tra diverse decisioni. 
+
+Dopo aver costruito la matrice QUBO, il problema viene \textbf{convertito nel modello di Ising}, che è direttamente interpretabile dai quantum annealer. La conversione mantiene la struttura e il significato matematico del problema. 
+
+Il passo successivo è l’\textbf{embedding del modello di Ising nel grafo Chimera} o in una topologia hardware compatibile. Questo processo richiede un numero maggiore di qubit fisici rispetto a quelli logici, ma strumenti software specializzati semplificano questa operazione. 
+
+\pagebreak
+
+Una volta completato l’embedding, il quantum annealer esegue la \textbf{determinazione del minimo di energia} attraverso il processo di \textit{Quantum Annealing}. È qui che il sistema viene inizializzato nello stato fondamentale di un Hamiltoniano iniziale e successivamente evoluto verso lo stato fondamentale dell’Hamiltoniano del problema. L’adiabaticità del processo garantisce che il sistema rimanga nello stato di energia minima, a meno di interruzioni causate da decoerenza o transizioni non adiabatiche.  
+
+Infine, si giunge all’\textbf{interpretazione della soluzione}, in cui lo stato finale del sistema viene decodificato per estrarre la configurazione ottimale delle variabili originali. La soluzione restituita è nel modello di Ising e viene poi convertita in forma QUBO in modo che sia più facile da interpretare. 
+
+Riassumendo, i passaggi per la progettazione di un algoritmo \cite{Label14} sono: 
+\begin{enumerate}
+	\item \textbf{Definizione del Problema};
+	\item \textbf{Rappresentazione della Soluzione};
+	\item \textbf{Definizione dei Vincoli};
+	\item \textbf{Costruzione della matrice QUBO};
+	\item \textbf{Conversione nel Modello di Ising};
+	\item \textbf{Embedding con grafico Chimera};
+	\item \textbf{Determinazione del minimo di energia};
+	\item \textbf{Interpretazione della soluzione}.
+\end{enumerate}
+
+\pagebreak
+
+\section{Esempio pratico di risoluzione di un TSP}
+Per illustrare l'applicazione del \textit{Quantum Annealing}, consideriamo un esempio pratico basato su un problema del Commesso Viaggiatore simmetrico (rappresentato nella figura sotto). La rappresentazione grafica del problema da risolvere è la seguente:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.0\textwidth]{images/TSP.png} 
+	\label{fig:TSP}
+\end{figure}
+
+La città A deve essere allo stesso tempo, la città di partenza e la città di arrivo. 
+
+\subsection{Passo 1: Definizione del Problema}
+Come discusso in precedenza, la formulazione classica del TSP, in cui l'obiettivo è determinare direttamente gli archi che compongono il percorso ottimale, risulta complessa da convertire in una forma compatibile con il modello QUBO. Pertanto proponiamo una formulazione alternativa del problema, focalizzandoci sull'\textbf{ordine delle città da visitare}. In questa rappresentazione, l'obiettivo è determinare la sequenza ottimale di città che minimizza il costo totale del percorso, rispettando i vincoli di unicità e ciclicità. 
+
+\pagebreak
+
+\subsection{Passo 2: Rappresentazione della Soluzione}
+In un problema di TSP con $N$ città, è necessario garantire che ogni città sia assegnata a una posizione specifica nel percorso. Per rappresentare questa relazione nella formulazione QUBO, sono richiesti $N^2$ qubit logici: ciascuna città può occupare $N$ posizioni nel percorso e ogni combinazione è rappresentata da un qubit.
+
+Nel nostro problema vi sono 4 città. Teoricamente, sarebbero necessari 16 qubit logici per rappresentare tutte le possibili assegnazioni. Tuttavia, è possibile ridurre il numero di qubit richiesti sfruttando le proprietà del problema e introducendo alcune ottimizzazioni.
+
+Poiché in un TSP la città di partenza e di arrivo sono la stessa (in questo caso è A), è sufficiente escluderla dalla rappresentazione. Questo riduce il problema a determinare l'ordine delle altre $N-1$ città. Di conseguenza, con 4 città, il numero di qubit logici necessari si riduce a: 
+\begin{equation*}
+	(N-1)^2 = 3^2 = 9
+\end{equation*}
+Questa riduzione sfrutta la simmetria del problema e semplifica il modello, pur preservando la correttezza della rappresentazione e la capacità di determinare il percorso ottimale. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 0.9\textwidth]{images/Rappresentazione_TSP.png} 
+\end{figure}
+
+\subsection{Passo 3: Definizione dei Vincoli}
+Abbiamo già visto come si formulano i vincoli del TSP con la formulazione basata sull'ordine delle città. Essi possono essere riassunti come segue:
+\begin{enumerate}
+	\item \textbf{Ogni città deve essere visitata una sola volta};
+	\item \textbf{Ogni posizione del percorso deve essere occupata da una sola città};
+	\item \textbf{La distanza tra città consecutive deve influire sul costo totale del percorso}. 
+\end{enumerate}
+
+\pagebreak
+
+La formalizzazione matematica di questi vincoli è la seguente: 
+\begin{equation*}
+	\begin{aligned}
+		& min(\sum_{i \in \{B,C,D\}} \sum_{j \in \{B,C,D\}} \sum_{p=2}^{4} c_{ij} \cdot x_{ip} \cdot x_{ip+1}), \\
+		& \sum_{p=2}^{4} x_{ip} = 1 \quad \forall i \in \{B,C,D\} \\
+		& \sum_{i \in \{B,C,D\}} x_{ip} = 1 \quad \forall p = \{2,3,4\}\\
+		& x_{ip} \in \{0, 1\} \quad \forall i \in \{B,C,D\}, \forall p = \{2,3,4\}.
+	\end{aligned}
+\end{equation*} 
+
+\subsection{Passo 4: Costruzione della matrice QUBO}
+Con queste semplificazioni, possiamo esprimere $Q$ nel seguente modo:
+\begin{equation*}
+	Q_{ip,jq} = 
+	\begin{cases} 
+		Q_{ip,jq}= c_{ij} & \quad \text{se } i \neq j \text{ e } q=p+1 \text{;}\\
+		Q_{ip,jq}= P & \quad \text{se } i=j \text{ e } p \neq q \text{;}\\
+		Q_{ip,jq}= P & \quad \text{se } i \neq j \text{ e } p=q \text{;}\\
+		Q_{ip,jq} = c_{ij} - R & \quad \text{se } i = j \text{ e } p = q \text{ con } p = 2 \text{ o } p = N \text{;}\\
+		Q_{ip,jq} = -R  & \quad \text{se } i = j \text{ e } p = q \text{ con } p \neq 2 \text{ e } p \neq N \text{;}\\
+		Q_{ip,jq}= 0 & \text{ altrimenti}
+	\end{cases}
+\end{equation*}
+
+Applicandola al nostro problema, troviamo la seguente matrice:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 0.6\textwidth]{images/QUBO_TSP.png}
+	\label{fig:QUBO TSP} 
+\end{figure}
+
+\pagebreak
+
+Il TSP è simmetrico e di conseguenza pure questa matrice lo è. Questo implica che i valori nella matrice siano speculari rispetto alla diagonale, ovvero i riquadri grigi sono identici per le coppie di città simmetriche.
+
+\subsection{Passo 5: Conversione nel Modello di Ising}
+Il modello QUBO viene tradotto in un modello di Ising per l’implementazione sul quantum annealer. Applicando l'algoritmo di conversione otteniamo la seguente matrice: 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 0.7\textwidth]{images/Ising_TSP.png}
+	\label{fig:Ising TSP} 
+\end{figure}
+
+\subsection{Passo 6: Embedding con grafico Chimera}
+Il modello di Ising può essere rappresentato come un grafo. In questa rappresentazione:
+\begin{itemize}
+	\item I vertici del grafo corrispondono ai qubit logici; 
+	\item Un arco viene introdotto tra due vertici se il valore corrispondente nella matrice Q (nella forma di Ising) è diverso da zero.
+\end{itemize}
+
+\pagebreak
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.1\textwidth]{images/Ising_Logical_Qubit.png}
+	\label{fig:Da Ising al grafico che rappresenta i Qubit Logici} 
+\end{figure}
+Questo grafico ci rende più facile la comprensione del meccanismo di \textbf{embedding}. $N$ qubit logici richiedono $N^{2}$ qubit fisici nel caso peggiore. Il nostro modello di Ising deve essere mappato sulla topologia fisica del grafo Chimera. 
+
+Utilizzando dei tool specifici è stato possibile ottenere un embedding che richiede 27 qubit fisici per rappresentare 9 qubit logici. Considerando che nel caso peggiore sarebbe stato necessario l'uso di 81 qubit fisici, il risultato ottenuto è soddisfacente. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.1\textwidth]{images/Qubit_Logici_Fisici.png}
+	\label{fig:Dal grafico che rappresenta i Qubit Logici al Grafo Chimera} 
+\end{figure}
+
+\pagebreak
+\subsection{Passo 7: Determinazione del Minimo di Energia}
+Il quantum annealer risolve il problema determinando lo stato fondamentale (minimo energetico) dell’Hamiltoniano totale. Il \textit{Quantum Annealing} sfrutta l’effetto tunnel per superare barriere energetiche, evitando di rimanere bloccato nei minimi locali e trovando il minimo globale.
+
+\subsection{Passo 8: Interpretazione della soluzione}
+Una volta identificata la configurazione dei qubit che corrisponde all'energia minima, il passo successivo consiste nel tradurre questa configurazione nella soluzione del problema originale. 
+
+Nel caso del TSP, ciò implica determinare il percorso ottimale, ossia la sequenza di città che minimizza la distanza totale, risolvendo così il problema di ottimizzazione. 
+
+Questa fase richiede l'interpretazione della configurazione dei qubit in termini di variabili logiche, seguendo la mappatura stabilita durante l'embedding, per ricostruire il percorso che rappresenta la soluzione migliore. \\\\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.0\textwidth]{images/Soluzione_TSP.png}
+	\caption{Soluzione del Problema} 
+	\label{Soluzione TSP} 
+\end{figure}
+
+\pagebreak
+
+Ricostruita la soluzione per il modello di Ising, viene poi presentata in forma QUBO. 
+
+La soluzione al nostro problema specifico è: $A \rightarrow C \rightarrow D \rightarrow B \rightarrow A$. \linebreak In formulazione QUBO si traduce in:
+
+\begin{equation*}
+	x = 
+	\begin{aligned}
+		\begin{bmatrix}
+			0 \\
+			0 \\
+			1 \\
+			1 \\
+			0 \\
+			0 \\
+			0 \\
+			1 \\
+			0 \\
+		\end{bmatrix}
+	\end{aligned}
+\end{equation*}
+
+
+
+
+
+
+
+

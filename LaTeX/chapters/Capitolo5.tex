@@ -1,0 +1,71 @@
+\chapter{Topologie Hardware e \\ Architettura del Quantum Annealing}
+\section{Quantum Annealer}
+Il \textbf{Quantum Annealer} è un tipo specifico di \textit{hardware quantistico} progettato specificamente per risolvere problemi di ottimizzazione, utilizzando i principi della meccanica quantistica. 
+
+Il Quantum Annealer agisce evolvendo il sistema lungo una traiettoria determinata dall'Hamiltoniano, in modo che il sistema raggiunga, con alta probabilità, il minimo globale o una soluzione molto vicina ad esso. Questo processo è reso possibile dalla natura parallela e probabilistica delle interazioni quantistiche tra i qubit, che permettono di esplorare simultaneamente molteplici configurazioni di stato. 
+
+I problemi di ottimizzazione vengono formulati tramite il modello matematico del \textbf{QUBO}, che viene successivamente convertito nel \textbf{modello di Ising}, che come abbiamo visto, è una rappresentazione che il quantum annealer è in grado di "trattare" per trovare la soluzione ottimale. 
+
+\section{Distinzione fra Qubit Logico e Qubit Fisico}
+Fino ad ora abbiamo trattato il \textbf{qubit} come una rappresentazione astratta dello stato dello spin di una particelle subatomica. D'ora in avanti è necessaria una distinzione fra \textbf{qubit Logico} e \textbf{qubit Fisico}. 
+
+Il \textit{qubit logico} è un'astrazione che rappresenta una variabile di un problema matematico. Nei modelli di Ising o nei QUBO, ogni qubit logico codifica uno stato binario, che può essere +1 o -1, oppure 1 o 0, a seconda della convenzione adottata. 
+
+Un \textit{qubit fisico}, invece, è un'entità concreta e fisica, come lo spin di una particella subatomica, che può essere implementata su hardware quantistico.
+
+\pagebreak
+
+Perché è stata necessaria questa distinzione? Ogni qubit fisico è soggetto a rumore, decoerenza e imperfezioni che ne compromettono la stabilità e la capacità di mantenere le informazioni. Se un qubit logico fosse rappresentato da un singolo qubit fisico, un errore nel qubit fisico potrebbe compromettere l'informazione contenuta in quel qubit logico. Per preservare le informazioni quantistiche, sono necessari meccanismi di correzione degli errori, mantenimento della coerenza e difesa dai disturbi esterni. Sebbene non ci concentreremo sui dettagli di questi meccanismi, è importante sottolineare che un \textbf{singolo qubit logico} viene spesso rappresentato da una \textbf{catena di qubit fisici interconnessi}.
+
+Questa tecnica, nota come \textbf{embedding}, consente di mappare le interazioni richieste dal modello logico sulla topologia fisica del Quantum Annealer, garantendo così una maggiore robustezza e stabilità nell'esecuzione del calcolo. 
+
+\section{Grafo Chimera}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 0.7\textwidth]{images/Grafo_Chimera.png} 
+	\caption{Una rappresentazione del Grafo Chimera} 
+	\label{fig:Grafo Chimera}
+\end{figure}
+
+Il \textbf{grafo Chimera} è una \textbf{struttura topologica} progettata per organizzare e connettere i qubit fisici nei processori quantistici sviluppati da \textit{D-Wave Systems} \cite{Label12}. 
+
+\pagebreak
+
+Questa architettura riflette le limitazioni hardware dei Quantum Annealer, che non possono implementare connessioni completamente arbitrarie tra i qubit fisici. La topologia Chimera offre un compromesso tra flessibilità e semplicità costruttiva, ottimizzando l’implementazione di interazioni locali e non locali per rappresentare problemi complessi di ottimizzazione. 
+
+Nel grafo Chimera, i qubit fisici sono rappresentati come \textbf{nodi}, mentre le interazioni tra di essi (denominate "\textbf{coupler}") sono rappresentate da archi. Ogni cella del grafo contiene 8 qubit fisici, suddivisi in due gruppi di 4 qubit (configurazione $K_{4,4}$), dove ogni gruppo è completamente connesso internamente, e può interagire con i qubit del gruppo opposto. Le celle sono disposte in una griglia \textit{L} x \textit{L} e le connessioni tra celle adiacenti sono limitate.
+
+Questa configurazione consente di rappresentare sottoproblemi locali altamente connessi all’interno di ciascuna cella. Tuttavia, la connettività limitata tra le celle può rappresentare un ostacolo per problemi con molte interazioni non locali. Ad esempio, per un processore con $L=4$, il grafo Chimera contiene $N = 8 L^2 = 128$ qubit fisici e circa $16 L^2 - 4 L = 240$ connessioni. 
+
+Per mappare un problema del modello di Ising su un grafo Chimera, le interazioni $J_{ij}$ e i campi locali $h_i$ devono essere tradotti in connessioni e pesi compatibili con la struttura del grafo. Tuttavia, le limitazioni della connettività richiedono un processo di embedding, in cui le variabili logiche ($s_i$) sono rappresentate da più qubit fisici interconnessi.
+
+\section{Embedding}
+L'\textbf{embedding}, ossia, il processo di \textbf{traduzione del modello di Ising al grafo Chimera}, avviene in diverse fasi. 
+
+In primo luogo, ogni variabile logica $s_i$ del modello di Ising viene rappresentata da un qubit logico che viene poi mappato da una catena di qubit fisici interconnessi. 
+
+Le interazioni $J_{ij}$ del modello devono essere assegnate agli archi del grafo, e se i qubit fisici corrispondenti non sono direttamente collegati, vengono introdotte catene di qubit per mediare l'interazione.
+
+Per garantire che una catena di qubit fisici rappresenti correttamente una singola variabile logica, vengono introdotti vincoli di coerenza. Questi vincoli impongono che tutti i qubit fisici della catena assumano lo stesso valore: 
+\begin{equation*}
+	E_{\text{catena}} = \sum_{(i,k) \in \text{catena}} J_{\text{catena}} s_i s_k
+\end{equation*}
+dove $J_{\text{catena}}$ è un peso assegnato alle connessioni all'interno della catena. 
+
+\pagebreak
+
+Infine termini $h_i$ vengono assegnati ai nodi corrispondenti del grafo Chimera, rappresentando campi locali applicati ai qubit fisici.
+
+L'ottimizzazione dell'embedding nel grafo Chimera richiede algoritmi specifici per ridurre il numero di catene necessarie e minimizzare gli errori tra i qubit fisici. Tuttavia, la traduzione del modello di Ising presenta sfide legate alla limitata connettività, che richiede l'uso di catene per simulare connessioni non locali, e all'aumento del numero di qubit fisici, che riduce la capacità del sistema. Inoltre, la sensibilità agli errori dei vincoli di catena può compromettere la rappresentazione delle variabili logiche, e la complessità computazionale del processo deve essere bilanciata con i benefici del calcolo quantistico. 
+
+Il grafo Chimera è stato una delle prime architetture pratiche per quantum annealers, permettendo la risoluzione di problemi di ottimizzazione complessi. Tuttavia, ne abbiamo riscontrato diverse limitazioni. 
+
+Per superarle, è stato sviluppato il grafo Pegasus, che offre una connettività superiore. Pegasus, con una struttura a $K_{5,5}$, consente una maggiore densità di connessioni tra i qubit, riducendo la necessità di catene di qubit e migliorando la rappresentazione diretta delle interazioni tra variabili logiche. Ciò ottimizza l'uso delle risorse hardware, aumentando l'efficienza del sistema.
+
+\section{Tool per l'Embedding}
+Diversi strumenti e algoritmi sono stati sviluppati per trovare embedding efficienti per un dato modello di Ising.
+
+\textbf{Minorminer} \cite{Label12.25} è uno strumento open-source progettato per affrontare il problema dell’embedding dei grafi logici nei grafi fisici dei quantum annealer. Disponibile pubblicamente, Minorminer è scritto in \textit{Python} e può essere integrato facilmente in altri framework o applicazioni personalizzate.  
+
+La stessa D-Wave offre un’interfaccia software che include strumenti per l’embedding automatico. La \textbf{D-Wave API} \cite{Label12.5} e il \textbf{Software Development Kit} (\textbf{SDK}) \cite{Label12.75} permettono ai programmatori di modellare, inviare e analizzare problemi ottimizzati per l’hardware quantistico. Permettono anche di simulare i risultati su un computer classico prima di eseguire il problema sull’hardware quantistico, utile per debugging e test.
+

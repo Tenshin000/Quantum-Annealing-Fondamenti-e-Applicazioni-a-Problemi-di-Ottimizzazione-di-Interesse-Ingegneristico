@@ -1,0 +1,3109 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.10.9)  6 SEP 2025 16:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-09-10>
+(c:/texlive/2024/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2024/02/08 v1.4n Standard LaTeX document class
+(c:/texlive/2024/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2024/02/08 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count194
+\c@chapter=\count195
+\c@section=\count196
+\c@subsection=\count197
+\c@subsubsection=\count198
+\c@paragraph=\count199
+\c@subparagraph=\count266
+\c@figure=\count267
+\c@table=\count268
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen141
+)
+(c:/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-07-10 v7.01j Hypertext links for LaTeX
+
+(c:/texlive/2024/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(c:/texlive/2024/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(c:/texlive/2024/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(c:/texlive/2024/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+(c:/texlive/2024/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(c:/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(c:/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(c:/texlive/2024/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count269
+)
+(c:/texlive/2024/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count270
+)
+(c:/texlive/2024/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen142
+\Hy@linkcounter=\count271
+\Hy@pagecounter=\count272
+
+(c:/texlive/2024/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-07-10 v7.01j Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(c:/texlive/2024/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count273
+
+(c:/texlive/2024/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-07-10 v7.01j Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4157.
+Package hyperref Info: Link nesting OFF on input line 4162.
+Package hyperref Info: Hyper index ON on input line 4165.
+Package hyperref Info: Plain pages OFF on input line 4172.
+Package hyperref Info: Backreferencing OFF on input line 4177.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4424.
+\c@Hy@tempcnt=\count274
+
+(c:/texlive/2024/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4763.
+\XeTeXLinkMargin=\dimen143
+
+(c:/texlive/2024/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(c:/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count275
+\Field@Width=\dimen144
+\Fld@charsize=\dimen145
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
+
+(c:/texlive/2024/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count276
+\c@Item=\count277
+\c@Hfootnote=\count278
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(c:/texlive/2024/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-07-10 v7.01j Hyperref driver for pdfTeX
+
+(c:/texlive/2024/texmf-dist/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count279
+\c@bookmark@seq@number=\count280
+
+(c:/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(c:/texlive/2024/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip51
+)
+(c:/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box52
+\beforetitleunit=\skip52
+\aftertitleunit=\skip53
+\ttl@plus=\dimen146
+\ttl@minus=\dimen147
+\ttl@toksa=\toks18
+\titlewidth=\dimen148
+\titlewidthlast=\dimen149
+\titlewidthfirst=\dimen150
+)
+(c:/texlive/2024/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(c:/texlive/2024/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count281
+\Gm@cntv=\count282
+\c@Gm@tempcnt=\count283
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks19
+)
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrextend.sty
+Package: scrextend 2023/07/07 v3.41 KOMA-Script package (extend other classes w
+ith features of KOMA-Script classes)
+
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2023/07/07 v3.41 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
+
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
+
+
+(c:/texlive/2024/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
+)))
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 368.
+))
+
+LaTeX Warning: Command \@footnotemark  has changed.
+               Check if current package is valid.
+
+)
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 34.
+
+(c:/texlive/2024/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/10/05 v24.11 The Babel package
+\babel@savecnt=\count284
+\U@D=\dimen159
+\l@unhyphenated=\language89
+
+(c:/texlive/2024/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count285
+
+(c:/texlive/2024/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
+Package babel Info: Hyphen rules for 'canadian' set to \l@english
+(babel)             (\language0). Reported on input line 102.
+Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
+(babel)             (\language23). Reported on input line 105.
+Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
+(babel)             (\language23). Reported on input line 108.
+)
+(c:/texlive/2024/texmf-dist/tex/generic/babel-italian/italian.ldf
+Language: italian 2024/01/03 v.1.5.00 Italian support for the babel system
+\it@lettering=\count286
+\it@doublequoteactive=\count287
+\it@ISOcompliance=\count288
+))
+(c:/texlive/2024/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex
+Package babel Info: Importing font and identification data for italian
+(babel)             from babel-it.ini. Reported on input line 11.
+)
+(c:/texlive/2024/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+Package babel Info: Importing font and identification data for english
+(babel)             from babel-en.ini. Reported on input line 11.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/babelbib/babelbib.sty
+Package: babelbib 2021/01/06 v1.34 babelbib: multilingual bibliographies
+\c@btxromaniannumeral=\count289
+)
+(c:/texlive/2024/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
+)
+(c:/texlive/2024/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 116.
+
+) (c:/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.sty
+(c:/texlive/2024/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+(c:/texlive/2024/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2024-09-10 L3 programming layer (loader) 
+
+(c:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count290
+\l__pdf_internal_box=\box53
+))
+Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count291
+\l__lipsum_a_int=\count292
+\l__lipsum_b_int=\count293
+
+(c:/texlive/2024/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
+(c:/texlive/2024/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip54
+\cftbeforetoctitleskip=\skip55
+\cftaftertoctitleskip=\skip56
+\cftbeforepartskip=\skip57
+\cftpartnumwidth=\skip58
+\cftpartindent=\skip59
+\cftbeforechapskip=\skip60
+\cftchapindent=\skip61
+\cftchapnumwidth=\skip62
+\cftbeforesecskip=\skip63
+\cftsecindent=\skip64
+\cftsecnumwidth=\skip65
+\cftbeforesubsecskip=\skip66
+\cftsubsecindent=\skip67
+\cftsubsecnumwidth=\skip68
+\cftbeforesubsubsecskip=\skip69
+\cftsubsubsecindent=\skip70
+\cftsubsubsecnumwidth=\skip71
+\cftbeforeparaskip=\skip72
+\cftparaindent=\skip73
+\cftparanumwidth=\skip74
+\cftbeforesubparaskip=\skip75
+\cftsubparaindent=\skip76
+\cftsubparanumwidth=\skip77
+\cftbeforeloftitleskip=\skip78
+\cftafterloftitleskip=\skip79
+\cftbeforefigskip=\skip80
+\cftfigindent=\skip81
+\cftfignumwidth=\skip82
+\c@lofdepth=\count294
+\c@lotdepth=\count295
+\cftbeforelottitleskip=\skip83
+\cftafterlottitleskip=\skip84
+\cftbeforetabskip=\skip85
+\cfttabindent=\skip86
+\cfttabnumwidth=\skip87
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/05/23 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen160
+\Gin@req@width=\dimen161
+)
+(c:/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count296
+\rotFPtop=\skip88
+\rotFPbot=\skip89
+\rot@float@box=\box54
+\rot@mess@toks=\toks22
+)
+(c:/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and foote
+rs
+\f@nch@headwidth=\skip90
+\f@nch@O@elh=\skip91
+\f@nch@O@erh=\skip92
+\f@nch@O@olh=\skip93
+\f@nch@O@orh=\skip94
+\f@nch@O@elf=\skip95
+\f@nch@O@erf=\skip96
+\f@nch@O@olf=\skip97
+\f@nch@O@orf=\skip98
+)
+(c:/texlive/2024/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip99
+\RaggedLeftLeftskip=\skip100
+\RaggedRightLeftskip=\skip101
+\CenteringRightskip=\skip102
+\RaggedLeftRightskip=\skip103
+\RaggedRightRightskip=\skip104
+\CenteringParfillskip=\skip105
+\RaggedLeftParfillskip=\skip106
+\RaggedRightParfillskip=\skip107
+\JustifyingParfillskip=\skip108
+\CenteringParindent=\skip109
+\RaggedLeftParindent=\skip110
+\RaggedRightParindent=\skip111
+\JustifyingParindent=\skip112
+)
+(c:/texlive/2024/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(c:/texlive/2024/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen162
+\captionmargin=\dimen163
+\caption@leftmargin=\dimen164
+\caption@rightmargin=\dimen165
+\caption@width=\dimen166
+\caption@indent=\dimen167
+\caption@parindent=\dimen168
+\caption@hangindent=\dimen169
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count297
+\c@continuedfloat=\count298
+Package caption Info: hyperref package is loaded.
+Package caption Info: rotating package is loaded.
+Package caption Info: scrextend package is loaded.
+\caption@addmargin@hsize=\dimen170
+\caption@addmargin@linewidth=\dimen171
+)
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks23
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2024/05/23 v2.17q AMS math features
+\@mathmargin=\skip113
+
+For additional information on amsmath, use the `?' option.
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks24
+\ex@=\dimen172
+))
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen173
+)
+(c:/texlive/2024/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count299
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count300
+\leftroot@=\count301
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count302
+\DOTSCASE@=\count303
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box55
+\strutbox@=\box56
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen174
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count304
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count305
+\dotsspace@=\muskip18
+\c@parentequation=\count306
+\dspbrk@lvl=\count307
+\tag@help=\toks25
+\row@=\count308
+\column@=\count309
+\maxfields@=\count310
+\andhelp@=\toks26
+\eqnshift@=\dimen175
+\alignsep@=\dimen176
+\tagshift@=\dimen177
+\tagwidth@=\dimen178
+\totwidth@=\dimen179
+\lineht@=\dimen180
+\@envbody=\toks27
+\multlinegap=\skip114
+\multlinetaggap=\skip115
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks29
+\thm@bodyfont=\toks30
+\thm@headfont=\toks31
+\thm@notefont=\toks32
+\thm@headpunct=\toks33
+\thm@preskip=\skip116
+\thm@postskip=\skip117
+\thm@headsep=\skip118
+\dth@everypar=\toks34
+)
+(c:/texlive/2024/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count311
+\float@exts=\toks35
+\float@box=\box57
+\@float@everytoks=\toks36
+\@floatcapt=\box58
+)
+(c:/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
+(c:/texlive/2024/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count312
+\lst@gtempboxa=\box59
+\lst@token=\toks37
+\lst@length=\count313
+\lst@currlwidth=\dimen181
+\lst@column=\count314
+\lst@pos=\count315
+\lst@lostspace=\dimen182
+\lst@width=\dimen183
+\lst@newlines=\count316
+\lst@lineno=\count317
+\lst@maxwidth=\dimen184
+
+(c:/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/09/23 1.10c (Carsten Heinz)
+)
+(c:/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/09/23 1.10c (Carsten Heinz)
+\c@lstnumber=\count318
+\lst@skipnumbers=\count319
+\lst@framebox=\box60
+)
+(c:/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/09/23 1.10c listings configuration
+))
+Package: listings 2024/09/23 1.10c (Carsten Heinz)
+
+(c:/texlive/2024/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box61
+\UL@hyphenbox=\box62
+\UL@skip=\skip119
+\UL@hook=\toks38
+\UL@height=\dimen185
+\UL@pe=\count320
+\UL@pixel=\dimen186
+\ULC@box=\box63
+Package: ulem 2019/11/18
+\ULdepth=\dimen187
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 168.
+\c@definition=\count321
+\c@theorem=\count322
+
+
+LaTeX Warning: Unused global option(s):
+    [article].
+
+(./main.aux (./chapters/Frontespizio.aux) (./chapters/Dedica.aux)
+(./chapters/Abstract.aux) (./chapters/Capitolo1.aux) (./chapters/Capitolo2.aux)
+(./chapters/Capitolo3.aux) (./chapters/Capitolo4.aux
+
+LaTeX Warning: Label `fig:D-Wave' multiply defined.
+
+) (./chapters/Capitolo5.aux) (./chapters/Capitolo6.aux)
+(./chapters/Capitolo7.aux) (./chapters/Capitolo8.aux) (./chapters/Appendice.aux
+))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+Package hyperref Info: Link coloring ON on input line 184.
+ (./main.out) (./main.out)
+\@outlinefile=\write3
+\openout3 = `main.out'.
+
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-23.91173pt
+* \headheight=12.5pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=11.69997pt plus 5.19942pt minus 2.60054pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Info: Redefining \it@ocap on input line 184.
+LaTeX Info: Redefining \it@ccap on input line 184.
+babelbib: Set bibliography fall-back language to italian
+babelbib: english.bdf loaded because language english defined.
+(c:/texlive/2024/texmf-dist/tex/latex/babelbib/english.bdf
+File: english.bdf 2021/01/06 v1.34 babelbib: multilingual bibliographies
+
+babelbib extension \btxifchangecaseon added to \extrasenglish
+)
+babelbib: italian.bdf loaded because language italian defined.
+(c:/texlive/2024/texmf-dist/tex/latex/babelbib/italian.bdf
+File: italian.bdf 2021/01/06 v1.34 babelbib: multilingual bibliographies
+
+babelbib extension \btxifchangecaseoff added to \extrasitalian
+)
+babelbib: Load BibTeX extensions \bibsitalian for italian
+babelbib: Set language for keywords in the bibliography fixed to italian
+(c:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count323
+\scratchdimen=\dimen188
+\scratchbox=\box64
+\nofMPsegments=\count324
+\nofMParguments=\count325
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count326
+\MPscratchDim=\dimen189
+\MPnumerator=\count327
+\makeMPintoPDFobject=\count328
+\everyMPtoPDFconversion=\toks40
+) (c:/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(c:/texlive/2024/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+
+(c:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count329
+\openout2 = `chapters/Frontespizio.aux'.
+
+
+(./chapters/Frontespizio.tex
+Package epstopdf Info: Source file: <images/Frontespizio/cherubinFrontespizio.e
+ps>
+(epstopdf)                    date: 2024-10-09 15:46:10
+(epstopdf)                    size: 259277 bytes
+(epstopdf)             Output file: <images/Frontespizio/cherubinFrontespizio-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2024-10-09 15:58:04
+(epstopdf)                    size: 39895 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/Frontespizio/cherub
+inFrontespizio-eps-converted-to.pdf images/Frontespizio/cherubinFrontespizio.ep
+s>
+(epstopdf)             \includegraphics on input line 4.
+Package epstopdf Info: Output file is already uptodate.
+<images/Frontespizio/cherubinFrontespizio-eps-converted-to.pdf, id=225, 288.076
+25pt x 294.09875pt>
+File: images/Frontespizio/cherubinFrontespizio-eps-converted-to.pdf Graphic fil
+e (type pdf)
+<use images/Frontespizio/cherubinFrontespizio-eps-converted-to.pdf>
+Package pdftex.def Info: images/Frontespizio/cherubinFrontespizio-eps-converted
+-to.pdf  used on input line 4.
+(pdftex.def)             Requested size: 144.03777pt x 147.04901pt.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <22.46396> not available
+(Font)              size <20.74> substituted on input line 8.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <15.59996> not available
+(Font)              size <14.4> substituted on input line 10.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <22.46396> not available
+(Font)              size <20.74> substituted on input line 17.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <13> not available
+(Font)              size <12> substituted on input line 24.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <15.59996> not available
+(Font)              size <14.4> substituted on input line 24.
+
+
+
+[1
+
+
+{c:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2024/
+texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./images/Frontespizio/che
+rubinFrontespizio-eps-converted-to.pdf>])
+\openout2 = `chapters/Dedica.aux'.
+
+ (./chapters/Dedica.tex
+
+LaTeX Font Warning: Font shape `T1/cmr/m/it' in size <15.59996> not available
+(Font)              size <14.4> substituted on input line 8.
+
+
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.13 \end{titlepage}
+                     [1
+
+
+
+])
+\openout2 = `chapters/Abstract.aux'.
+
+
+No file chapters/Abstract.tex.
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <32.34409> not available
+(Font)              size <29.86> substituted on input line 192.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <32.34409> not available
+(Font)              size <29.86> substituted on input line 192.
+
+(./main.toc
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 3.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 3.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
+(Font)              size <12> substituted on input line 3.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
+(Font)              size <6> substituted on input line 3.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 3.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 3.
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+
+(c:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+[1
+
+
+
+
+
+])
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[2]
+\openout2 = `chapters/Capitolo1.aux'.
+
+ (./chapters/Capitolo1.tex
+Capitolo 1.
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <26.96207> not available
+(Font)              size <24.88> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <26.96207> not available
+(Font)              size <24.88> substituted on input line 1.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/m/it' in size <13> not available
+(Font)              size <12> substituted on input line 4.
+
+
+
+[3
+
+
+
+]
+Overfull \hbox (11.63747pt too wide) in paragraph at lines 10--11
+\T1/cmr/m/n/12 il cam-po del-la com-pu-ta-zio-ne quan-ti-sti-ca non so-lo ri-de
+-fi-ni-sce le ca-pa-ci-tà com-pu-ta-zio-na-li,
+ []
+
+
+Overfull \hbox (3.54784pt too wide) in paragraph at lines 12--13
+\T1/cmr/m/n/12 li-vel-lo co-me \T1/cmr/bx/n/12 Py-thon\T1/cmr/m/n/12 , gra-zie 
+a fra-mework avan-za-ti che tra-du-co-no il co-di-ce in istru-zio-ni
+ []
+
+
+Overfull \hbox (5.04622pt too wide) in paragraph at lines 12--13
+\T1/cmr/m/n/12 ven-ga ese-gui-to di-ret-ta-men-te sul-l'hard-ware quan-ti-sti-c
+o, fun-ge da in-ter-fac-cia per in-via-re
+ []
+
+
+Overfull \hbox (21.36171pt too wide) in paragraph at lines 12--13
+\T1/cmr/m/n/12 me-to-do-lo-gia per-met-te di sfrut-ta-re la po-ten-za del-la co
+m-pu-ta-zio-ne quan-ti-sti-ca man-te-nen-do
+ []
+
+
+Overfull \hbox (21.38206pt too wide) in paragraph at lines 16--17
+[]\T1/cmr/m/n/12 L'approccio più stu-dia-to, e quel-lo che at-tual-men-te ap-pa
+-re co-me il fu-tu-ro pre-do-mi-nan-te
+ []
+
+
+Overfull \hbox (7.00766pt too wide) in paragraph at lines 16--17
+\T1/cmr/m/n/12 del-la com-pu-ta-zio-ne quan-ti-sti-ca, è il \T1/cmr/m/it/12 Gat
+e-Based Quan-tum Com-pu-ting\T1/cmr/m/n/12 . Que-sto mo-del-lo
+ []
+
+
+Overfull \hbox (3.32106pt too wide) in paragraph at lines 16--17
+\T1/cmr/m/n/12 pro-ble-ma-ti-che. Il prin-ci-pa-le osta-co-lo è rap-pre-sen-ta-
+to dal-la \T1/cmr/bx/n/12 de-coe-ren-za quan-ti-sti-ca\T1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (19.99112pt too wide) in paragraph at lines 16--17
+\T1/cmr/m/n/12 lo-ro sta-to quan-ti-sti-co ten-de a col-las-sa-re ra-pi-da-men-
+te in uno sta-to clas-si-co, in-ter-rom-pen-do
+ []
+
+
+Overfull \hbox (3.889pt too wide) in paragraph at lines 16--17
+\T1/cmr/m/n/12 i cal-co-li e ri-du-cen-do la fe-del-tà dei ri-sul-ta-ti. Il fe-
+no-me-no di-ven-ta cri-ti-co nel-le ope-ra-zio-ni
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[4]
+
+LaTeX Font Warning: Font shape `T1/cmr/bx/it' in size <13> not available
+(Font)              size <12> substituted on input line 20.
+
+
+Overfull \hbox (17.65782pt too wide) in paragraph at lines 20--21
+[]\T1/cmr/m/n/12 Il prin-ci-pa-le ar-go-men-to di cui trat-te-re-mo in que-sta 
+te-si sa-rà il \T1/cmr/bx/it/12 Quan-tum An-nea-ling\T1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (6.02786pt too wide) in paragraph at lines 20--21
+\T1/cmr/m/n/12 una for-ma spe-cia-liz-za-ta dell'\T1/cmr/m/it/12 Adiabatic Quan
+-tum Com-pu-ting \T1/cmr/m/n/12 pro-get-ta-ta spe-ci-fi-ca-men-te
+ []
+
+
+Overfull \hbox (24.37436pt too wide) in paragraph at lines 20--21
+\T1/cmr/m/n/12 per ri-sol-ve-re pro-ble-mi di ot-ti-miz-za-zio-ne. A dif-fe-ren
+-za dell'\T1/cmr/m/it/12 Adiabatic Quan-tum Com-pu-ting\T1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (35.6062pt too wide) in paragraph at lines 22--23
+[]\T1/cmr/m/n/12 Nasce co-me esten-sio-ne del \T1/cmr/bx/n/12 Si-mu-la-ted An-n
+ea-ling\T1/cmr/m/n/12 , una tec-ni-ca clas-si-ca di ot-ti-miz-za-zio-ne
+ []
+
+
+Overfull \hbox (21.76521pt too wide) in paragraph at lines 28--29
+[]\T1/cmr/m/n/12 Nel 2007, D-Wave pre-sen-tò pub-bli-ca-men-te il pri-mo com-pu
+-ter quan-ti-sti-co com-mer-cia-le,
+ []
+
+
+Overfull \hbox (16.39467pt too wide) in paragraph at lines 28--29
+\T1/cmr/m/n/12 il \T1/cmr/m/it/12 D-Wave One\T1/cmr/m/n/12 , in gra-do di ri-so
+l-ve-re pro-ble-mi di ot-ti-miz-za-zio-ne com-bi-na-to-ria uti-liz-zan-do
+ []
+
+)
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[5]
+\openout2 = `chapters/Capitolo2.aux'.
+
+ (./chapters/Capitolo2.tex
+Capitolo 2.
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <18.72003> not available
+(Font)              size <17.28> substituted on input line 2.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/bx/n' in size <18.72003> not available
+(Font)              size <17.28> substituted on input line 2.
+
+
+Overfull \hbox (8.96155pt too wide) in paragraph at lines 3--4
+\T1/cmr/m/n/12 al-la mec-ca-ni-ca clas-si-ca, che si ba-sa sul-l'e-vo-lu-zio-ne
+ de-ter-mi-ni-sti-ca di va-ria-bi-li os-ser-va-bi-li
+ []
+
+
+Overfull \hbox (17.25018pt too wide) in paragraph at lines 5--6
+\T1/cmr/m/n/12 quat-tro po-stu-la-ti, che sta-bi-li-sco-no le re-go-le ma-te-ma
+-ti-che e fi-si-che per la rap-pre-sen-ta-zio-ne
+ []
+
+
+Overfull \hbox (12.34106pt too wide) in paragraph at lines 13--14
+[]\T1/cmr/m/n/12 Il pri-mo po-stu-la-to [[]] sta-bi-li-sce che ogni si-ste-ma q
+uan-ti-sti-co può es-se-re rap-pre-sen-ta-to
+ []
+
+
+
+[6
+
+
+
+
+
+]
+Overfull \hbox (5.06667pt too wide) in paragraph at lines 23--25
+\T1/cmr/m/n/12 dove $\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 e[]\OMS/cmsy/m/n/12 i$ 
+\T1/cmr/m/n/12 rap-pre-sen-ta una ba-se or-to-nor-ma-le del-lo spa-zio di Hil-b
+ert e $\OML/cmm/m/it/12 ^^U[]$ \T1/cmr/m/n/12 so-no coef-fi-cien-ti
+ []
+
+
+Overfull \hbox (4.38058pt too wide) in paragraph at lines 32--33
+\T1/cmr/m/n/12 rap-pre-sen-ta la fun-zio-ne d'on-da di una par-ti-cel-la. La pr
+o-ba-bi-li-tà di tro-va-re la par-ti-cel-la
+ []
+
+
+LaTeX Font Warning: Font shape `TS1/cmr/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 45.
+
+
+LaTeX Font Warning: Font shape `T1/cmr/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 46.
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[7{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+Overfull \hbox (6.87346pt too wide) in paragraph at lines 53--54
+\T1/cmr/m/n/12 pre-ser-va-ta nel tem-po, as-si-cu-ran-do la con-ser-va-zio-ne d
+el-la pro-ba-bi-li-tà to-ta-le del si-ste-ma. 
+ []
+
+
+Overfull \hbox (1.5728pt too wide) in paragraph at lines 61--62
+[]\T1/cmr/m/n/12 Tuttavia, la de-ter-mi-na-zio-ne pre-ci-sa del-l'Ha-mil-to-nia
+-no di un si-ste-ma fi-si-co spe-ci-fi-co
+ []
+
+
+Overfull \hbox (0.73895pt too wide) in paragraph at lines 61--62
+\T1/cmr/m/n/12 ri-sul-ta es-se-re un com-pi-to estre-ma-men-te com-ples-so, in 
+quan-to ri-chie-de una co-no-scen-za
+ []
+
+
+Overfull \hbox (5.11766pt too wide) in paragraph at lines 67--68
+\T1/cmr/m/it/12 Hil-bert. Que-sto ope-ra-to-re, chia-ma-to os-ser-va-bi-le, ha 
+au-to-vet-to-ri che for-ma-no
+ []
+
+
+Overfull \hbox (8.50519pt too wide) in paragraph at lines 70--71
+\T1/cmr/m/n/12 dal-l'e-qua-zio-ne di Schrö-din-ger, è fon-da-men-ta-le pre-ve-d
+e-re mo-men-ti in cui uno stru-men-to
+ []
+
+
+Overfull \hbox (0.76059pt too wide) in paragraph at lines 70--71
+\T1/cmr/m/n/12 per os-ser-va-re il com-por-ta-men-to del si-ste-ma. Que-sto pro
+-ces-so in-ter-rom-pe l'i-so-la-men-to
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[8]
+Overfull \hbox (9.05992pt too wide) in paragraph at lines 74--75
+[]\T1/cmr/m/n/12 Il ter-zo po-stu-la-to [[]] for-ma-liz-za que-sto con-cet-to t
+ra-mi-te l'\T1/cmr/bx/n/12 osservabile\T1/cmr/m/n/12 , un ope-ra-to-re
+ []
+
+
+Overfull \hbox (10.6049pt too wide) in paragraph at lines 92--93
+[]\T1/cmr/m/n/12 Ciò con-sen-te di rap-pre-sen-ta-re sta-ti di si-ste-mi com-po
+-sti da più sot-to-si-ste-mi. Tut-ta-via
+ []
+
+)
+Overfull \hbox (21.77368pt too wide) in paragraph at lines 99--197
+[]\T1/cmr/m/n/12 L'entanglement è un fe-no-me-no che è al-la ba-se di mol-te ap
+-pli-ca-zio-ni del-la com-pu-ta-zio-ne
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[9]
+\openout2 = `chapters/Capitolo3.aux'.
+
+ (./chapters/Capitolo3.tex
+Capitolo 3.
+
+
+[10
+
+
+
+
+
+]
+Overfull \hbox (25.01215pt too wide) in paragraph at lines 25--26
+\T1/cmr/m/n/12 Il qu-bit pos-sie-de pro-prie-tà in-trin-se-che che de-ri-va-no 
+di-ret-ta-men-te dai prin-ci-pi fon-da-men-ta-li
+ []
+
+
+Overfull \hbox (44.71437pt too wide) in paragraph at lines 28--29
+\T1/cmr/m/n/12 La pri-ma pro-prie-tà fon-da-men-ta-le del qu-bit, l'ab-bia-mo g
+ià in-tro-dot-ta ed è la \T1/cmr/bx/n/12 so-vrap-po-si-zio-ne
+ []
+
+
+Overfull \hbox (9.15775pt too wide) in paragraph at lines 35--37
+\T1/cmr/m/n/12 Questo sta-to è no-to co-me sta-to di so-vrap-po-si-zio-ne equi-
+pro-ba-bi-le ed è una com-bi-na-zio-ne
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[11]
+Overfull \hbox (7.9047pt too wide) in paragraph at lines 41--42
+\T1/cmr/m/n/12 na-tu-ra non-locale del-la mec-ca-ni-ca quan-ti-sti-ca. Que-sto 
+fe-no-me-no, de-scrit-to da \T1/cmr/m/it/12 Ein-stein
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--57
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--70
+
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[12]
+Overfull \hbox (0.53769pt too wide) in paragraph at lines 81--82
+\T1/cmr/m/n/12 I qu-bit pos-so-no an-che ma-ni-fe-sta-re il fe-no-me-no del-l'i
+n-ter-fe-ren-za, che si ve-ri-fi-ca quan-do
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[13]
+<images/Bloch_Sphere.png, id=389, 803.0pt x 851.18pt>
+File: images/Bloch_Sphere.png Graphic file (type png)
+<use images/Bloch_Sphere.png>
+Package pdftex.def Info: images/Bloch_Sphere.png  used on input line 96.
+(pdftex.def)             Requested size: 213.39568pt x 226.19803pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[14 <./images/Bloch_Sphere.png>]
+Overfull \hbox (20.1217pt too wide) in paragraph at lines 116--117
+\T1/cmr/m/n/12 fe-no-me-ni co-me l'en-tan-gle-ment e l'in-ter-fe-ren-za, con-fe
+-ri-sce ai si-ste-mi quan-ti-sti-ci un'e-nor-me
+ []
+
+
+Overfull \hbox (24.1308pt too wide) in paragraph at lines 118--119
+[]\T1/cmr/m/n/12 In un si-ste-ma clas-si-co, per rap-pre-sen-ta-re $\OML/cmm/m/
+it/12 n$ \T1/cmr/m/n/12 bit so-no ne-ces-sa-rie $\OT1/cmr/m/n/12 2[]$ \T1/cmr/m
+/n/12 pos-si-bi-li com-bi-na-zio-ni
+ []
+
+
+Overfull \hbox (28.65642pt too wide) in paragraph at lines 122--123
+[]\T1/cmr/m/n/12 Inoltre, gra-zie al-l'en-tan-gle-ment quan-ti-sti-co, i qu-bit
+ non so-lo esi-sto-no in so-vrap-po-si-zio-ne,
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[15]
+Overfull \hbox (21.03511pt too wide) in paragraph at lines 130--131
+\T1/cmr/m/n/12 in-trin-se-ca al pro-ces-so stes-so, gra-zie al-la na-tu-ra pro-
+ba-bi-li-sti-ca del-la mec-ca-ni-ca quan-ti-sti-ca.
+ []
+
+)
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[16]
+\openout2 = `chapters/Capitolo4.aux'.
+
+ (./chapters/Capitolo4.tex
+Capitolo 4.
+<images/D-Wave.jpg, id=407, 652.4375pt x 434.62375pt>
+File: images/D-Wave.jpg Graphic file (type jpg)
+<use images/D-Wave.jpg>
+Package pdftex.def Info: images/D-Wave.jpg  used on input line 4.
+(pdftex.def)             Requested size: 341.43437pt x 227.45801pt.
+
+Overfull \hbox (19.26068pt too wide) in paragraph at lines 10--11
+\T1/cmr/m/n/12 ap-pli-can-do una se-quen-za di ope-ra-zio-ni ai qu-bit, at-tra-
+ver-so \T1/cmr/bx/n/12 por-te lo-gi-che quan-ti-sti-che\T1/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (6.75009pt too wide) in paragraph at lines 12--13
+[]\T1/cmr/m/n/12 Il pro-ces-so ini-zia con l'i-ni-zia-liz-za-zio-ne dei qu-bit 
+in uno sta-to no-to. Suc-ces-si-va-men-te,
+ []
+
+
+
+[17
+
+
+
+
+
+ <./images/D-Wave.jpg>]
+Overfull \hbox (5.58289pt too wide) in paragraph at lines 20--21
+[]\T1/cmr/m/n/12 In al-ter-na-ti-va al mo-del-lo a por-te quan-ti-sti-che, si d
+i-stin-gue il \T1/cmr/bx/it/12 Quan-tum An-nea-ling
+ []
+
+
+Overfull \hbox (11.89845pt too wide) in paragraph at lines 20--21
+\T1/cmr/m/n/12 [[]], un ap-proc-cio eu-ri-sti-co spe-cia-liz-za-to per la ri-so
+-lu-zio-ne di pro-ble-mi di ot-ti-miz-za-zio-ne
+ []
+
+
+Overfull \hbox (2.60222pt too wide) in paragraph at lines 22--23
+\T1/cmr/m/n/12 ot-ti-miz-za-zio-ne vie-ne for-mu-la-to co-me la mi-ni-miz-za-zi
+o-ne di un \T1/cmr/bx/n/12 pae-sag-gio ener-ge-ti-co\T1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (26.86108pt too wide) in paragraph at lines 22--23
+\T1/cmr/m/n/12 pos-si-bi-le so-lu-zio-ne) è as-so-cia-ta a un li-vel-lo di ener
+-gia spe-ci-fi-co. In que-sta rap-pre-sen-ta-zio-ne,
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[18]
+Overfull \hbox (8.34068pt too wide) in paragraph at lines 30--31
+[]\T1/cmr/m/n/12 Un'altra dif-fe-ren-za si-gni-fi-ca-ti-va ri-spet-to al Gate-B
+ased Quan-tum Com-pu-ting ri-sie-de
+ []
+
+
+Overfull \hbox (16.67656pt too wide) in paragraph at lines 48--49
+[]$\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$ \T1/
+cmr/m/n/12 e $\OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n
+/12 )$ \T1/cmr/m/n/12 de-fi-ni-sco-no i vin-co-li del pro-ble-ma, ri-spet-ti-va
+-men-te, co-me di-su-gua-glian-ze
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[19]
+Overfull \hbox (35.38124pt too wide) in paragraph at lines 54--55
+[]\T1/cmr/m/n/12 La dif-fi-col-tà di ri-so-lu-zio-ne è de-scrit-ta dal-la \T1/c
+mr/bx/n/12 teo-ria del-la com-ples-si-tà com-pu-ta-zio-na-le\T1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (11.91803pt too wide) in paragraph at lines 75--76
+[]$\OML/cmm/m/it/12 h[]$ \T1/cmr/m/n/12 è un cam-po ma-gne-ti-co ester-no che a
+gi-sce sul-lo spin $\OML/cmm/m/it/12 i$\T1/cmr/m/n/12 , in-fluen-zan-do la pro-
+ba-bi-li-tà
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[20]
+<images/Modello_di_Ising.png, id=430, 641.39626pt x 457.71pt>
+File: images/Modello_di_Ising.png Graphic file (type png)
+<use images/Modello_di_Ising.png>
+Package pdftex.def Info: images/Modello_di_Ising.png  used on input line 81.
+(pdftex.def)             Requested size: 341.43437pt x 243.65372pt.
+
+Overfull \hbox (32.76395pt too wide) in paragraph at lines 90--91
+[]\T1/cmr/m/n/12 Il mo-del-lo di Ising è par-ti-co-lar-men-te adat-to per rap-p
+re-sen-ta-re pro-ble-mi di ot-ti-miz-za-zio-ne
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[21 <./images/Modello_di_Ising.png>]
+Overfull \hbox (22.33037pt too wide) in paragraph at lines 111--112
+[]\T1/cmr/m/n/12 Questa for-mu-la-zio-ne com-pat-ta sem-pli-fi-ca no-te-vol-men
+-te il trat-ta-men-to com-pu-ta-zio-na-le
+ []
+
+
+Overfull \hbox (30.95514pt too wide) in paragraph at lines 111--112
+\T1/cmr/m/n/12 del pro-ble-ma, ren-den-do più ef-fi-cien-ti le ope-ra-zio-ni di
+ cal-co-lo e fa-ci-li-tan-do l'im-ple-men-ta-zio-ne
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[22]
+Overfull \hbox (11.57228pt too wide) in paragraph at lines 130--131
+\T1/cmr/m/n/12 for-mu-la-zio-ne non in-clu-de espli-ci-ta-men-te vin-co-li, seb
+-be-ne es-si pos-sa-no es-se-re in-cor-po-ra-ti
+ []
+
+
+Overfull \hbox (3.49178pt too wide) in paragraph at lines 132--133
+[]\T1/cmr/m/n/12 Nel ca-so del QU-BO, l'o-biet-ti-vo è mi-ni-miz-za-re una fun-
+zio-ne qua-dra-ti-ca con va-ria-bi-li
+ []
+
+
+Overfull \hbox (39.30872pt too wide) in paragraph at lines 134--135
+\T1/cmr/m/n/12 ri-sul-ta ge-ne-ral-men-te più in-tui-ti-va e con-ve-nien-te per
+ espri-me-re un pro-ble-ma di ot-ti-miz-za-zio-ne.
+ []
+
+
+Overfull \hbox (3.79448pt too wide) in paragraph at lines 134--135
+\T1/cmr/m/it/12 An-nea-ling\T1/cmr/m/n/12 . Una vol-ta tro-va-ta la so-lu-zio-n
+e nel mo-del-lo di Ising, è pos-si-bi-le ri-con-ver-tir-la
+ []
+
+(c:/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 137.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
+37.
+
+(c:/texlive/2024/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+
+LaTeX Font Warning: Font shape `T1/cmtt/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 137.
+
+(./listings/qubo_to_ising.py)
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--148
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+<images/Qubo_Ising.png, id=472, 660.66824pt x 384.2355pt>
+File: images/Qubo_Ising.png Graphic file (type png)
+<use images/Qubo_Ising.png>
+Package pdftex.def Info: images/Qubo_Ising.png  used on input line 153.
+(pdftex.def)             Requested size: 426.79135pt x 248.21402pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[24 <./images/Qubo_Ising.png>]
+Overfull \hbox (6.82509pt too wide) in paragraph at lines 161--162
+\T1/cmr/m/it/12 de-gli au-to-sta-ti cor-ri-spon-den-ti del-l'Ha-mil-to-nia-no i
+stan-ta-neo $\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/
+12 )$ \T1/cmr/m/it/12 per tut-ta l'e-vo-lu-zio-ne. 
+ []
+
+
+Overfull \hbox (13.13445pt too wide) in paragraph at lines 164--165
+\T1/cmr/m/n/12 un si-ste-ma quan-ti-sti-co sot-to-po-sto a un'e-vo-lu-zio-ne le
+n-ta e con-ti-nua del suo Ha-mil-to-nia-no
+ []
+
+
+Overfull \hbox (10.07129pt too wide) in paragraph at lines 166--167
+\T1/cmr/m/n/12 in-ve-ce, so-no con-fi-gu-ra-zio-ni di ener-gia su-pe-rio-re che
+ rap-pre-sen-ta-no so-lu-zio-ni su-bot-ti-ma-li
+ []
+
+
+Overfull \hbox (5.90663pt too wide) in paragraph at lines 172--173
+\T1/cmr/m/n/12 fun-zio-ne obiet-ti-vo che il si-ste-ma de-ve mi-ni-miz-za-re [[
+]]. A dif-fe-ren-za del-l'Ha-mil-to-nia-no
+ []
+
+
+Overfull \hbox (0.32333pt too wide) in paragraph at lines 172--173
+\T1/cmr/m/n/12 di $\OML/cmm/m/it/12 H[]$ \T1/cmr/m/n/12 rap-pre-sen-ta la con-f
+i-gu-ra-zio-ne di spin che mi-ni-miz-za l'e-ner-gia to-ta-le del si-ste-ma.
+ []
+
+
+Overfull \hbox (7.33028pt too wide) in paragraph at lines 172--173
+\T1/cmr/m/n/12 Ta-le con-fi-gu-ra-zio-ne cor-ri-spon-de al-la so-lu-zio-ne ot-t
+i-ma-le del pro-ble-ma di ot-ti-miz-za-zio-ne. 
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[25]
+<images/Eigenspectrum.png, id=487, 953.5625pt x 562.1pt>
+File: images/Eigenspectrum.png Graphic file (type png)
+<use images/Eigenspectrum.png>
+Package pdftex.def Info: images/Eigenspectrum.png  used on input line 177.
+(pdftex.def)             Requested size: 341.43437pt x 201.26657pt.
+
+Underfull \hbox (badness 1231) in paragraph at lines 178--178
+[]|\T1/cmr/m/it/12 Gra-fi-co del-l'e-ner-gia in fun-zio-ne del tem-po du-ran-te
+ un pro-ces-so di Quan-tum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+\T1/cmr/m/it/12 An-nea-ling.L'origine de-gli as-si è lo sta-to fon-da-men-ta-le
+ (ground sta-te)
+ []
+
+
+Overfull \hbox (3.72235pt too wide) in paragraph at lines 182--183
+[]\T1/cmr/m/n/12 Il com-por-ta-men-to del si-ste-ma è go-ver-na-to dal-l'e-vo-l
+u-zio-ne del-l'Ha-mil-to-nia-no to-ta-le,
+ []
+
+
+Overfull \hbox (12.33592pt too wide) in paragraph at lines 188--189
+[]\T1/cmr/m/n/12 Dove è $\OML/cmm/m/it/12 s\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\
+OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 la fun-zio-ne di pro-gram-ma-zio-ne, o \T1/cmr
+/bx/n/12 sche-du-ling func-tion\T1/cmr/m/n/12 , e $\OML/cmm/m/it/12 T$ \T1/cmr/
+m/n/12 rap-pre-sen-ta
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[26 <./images/Eigenspectrum.png>]
+Overfull \hbox (18.86308pt too wide) in paragraph at lines 194--195
+[]\T1/cmr/m/n/12 Matematicamente, ciò si-gni-fi-ca che, du-ran-te l'e-vo-lu-zio
+-ne tem-po-ra-le del-l'Ha-mil-to-nia-no
+ []
+
+
+Overfull \hbox (3.60626pt too wide) in paragraph at lines 196--197
+\T1/cmr/m/n/12 que-sta teo-ria, se il si-ste-ma at-tra-ver-sa ra-pi-da-men-te u
+n Avoi-ded Cros-sing, la pro-ba-bi-li-tà
+ []
+
+
+Overfull \hbox (16.19138pt too wide) in paragraph at lines 210--211
+[]\T1/cmr/m/n/12 Il gap mi-ni-mo ri-ve-ste un'im-por-tan-za cru-cia-le nel-l'a-
+na-li-si del-le tran-si-zio-ni adia-ba-ti-che,
+ []
+
+
+Overfull \hbox (1.21326pt too wide) in paragraph at lines 210--211
+\T1/cmr/m/n/12 av-ven-ga in ma-nie-ra adia-ba-ti-ca. In par-ti-co-la-re, per ev
+i-ta-re tran-si-zio-ni non adia-ba-ti-che
+ []
+
+
+Overfull \hbox (6.15578pt too wide) in paragraph at lines 210--211
+\T1/cmr/m/n/12 e man-te-ne-re il si-ste-ma nel-lo sta-to fon-da-men-ta-le, è ne
+-ces-sa-rio che il tem-po di evo-lu-zio-ne
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[27]
+Overfull \hbox (9.37502pt too wide) in paragraph at lines 222--223
+\T1/cmr/m/n/12 adia-ba-ti-co. Que-sti di-spo-si-ti-vi so-no pro-get-ta-ti per o
+t-ti-miz-za-re la ra-pi-di-tà e la sca-la-bi-li-tà
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[28]
+Overfull \hbox (5.62624pt too wide) in paragraph at lines 228--229
+[]\T1/cmr/m/n/12 Per rap-pre-sen-ta-re l'ef-fet-to del cam-po tra-sver-sa-le, è
+ ne-ces-sa-rio in-tro-dur-re le \T1/cmr/bx/n/12 ma-tri-ci
+ []
+
+
+Overfull \hbox (7.06519pt too wide) in paragraph at lines 249--250
+\T1/cmr/m/n/12 si-ste-ma di-ven-ta sem-pre più do-mi-na-to dal-l'Ha-mil-to-nia-
+no del pro-ble-ma, che rap-pre-sen-ta
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[29]
+Overfull \hbox (15.32274pt too wide) in paragraph at lines 274--275
+\T1/cmr/m/n/12 flut-tua-zio-ni quan-ti-sti-che, men-tre le ma-tri-ci di Pau-li 
+for-ni-sco-no il for-ma-li-smo ma-te-ma-ti-co
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[30]
+<images/Quantum_Tunneling.jpg, id=518, 426.99525pt x 234.27525pt>
+File: images/Quantum_Tunneling.jpg Graphic file (type jpg)
+<use images/Quantum_Tunneling.jpg>
+Package pdftex.def Info: images/Quantum_Tunneling.jpg  used on input line 281.
+(pdftex.def)             Requested size: 426.79135pt x 234.17458pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[31 <./images/Quantum_Tunneling.jpg>]
+Overfull \hbox (4.84215pt too wide) in paragraph at lines 299--300
+\T1/cmr/m/n/12 lo-ca-le e il pic-co del-la bar-rie-ra po-ten-zia-le. Bar-rie-re
+ più al-te ri-du-co-no la pro-ba-bi-li-tà
+ []
+
+
+Overfull \hbox (4.00677pt too wide) in paragraph at lines 300--301
+\T1/cmr/m/n/12 per-cor-re-re nel-lo spa-zio del-le con-fi-gu-ra-zio-ni de-gli s
+ta-ti per at-tra-ver-sa-re la bar-rie-ra.
+ []
+
+
+Overfull \hbox (0.65631pt too wide) in paragraph at lines 315--316
+[]\T1/cmr/bx/n/12 Riscaldamento: \T1/cmr/m/n/12 Il ma-te-ria-le vie-ne por-ta-t
+o a una tem-pe-ra-tu-ra suf-fi-cien-te-men-te
+ []
+
+
+Overfull \hbox (2.44048pt too wide) in paragraph at lines 317--318
+\T1/cmr/m/n/12 di rag-giun-ge-re uno sta-to sta-bi-le con una strut-tu-ra cri-s
+tal-li-na mi-glio-ra-ta e mi-ni-me
+ []
+
+
+Overfull \hbox (13.9443pt too wide) in paragraph at lines 317--318
+\T1/cmr/m/n/12 ten-sio-ni re-si-due. Un raf-fred-da-men-to len-to è fon-da-men-
+ta-le per evi-ta-re la for-ma-zio-ne
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[32]
+Overfull \hbox (22.90938pt too wide) in paragraph at lines 324--325
+[]\T1/cmr/m/n/12 Il Si-mu-la-ted An-nea-ling è un al-go-rit-mo eu-ri-sti-co che
+ af-fron-ta pro-ble-mi di ot-ti-miz-za-zio-ne
+ []
+
+
+Overfull \hbox (19.59949pt too wide) in paragraph at lines 324--325
+\T1/cmr/m/n/12 for-mu-la-ti tra-mi-te una fun-zio-ne obiet-ti-vo di mol-te va-r
+ia-bi-li, sog-get-ta a vin-co-li ma-te-ma-ti-ci.
+ []
+
+
+Overfull \hbox (15.22285pt too wide) in paragraph at lines 324--325
+\T1/cmr/m/n/12 Il prin-ci-pio di fun-zio-na-men-to si-mu-la un pro-ces-so di ra
+f-fred-da-men-to len-to per in-di-vi-dua-re
+ []
+
+
+Overfull \hbox (2.45737pt too wide) in paragraph at lines 324--325
+\T1/cmr/m/n/12 il mi-ni-mo glo-ba-le del-la fun-zio-ne obiet-ti-vo. Ogni con-fi
+-gu-ra-zio-ne del si-ste-ma è as-so-cia-ta
+ []
+
+
+Overfull \hbox (7.79408pt too wide) in paragraph at lines 343--345
+\T1/cmr/m/n/12 dove $\OML/cmm/m/it/12 T$ \T1/cmr/m/n/12 è la tem-pe-ra-tu-ra co
+r-ren-te. Que-sta pro-ba-bi-li-tà se-gue la \T1/cmr/bx/n/12 di-stri-bu-zio-ne
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[33]
+Overfull \hbox (2.53351pt too wide) in paragraph at lines 349--350
+[]\T1/cmr/bx/n/12 Condizione di ar-re-sto: \T1/cmr/m/n/12 L'al-go-rit-mo ter-mi
+-na quan-do la tem-pe-ra-tu-ra rag-giun-ge
+ []
+
+
+Overfull \hbox (6.43762pt too wide) in paragraph at lines 349--350
+\T1/cmr/m/n/12 una so-glia mi-ni-ma pre-sta-bi-li-ta. A que-sto pun-to, l'ul-ti
+-ma con-fi-gu-ra-zio-ne ac-cet-ta-ta
+ []
+
+(./listings/simulated_annealing.py)
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[34]
+<images/Confronto.png, id=579, 642.4pt x 463.7325pt>
+File: images/Confronto.png Graphic file (type png)
+<use images/Confronto.png>
+Package pdftex.def Info: images/Confronto.png  used on input line 356.
+(pdftex.def)             Requested size: 341.43437pt x 246.47757pt.
+
+Overfull \hbox (9.65842pt too wide) in paragraph at lines 365--366
+[]\T1/cmr/m/n/12 Le prin-ci-pa-li si-mi-li-tu-di-ni tra Si-mu-la-ted An-nea-lin
+g e \T1/cmr/m/it/12 Quan-tum An-nea-ling \T1/cmr/m/n/12 ri-guar-da-no
+ []
+
+
+Overfull \hbox (16.40182pt too wide) in paragraph at lines 365--366
+\T1/cmr/m/n/12 se-guo-no un com-por-ta-men-to espo-nen-zia-le per pas-sa-re a s
+ta-ti ener-ge-ti-ca-men-te sfa-vo-re-vo-li,
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[35 <./images/Confronto.png>]
+Overfull \hbox (1.21605pt too wide) in paragraph at lines 369--370
+[]\T1/cmr/m/n/12 Le prin-ci-pa-li dif-fe-ren-ze tra i due me-to-di ri-sie-do-no
+ nel ti-po di flut-tua-zio-ni uti-liz-za-te:
+ []
+
+
+Overfull \hbox (1.01524pt too wide) in paragraph at lines 369--370
+\T1/cmr/m/n/12 il Si-mu-la-ted An-nea-ling si ba-sa su flut-tua-zio-ni ter-mi-c
+he, men-tre il \T1/cmr/m/it/12 Quan-tum An-nea-ling
+ []
+
+
+Overfull \hbox (16.01944pt too wide) in paragraph at lines 371--372
+[]\T1/cmr/m/n/12 Il \T1/cmr/m/it/12 Quan-tum An-nea-ling \T1/cmr/m/n/12 può ri-
+sul-ta-re più ef-fi-ca-ce del Si-mu-la-ted An-nea-ling, so-prat-tut-to
+ []
+
+
+Overfull \hbox (7.39565pt too wide) in paragraph at lines 371--372
+\T1/cmr/m/n/12 in con-te-sti com-ples-si, gra-zie al-la ca-pa-ci-tà di at-tra-v
+er-sa-re bar-rie-re al-te tra-mi-te fe-no-me-ni
+ []
+
+
+Overfull \hbox (1.13036pt too wide) in paragraph at lines 371--372
+\T1/cmr/m/n/12 quan-ti-sti-ci, ren-den-do l'ot-ti-miz-za-zio-ne più ve-lo-ce ed
+ ef-fi-cien-te su com-pu-ter quan-ti-sti-ci.
+ []
+
+
+Overfull \hbox (1.39154pt too wide) in paragraph at lines 371--372
+\T1/cmr/m/n/12 Tut-ta-via, la sua ef-fi-ca-cia di-pen-de dal-le spe-ci-fi-che d
+el pro-ble-ma e del-l'im-ple-men-ta-zio-ne
+ []
+
+
+Overfull \hbox (18.22493pt too wide) in paragraph at lines 371--372
+\T1/cmr/m/n/12 di-men-sio-ni re-la-ti-va-men-te pic-co-le il Si-mu-la-ted An-ne
+a-ling può es-se-re una scel-ta pre-fe-ri-bi-le. 
+ []
+
+)
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[36]
+\openout2 = `chapters/Capitolo5.aux'.
+
+ (./chapters/Capitolo5.tex
+Capitolo 5.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 1.
+
+
+Overfull \hbox (2.48248pt too wide) in paragraph at lines 5--6
+[]\T1/cmr/m/n/12 Il Quan-tum An-nea-ler agi-sce evol-ven-do il si-ste-ma lun-go
+ una tra-iet-to-ria de-ter-mi-na-ta
+ []
+
+
+Overfull \hbox (5.96002pt too wide) in paragraph at lines 7--8
+\T1/cmr/m/n/12 ab-bia-mo vi-sto, è una rap-pre-sen-ta-zio-ne che il quan-tum an
+-nea-ler è in gra-do di "trat-ta-re"
+ []
+
+
+
+[37
+
+
+
+
+
+]
+Overfull \hbox (8.33102pt too wide) in paragraph at lines 20--21
+[]\T1/cmr/m/n/12 Questa tec-ni-ca, no-ta co-me \T1/cmr/bx/n/12 em-bed-ding\T1/c
+mr/m/n/12 , con-sen-te di map-pa-re le in-te-ra-zio-ni ri-chie-ste
+ []
+
+<images/Grafo_Chimera.png, id=596, 579.16376pt x 571.13374pt>
+File: images/Grafo_Chimera.png Graphic file (type png)
+<use images/Grafo_Chimera.png>
+Package pdftex.def Info: images/Grafo_Chimera.png  used on input line 25.
+(pdftex.def)             Requested size: 298.75264pt x 294.61212pt.
+
+Overfull \hbox (15.31743pt too wide) in paragraph at lines 30--31
+\T1/cmr/m/n/12 Il \T1/cmr/bx/n/12 gra-fo Chi-me-ra \T1/cmr/m/n/12 è una \T1/cmr
+/bx/n/12 strut-tu-ra to-po-lo-gi-ca \T1/cmr/m/n/12 pro-get-ta-ta per or-ga-niz-
+za-re e con-net-te-re
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[38 <./images/Grafo_Chimera.png (PNG copy)>]
+Overfull \hbox (7.01472pt too wide) in paragraph at lines 36--37
+[]\T1/cmr/m/n/12 Nel gra-fo Chi-me-ra, i qu-bit fi-si-ci so-no rap-pre-sen-ta-t
+i co-me \T1/cmr/bx/n/12 no-di\T1/cmr/m/n/12 , men-tre le in-te-ra-zio-ni
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[39]
+Overfull \hbox (24.29424pt too wide) in paragraph at lines 59--60
+\T1/cmr/m/n/12 Tut-ta-via, la tra-du-zio-ne del mo-del-lo di Ising pre-sen-ta s
+fi-de le-ga-te al-la li-mi-ta-ta con-net-ti-vi-tà,
+ []
+
+
+Overfull \hbox (15.77075pt too wide) in paragraph at lines 61--62
+\T1/cmr/m/n/12 an-nea-lers, per-met-ten-do la ri-so-lu-zio-ne di pro-ble-mi di 
+ot-ti-miz-za-zio-ne com-ples-si. Tut-ta-via,
+ []
+
+
+Overfull \hbox (13.51318pt too wide) in paragraph at lines 68--69
+[]\T1/cmr/bx/n/12 Minorminer \T1/cmr/m/n/12 [[]] è uno stru-men-to open-source 
+pro-get-ta-to per af-fron-ta-re il pro-ble-ma
+ []
+
+
+Overfull \hbox (12.72858pt too wide) in paragraph at lines 70--71
+[]\T1/cmr/m/n/12 La stes-sa D-Wave of-fre un'in-ter-fac-cia soft-ware che in-cl
+u-de stru-men-ti per l'em-bed-ding
+ []
+
+)
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[40]
+\openout2 = `chapters/Capitolo6.aux'.
+
+ (./chapters/Capitolo6.tex
+Capitolo 6.
+
+Overfull \hbox (5.88152pt too wide) in paragraph at lines 3--4
+\T1/cmr/m/n/12 un clas-si-co pro-ble-ma di ot-ti-miz-za-zio-ne com-bi-na-to-ria
+ [[]]. Es-so ri-chie-de di de-ter-mi-na-re
+ []
+
+
+
+[41
+
+
+
+
+
+]
+Overfull \hbox (17.64247pt too wide) in paragraph at lines 33--34
+\T1/cmr/m/n/12 un uni-co ci-clo ha-mil-to-nia-no e l'as-sen-za di sot-to-ci-cli
+. So-no det-ti \T1/cmr/bx/n/12 vin-co-li di con-nes-sio-ne\T1/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (22.78221pt too wide) in paragraph at lines 36--37
+\T1/cmr/m/n/12 Per ri-sol-ve-re il pro-ble-ma tra-mi-te il \T1/cmr/m/it/12 Quan
+-tum An-nea-ling\T1/cmr/m/n/12 , è ne-ces-sa-rio pri-ma rap-pre-sen-tar-lo
+ []
+
+
+Overfull \hbox (1.94772pt too wide) in paragraph at lines 38--39
+\T1/cmr/bx/n/12 con-nes-sio-ne\T1/cmr/m/n/12 . La mo-del-la-zio-ne di ta-li vin
+-co-li spes-so ri-chie-de espres-sio-ni ma-te-ma-ti-che
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[42]
+Overfull \hbox (3.33488pt too wide) in paragraph at lines 46--47
+[]\T1/cmr/m/n/12 In que-sta nuo-va rap-pre-sen-ta-zio-ne, il pro-ble-ma vie-ne 
+mo-del-la-to uti-liz-zan-do va-ria-bi-li
+ []
+
+
+Overfull \hbox (6.245pt too wide) in paragraph at lines 59--60
+[]\T1/cmr/m/n/12 Il se-con-do ti-po di vin-co-li ga-ran-ti-sce che ogni po-si-z
+io-ne $\OML/cmm/m/it/12 p$ \T1/cmr/m/n/12 nel per-cor-so sia as-se-gna-ta
+ []
+
+
+Overfull \hbox (2.30492pt too wide) in paragraph at lines 66--67
+\T1/cmr/m/n/12 as-so-cia-te al-la vio-la-zio-ne dei vin-co-li pre-val-ga-no sui
+ con-tri-bu-ti po-si-ti-vi del-la ri-com-pen-sa
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[43]
+Overfull \hbox (1.3118pt too wide) in paragraph at lines 87--88
+[]\T1/cmr/m/n/12 Infine per evi-ta-re che la so-lu-zio-ne im-pon-ga la stes-sa 
+cit-tà su più po-si-zio-ni, to-glia-mo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[44]
+Overfull \hbox (9.8102pt too wide) in paragraph at lines 119--121
+\T1/cmr/m/n/12 pre-sen-ti pe-na-li-tà as-so-cia-te ai vin-co-li, an-ch'es-se re
+-sta-no ad-di-ti-ve nel-la fun-zio-ne obiet-ti-vo
+ []
+
+
+Overfull \hbox (1.68199pt too wide) in paragraph at lines 122--123
+[]\T1/cmr/m/n/12 Successivamente, si pas-sa al-la \T1/cmr/bx/n/12 rap-pre-sen-t
+a-zio-ne del-la so-lu-zio-ne\T1/cmr/m/n/12 . Nel \T1/cmr/m/it/12 Quan-tum
+ []
+
+
+Overfull \hbox (1.76651pt too wide) in paragraph at lines 122--123
+\T1/cmr/m/it/12 An-nea-ling \T1/cmr/m/n/12 è de-ter-mi-na-ta dal nu-me-ro di qu
+-bit ne-ces-sa-ri per mo-del-la-re tut-te le pos-si-bi-li
+ []
+
+
+Overfull \hbox (9.22292pt too wide) in paragraph at lines 126--127
+\T1/cmr/m/n/12 al-le de-ci-sio-ni in-di-vi-dua-li, men-tre gli ele-men-ti non d
+ia-go-na-li rap-pre-sen-ta-no le in-te-ra-zio-ni
+ []
+
+
+Overfull \hbox (1.44237pt too wide) in paragraph at lines 128--129
+[]\T1/cmr/m/n/12 Dopo aver co-strui-to la ma-tri-ce QU-BO, il pro-ble-ma vie-ne
+ \T1/cmr/bx/n/12 con-ver-ti-to nel mo-del-lo
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[45]
+Overfull \hbox (7.56038pt too wide) in paragraph at lines 134--135
+[]\T1/cmr/m/n/12 Una vol-ta com-ple-ta-to l'em-bed-ding, il quan-tum an-nea-ler
+ ese-gue la \T1/cmr/bx/n/12 de-ter-mi-na-zio-ne
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[46]
+<images/TSP.png, id=656, 271.61475pt x 208.98074pt>
+File: images/TSP.png Graphic file (type png)
+<use images/TSP.png>
+Package pdftex.def Info: images/TSP.png  used on input line 156.
+(pdftex.def)             Requested size: 426.79135pt x 328.39703pt.
+
+Overfull \hbox (2.81197pt too wide) in paragraph at lines 153--158
+\T1/cmr/m/n/12 Per il-lu-stra-re l'ap-pli-ca-zio-ne del \T1/cmr/m/it/12 Quan-tu
+m An-nea-ling\T1/cmr/m/n/12 , con-si-de-ria-mo un esem-pio pra-ti-co
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[47 <./images/TSP.png>]
+<images/Rappresentazione_TSP.png, id=664, 462.528pt x 52.998pt>
+File: images/Rappresentazione_TSP.png Graphic file (type png)
+<use images/Rappresentazione_TSP.png>
+Package pdftex.def Info: images/Rappresentazione_TSP.png  used on input line 18
+0.
+(pdftex.def)             Requested size: 384.1096pt x 44.015pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[48 <./images/Rappresentazione_TSP.png>]
+<images/QUBO_TSP.png, id=674, 1186.4325pt x 1170.3725pt>
+File: images/QUBO_TSP.png Graphic file (type png)
+<use images/QUBO_TSP.png>
+Package pdftex.def Info: images/QUBO_TSP.png  used on input line 220.
+(pdftex.def)             Requested size: 256.07741pt x 252.60739pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[49 <./images/QUBO_TSP.png>]
+<images/Ising_TSP.png, id=681, 1268.74pt x 1270.7475pt>
+File: images/Ising_TSP.png Graphic file (type png)
+<use images/Ising_TSP.png>
+Package pdftex.def Info: images/Ising_TSP.png  used on input line 232.
+(pdftex.def)             Requested size: 298.75264pt x 299.22679pt.
+
+Overfull \hbox (8.44913pt too wide) in paragraph at lines 237--238
+\T1/cmr/m/n/12 Il mo-del-lo di Ising può es-se-re rap-pre-sen-ta-to co-me un gr
+a-fo. In que-sta rap-pre-sen-ta-zio-ne: 
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[50 <./images/Ising_TSP.png>]
+<images/Ising_Logical_Qubit.png, id=688, 1367.70975pt x 601.0455pt>
+File: images/Ising_Logical_Qubit.png Graphic file (type png)
+<use images/Ising_Logical_Qubit.png>
+Package pdftex.def Info: images/Ising_Logical_Qubit.png  used on input line 247
+.
+(pdftex.def)             Requested size: 469.47308pt x 206.30623pt.
+
+Overfull \hbox (42.68173pt too wide) in paragraph at lines 247--249
+ [][] 
+ []
+
+<images/Qubit_Logici_Fisici.png, id=689, 1997.4625pt x 991.705pt>
+File: images/Qubit_Logici_Fisici.png Graphic file (type png)
+<use images/Qubit_Logici_Fisici.png>
+Package pdftex.def Info: images/Qubit_Logici_Fisici.png  used on input line 256
+.
+(pdftex.def)             Requested size: 469.47308pt x 233.08098pt.
+
+Overfull \hbox (42.68173pt too wide) in paragraph at lines 256--258
+ [][] 
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[51 <./images/Ising_Logical_Qubit.png> <./images/Qubit_Logici_Fisici.png>]
+Overfull \hbox (4.00192pt too wide) in paragraph at lines 269--270
+\T1/cmr/m/n/12 va-ria-bi-li lo-gi-che, se-guen-do la map-pa-tu-ra sta-bi-li-ta 
+du-ran-te l'em-bed-ding, per ri-co-strui-re
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
+
+ []
+
+<images/Soluzione_TSP.png, id=698, 2162.0775pt x 977.6525pt>
+File: images/Soluzione_TSP.png Graphic file (type png)
+<use images/Soluzione_TSP.png>
+Package pdftex.def Info: images/Soluzione_TSP.png  used on input line 273.
+(pdftex.def)             Requested size: 426.79135pt x 192.97609pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[52 <./images/Soluzione_TSP.png>])
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[53]
+\openout2 = `chapters/Capitolo7.aux'.
+
+ (./chapters/Capitolo7.tex
+Capitolo 7.
+
+Overfull \hbox (68.97113pt too wide) in paragraph at lines 1--1
+|\T1/cmr/bx/n/24.88 Capitolo 7: Im-ple-men-ta-zio-ne del-l'Al-go-rit-mo
+ []
+
+
+Overfull \hbox (53.71703pt too wide) in paragraph at lines 1--1
+\T1/cmr/bx/n/24.88 di Gro-ver at-tra-ver-so il Quan-tum An-nea-ling| 
+ []
+
+
+Overfull \hbox (12.94772pt too wide) in paragraph at lines 7--8
+[]\T1/cmr/m/n/12 Come al-tri al-go-rit-mi quan-ti-sti-ci, l'al-go-rit-mo di Gro
+-ver ini-zia con una so-vrap-po-si-zio-ne
+ []
+
+
+Overfull \hbox (4.33992pt too wide) in paragraph at lines 7--8
+\T1/cmr/m/n/12 im-pli-ca che una stes-sa am-piez-za pa-ri a $[]$ è as-so-cia-ta
+ ad ogni pos-si-bi-le con-fi-gu-ra-zio-ne
+ []
+
+
+Overfull \hbox (5.39645pt too wide) in paragraph at lines 9--10
+\T1/cmr/m/n/12 l'am-piez-za di quel-lo sta-to per $\OMS/cmsy/m/n/12 ^^@\OT1/cmr
+/m/n/12 1$\T1/cmr/m/n/12 . Seb-be-ne il se-gno del-l'am-piez-za cam-bi, la pro-
+ba-bi-li-tà
+ []
+
+
+Overfull \hbox (6.09023pt too wide) in paragraph at lines 9--10
+\T1/cmr/m/n/12 as-so-cia-ta al-lo sta-to ri-ma-ne in-va-ria-ta, in quan-to di-p
+en-de so-lo dal mo-du-lo del-l'am-piez-za. 
+ []
+
+
+
+[54
+
+
+
+
+
+]
+Overfull \hbox (11.86299pt too wide) in paragraph at lines 17--19
+\T1/cmr/m/n/12 so-vrap-po-si-zio-ne tra-mi-te la \T1/cmr/bx/n/12 tra-sfor-ma-zi
+o-ne di Ha-da-mard\T1/cmr/m/n/12 : $\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12  \OMS/cm
+sy/m/n/12 i \OT1/cmr/m/n/12 = [] [][]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 x\OMS/c
+msy/m/n/12 i$\T1/cmr/m/n/12 . 
+ []
+
+
+Overfull \hbox (2.6866pt too wide) in paragraph at lines 31--32
+[]\T1/cmr/m/n/12 Ogni pas-so può es-se-re im-ple-men-ta-to in mo-do ef-fi-cien-
+te su un com-pu-ter quan-ti-sti-co. 
+ []
+
+<images/Grover_Algorithm.png, id=717, 1883.035pt x 584.1825pt>
+File: images/Grover_Algorithm.png Graphic file (type png)
+<use images/Grover_Algorithm.png>
+Package pdftex.def Info: images/Grover_Algorithm.png  used on input line 35.
+(pdftex.def)             Requested size: 426.79135pt x 132.407pt.
+<images/Grover_Iteration.png, id=718, 1870.99pt x 590.205pt>
+File: images/Grover_Iteration.png Graphic file (type png)
+<use images/Grover_Iteration.png>
+Package pdftex.def Info: images/Grover_Iteration.png  used on input line 42.
+(pdftex.def)             Requested size: 426.79135pt x 134.62756pt.
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[55 <./images/Grover_Algorithm.png> <./images/Grover_Iteration.png>]
+Overfull \hbox (17.61392pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/12 La \T1/cmr/bx/n/12 tra-sfor-ma-zio-ne di Ha-da-mard \T1/cmr/m/n/
+12 è una del-le ope-ra-zio-ni fon-da-men-ta-li nel-l'in-for-ma-ti-ca
+ []
+
+
+Overfull \hbox (14.10323pt too wide) in paragraph at lines 67--68
+\T1/cmr/m/n/12 fun-zio-ne d'on-da del si-ste-ma quan-ti-sti-co. È cru-cia-le pe
+r sfrut-ta-re la na-tu-ra pro-ba-bi-li-sti-ca
+ []
+
+
+Overfull \hbox (3.61028pt too wide) in paragraph at lines 69--70
+\T1/cmr/m/n/12 li-nea-re di sta-ti ba-se con coef-fi-cien-ti com-ples-si che va
+-ria-no in mo-do ci-cli-co (espo-nen-zia-li
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[56]
+Overfull \hbox (22.72191pt too wide) in paragraph at lines 80--81
+[]\T1/cmr/m/n/12 Questa im-ple-men-ta-zio-ne con-sen-te di co-di-fi-ca-re in-fo
+r-ma-zio-ni su un pro-ble-ma al-l'in-ter-no
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Overfull \hbox (27.74289pt too wide) in paragraph at lines 115--116
+[]\T1/cmr/m/n/12 Un esem-pio sem-pli-ce per il-lu-stra-re que-sta di-stin-zio-n
+e è il pro-ble-ma del-la fat-to-riz-za-zio-ne.
+ []
+
+
+Overfull \hbox (7.28682pt too wide) in paragraph at lines 117--118
+\T1/cmr/m/n/12 è ne-ces-sa-rio co-strui-re un cir-cui-to ef-fi-cien-te che im-p
+le-men-ti l'o-ra-co-lo. Si ini-zia de-fi-nen-do
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[58]
+Overfull \hbox (23.05847pt too wide) in paragraph at lines 130--131
+\T1/cmr/m/n/12 del-la com-pu-ta-zio-ne re-ver-si-bi-le, può es-se-re tra-dot-to
+ di-ret-ta-men-te in un cir-cui-to quan-ti-sti-co
+ []
+
+
+Overfull \hbox (2.94476pt too wide) in paragraph at lines 132--133
+[]\T1/cmr/m/n/12 Quindi l'o-ra-co-lo è un com-po-nen-te ope-ra-ti-vo co-strui-t
+o ad \T1/cmr/m/it/12 hoc \T1/cmr/m/n/12 per pro-ble-mi spe-ci-fi-ci,
+ []
+
+
+Overfull \hbox (3.15596pt too wide) in paragraph at lines 132--133
+\T1/cmr/m/n/12 co-me la ri-cer-ca nel-l'al-go-rit-mo di Gro-ver. La sua im-ple-
+men-ta-zio-ne è le-ga-ta al pro-ble-ma
+ []
+
+
+Overfull \hbox (26.84375pt too wide) in paragraph at lines 132--133
+\T1/cmr/m/n/12 che si vuo-le ri-sol-ve-re ed è uno stru-men-to es-sen-zia-le pe
+r sfrut-ta-re i van-tag-gi del-l'in-ter-fe-ren-za
+ []
+
+
+Overfull \hbox (8.50653pt too wide) in paragraph at lines 134--135
+\T1/cmr/bx/n/12 que-ry\T1/cmr/m/n/12 , in quan-to agi-sce co-me un'en-ti-tà che
+ for-ni-sce ri-spo-ste de-fi-ni-te a una de-ter-mi-na-ta
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[59]
+Overfull \hbox (12.97849pt too wide) in paragraph at lines 143--144
+[]\T1/cmr/m/n/12 L'iterazione di Gro-ver [[]] è un'o-pe-ra-zio-ne che vie-ne ri
+-pe-tu-ta più vol-te dal-l'al-go-rit-mo
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[60]
+Overfull \hbox (28.26218pt too wide) in paragraph at lines 172--173
+[]\T1/cmr/m/n/12 Viene ap-pli-ca-to l'o-ra-co-lo, che "se-gna" (mo-di-fi-can-do
+ la fa-se di $\OML/cmm/m/it/12 ^^Y$ \T1/cmr/m/n/12 e quin-di mol-ti-pli-can-do
+ []
+
+
+Overfull \hbox (6.91988pt too wide) in paragraph at lines 174--175
+[]\T1/cmr/m/n/12 Successivamente, vie-ne ap-pli-ca-ta una ri-fles-sio-ne ri-spe
+t-to al-lo \T1/cmr/m/it/12 sta-to me-dio \T1/cmr/m/n/12 (tra-mi-te
+ []
+
+
+Overfull \hbox (39.40921pt too wide) in paragraph at lines 175--176
+\T1/cmr/m/n/12 ap-pli-ca-ta una se-con-da vol-ta per ri-tor-na-re dal-la ba-se 
+di Fou-rier al-la ba-se com-pu-ta-zio-na-le.
+ []
+
+
+Overfull \hbox (9.48874pt too wide) in paragraph at lines 175--176
+\T1/cmr/m/n/12 ri-sul-ta-ti pos-so-no es-se-re mi-su-ra-ti e con-ser-va-re gli 
+ef-fet-ti del-le pre-ce-den-ti ope-ra-zio-ni.
+ []
+
+
+Overfull \hbox (2.82393pt too wide) in paragraph at lines 187--188
+[]\T1/cmr/m/n/12 La fun-zio-ne $[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m
+/n/12 )$ \T1/cmr/m/n/12 re-sti-tui-sce l'in-te-ro più vi-ci-no al va-lo-re rea-
+le $\OML/cmm/m/it/12 x$\T1/cmr/m/n/12 , con la con-ven-zio-ne
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[61]
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[62]
+Overfull \hbox (4.74649pt too wide) in paragraph at lines 224--225
+\T1/cmr/m/n/12 qua-dra-ti-co ri-spet-to al me-to-do clas-si-co che ri-chie-de-r
+eb-be $\OML/cmm/m/it/12 O\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 N=M\OT1/cmr/m/n/12 )
+$ \T1/cmr/m/n/12 chia-ma-te al-l'o-ra-co-lo
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[63]
+Overfull \hbox (28.46489pt too wide) in paragraph at lines 256--257
+[]\T1/cmr/m/n/12 Questo vie-ne rea-liz-za-to ag-giun-gen-do un sin-go-lo qu-bit
+ al-l'in-di-ce di ri-cer-ca, rad-dop-pian-do
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[64]
+Overfull \hbox (66.05505pt too wide) detected at line 298
+\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 = []\OMS
+/cmsy/m/n/12 j\OT1/cmr/m/n/12 000\OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 + []\OMS/cm
+sy/m/n/12 j\OT1/cmr/m/n/12 001\OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 + []\OMS/cmsy/
+m/n/12 j\OT1/cmr/m/n/12 010\OMS/cmsy/m/n/12 i ^^@ []j\OT1/cmr/m/n/12 011\OMS/cm
+sy/m/n/12 i \OT1/cmr/m/n/12 + []\OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 100\OMS/cmsy/
+m/n/12 i \OT1/cmr/m/n/12 + []\OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 101\OMS/cmsy/m/n
+/12 i \OT1/cmr/m/n/12 + []\OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 110\OMS/cmsy/m/n/12
+ i \OT1/cmr/m/n/12 + []\OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 111\OMS/cmsy/m/n/12 i
+ []
+
+
+Overfull \hbox (11.08624pt too wide) detected at line 313
+\OML/cmm/m/it/12 G\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 i \OT1/c
+mr/m/n/12 = (2\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 ih\OML/cmm/m
+/it/12  \OMS/cmsy/m/n/12 j ^^@ \OML/cmm/m/it/12 Id\OT1/cmr/m/n/12 ) \OMS/cmsy/m
+/n/12 ^^A \OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12
+ i ^^@ []j\OT1/cmr/m/n/12 011\OMS/cmsy/m/n/12 i\OT1/cmr/m/n/12 ) = 2\OMS/cmsy/m
+/n/12 j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 ih\OML/cmm/m/it/12   \OMS/cmsy/m/n/12
+ j \OML/cmm/m/it/12  \OMS/cmsy/m/n/12 i ^^@ j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12
+ i ^^@ []j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 ih\OML/cmm/m/it/12   \OMS/cmsy/m/n
+/12 j \OT1/cmr/m/n/12 011\OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 + []\OMS/cmsy/m/n/1
+2 j\OT1/cmr/m/n/12 011\OMS/cmsy/m/n/12 i
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[65]
+Overfull \hbox (24.94113pt too wide) detected at line 336
+\OML/cmm/m/it/12 G\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 i \OT1/c
+mr/m/n/12 = [] = 2\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 i ^^@ j\
+OML/cmm/m/it/12  \OMS/cmsy/m/n/12 i ^^@ [] ^^A [] ^^A j\OML/cmm/m/it/12  \OMS/c
+msy/m/n/12 i \OT1/cmr/m/n/12 + []\OMS/cmsy/m/n/12 j\OT1/cmr/m/n/12 011\OMS/cmsy
+/m/n/12 i \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12  \OMS/cmsy/m/n/1
+2 i ^^@ []j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 + []\OMS/cmsy/m
+/n/12 j\OT1/cmr/m/n/12 011\OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 = []\OMS/cmsy/m/n/
+12 j\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 i \OT1/cmr/m/n/12 + []\OMS/cmsy/m/n/12 j
+\OT1/cmr/m/n/12 011\OMS/cmsy/m/n/12 i
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[66]
+Overfull \hbox (11.88045pt too wide) in paragraph at lines 373--374
+\T1/cmr/m/n/12 del \T1/cmr/bx/n/12 Gate-Based Quan-tum Com-pu-ting\T1/cmr/m/n/1
+2 , sfrut-tan-do cir-cui-ti quan-ti-sti-ci che uti-liz-za-no
+ []
+
+
+Overfull \hbox (31.67381pt too wide) in paragraph at lines 375--376
+[]\T1/cmr/m/n/12 Nel \T1/cmr/m/it/12 Quan-tum An-nea-ling\T1/cmr/m/n/12 , l'e-v
+o-lu-zio-ne di-na-mi-ca del si-ste-ma è de-scrit-ta dal-l'Ha-mil-to-nia-no
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[67]
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[68]
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[69]
+Overfull \hbox (25.0324pt too wide) in paragraph at lines 471--472
+[]\T1/cmr/m/n/12 Per ana-liz-za-re l'e-vo-lu-zio-ne del-l'Ha-mil-to-nia-no to-t
+a-le nel tem-po, ci pos-sia-mo con-cen-tra-re
+ []
+
+
+Overfull \hbox (1.25131pt too wide) in paragraph at lines 487--489
+\T1/cmr/m/n/12 La ma-tri-ce di $[]$ può es-se-re se-pa-ra-ta in una par-te dia-
+go-na-le e una par-te non dia-go-na-le.
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[70]
+Overfull \hbox (1.75235pt too wide) in paragraph at lines 538--539
+\T1/cmr/m/n/12 di-na-mi-ca-men-te $\OML/cmm/m/it/12 T$\T1/cmr/m/n/12 , ri-spet-
+tan-do co-mun-que le con-di-zio-ni che ga-ran-ti-sco-no l'a-dia-ba-ti-ci-tà
+ []
+
+
+Overfull \hbox (4.96233pt too wide) in paragraph at lines 543--544
+[]\T1/cmr/m/n/12 In que-sto mo-do, la for-mu-la com-ple-ta per l'Ha-mil-to-nia-
+no nel con-te-sto del-l'al-go-rit-mo
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[71]
+Overfull \hbox (17.0399pt too wide) in paragraph at lines 558--559
+[]\T1/cmr/m/n/12 Invece di evol-ve-re in un sot-to-spa-zio bi-di-men-sio-na-le,
+ il si-ste-ma evol-ve in un sot-to-spa-zio
+ []
+
+
+Overfull \hbox (48.56714pt too wide) detected at line 567
+\OML/cmm/m/it/12 H\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] \OM
+L/cmm/m/it/12 :
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[72]
+Overfull \hbox (7.56102pt too wide) in paragraph at lines 591--592
+\T1/cmr/m/n/12 at-tra-ver-so il \T1/cmr/m/it/12 Quan-tum An-nea-ling\T1/cmr/m/n
+/12 , di-mo-stran-do che rag-giun-ge una com-ples-si-tà $\OML/cmm/m/it/12 O\OT1
+/cmr/m/n/12 ([])$\T1/cmr/m/n/12 ,
+ []
+
+
+Overfull \hbox (20.64378pt too wide) in paragraph at lines 595--596
+\T1/cmr/m/n/12 un er-ro-re tem-po-ra-le po-treb-be com-pro-met-te-re si-gni-fi-
+ca-ti-va-men-te l'ef-fi-ca-cia del-l'al-go-rit-mo.
+ []
+
+
+Overfull \hbox (9.41876pt too wide) in paragraph at lines 597--598
+\T1/cmr/m/n/12 di-men-sio-ne, con una com-ples-si-tà com-pu-ta-zio-na-le che cr
+e-sce me-no ra-pi-da-men-te ri-spet-to
+ []
+
+)
+Overfull \hbox (17.21626pt too wide) in paragraph at lines 599--202
+[]\T1/cmr/m/n/12 Finora, l'al-go-rit-mo di Gro-ver nel-l'A-dia-ba-tic Quan-tum 
+Com-pu-ting è ri-ma-sto con-fi-na-to
+ []
+
+
+Overfull \hbox (3.4797pt too wide) in paragraph at lines 599--202
+\T1/cmr/m/n/12 al-go-rit-mi quan-ti-sti-ci at-tua-li, of-fren-do van-tag-gi nel
+-la ri-so-lu-zio-ne di pro-ble-mi com-ples-si. 
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 30.54852pt, for example:
+(fancyhdr)                \setlength{\headheight}{30.54852pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-18.04852pt}.
+
+[73]
+\openout2 = `chapters/Capitolo8.aux'.
+
+ (./chapters/Capitolo8.tex
+Capitolo 8.
+
+Overfull \hbox (4.85027pt too wide) in paragraph at lines 2--3
+\T1/cmr/m/n/12 de-gli al-go-rit-mi clas-si-ci e ri-du-cen-do il ri-schio di ri-
+ma-ne-re nei mi-ni-mi lo-ca-li del pae-sag-gio
+ []
+
+
+Overfull \hbox (16.74962pt too wide) in paragraph at lines 4--5
+\T1/cmr/m/n/12 lo-ca-li dal mi-ni-mo glo-ba-le. Que-sto ap-proc-cio, uni-to al-
+la fles-si-bi-li-tà nel-la rap-pre-sen-ta-zio-ne
+ []
+
+
+Overfull \hbox (5.82912pt too wide) in paragraph at lines 6--7
+\T1/cmr/m/n/12 ri-du-zio-ne del gap mi-ni-mo e il mi-glio-ra-men-to del-la sca-
+la-bi-li-tà nei di-spo-si-ti-vi quan-ti-sti-ci,
+ []
+
+)
+Overfull \hbox (13.72607pt too wide) in paragraph at lines 8--203
+\T1/cmr/m/n/12 at-ti-va-men-te a tra-sfor-ma-re le no-stre ca-pa-ci-tà di af-fr
+on-ta-re e ri-sol-ve-re pro-ble-mi com-ples-si.
+ []
+
+
+
+[74
+
+
+
+
+
+]
+\openout2 = `chapters/Appendice.aux'.
+
+ (./chapters/Appendice.tex
+Appendice A.
+
+Overfull \hbox (3.14632pt too wide) in paragraph at lines 8--8
+|\T1/cmr/bx/n/24.88 Appendice A: Co-di-ce di ri-so-lu-zio-ne del
+ []
+
+(./listings/TSP.py
+
+[75
+
+
+
+
+
+]
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[76]
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[77]
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[78]
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[79])
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[80]
+Appendice B.
+
+Overfull \hbox (1.11006pt too wide) in paragraph at lines 14--14
+|\T1/cmr/bx/n/24.88 Appendice B: Pro-va che QU-BO e Ising
+ []
+
+<images/Prova1.png, id=1105, 399.894pt x 457.71pt>
+File: images/Prova1.png Graphic file (type png)
+<use images/Prova1.png>
+Package pdftex.def Info: images/Prova1.png  used on input line 19.
+(pdftex.def)             Requested size: 384.1096pt x 439.66202pt.
+
+
+[81
+
+
+ <./images/Prova1.png>]
+<images/Prova2.png, id=1112, 400.49625pt x 175.25475pt>
+File: images/Prova2.png Graphic file (type png)
+<use images/Prova2.png>
+Package pdftex.def Info: images/Prova2.png  used on input line 27.
+(pdftex.def)             Requested size: 426.79135pt x 186.77194pt.
+<images/Espansione.png, id=1113, 762.85pt x 397.485pt>
+File: images/Espansione.png Graphic file (type png)
+<use images/Espansione.png>
+Package pdftex.def Info: images/Espansione.png  used on input line 33.
+(pdftex.def)             Requested size: 426.79135pt x 222.37779pt.
+)
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[82 <./images/Prova2.png> <./images/Espansione.png (PNG copy)>] (./main.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 4--10
+\T1/cmtt/m/n/12 Adiabatic _ Quantum _ Computation _ is _ Equivalent _ to _ Stan
+dard _ Quantum _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--58
+[]\T1/cmr/m/n/12 Differences bet-ween quan-tum an-nea-lers and gate-based quan-
+tum
+ []
+
+
+Overfull \hbox (42.06297pt too wide) in paragraph at lines 54--58
+\T1/cmtt/m/n/12 differences-[]between-[]quantum-[]annealers-[]and-[]gate-[]base
+d-[]quantum-[]computing/$[][]\T1/cmr/m/n/12 . 
+ []
+
+
+
+[83
+
+
+
+
+]
+Underfull \hbox (badness 1406) in paragraph at lines 90--94
+\T1/cmr/m/it/12 Landau-Zener Tran-si-tions, and the Sche-du-ling Func-tion\T1/c
+mr/m/n/12 , pa-ges 250--252,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--121
+[]\T1/cmr/m/n/12 Hristo Dji-d-jev, Ste-fa-nie Zbin-den, An-dreas Bär-ts-chi and
+ Ste-phan
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--121
+\T1/cmr/m/n/12 Ei-den-benz.  Em-bed-ding al-go-ri-thms for quan-tum an-nea-lers
+ with
+ []
+
+
+Underfull \hbox (badness 5563) in paragraph at lines 115--121
+\T1/cmr/m/n/12 chi-me-ra and pe-ga-sus con-nec-tion to-po-lo-gies.  2019.  Avai
+-la-ble at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--121
+[][]$\T1/cmtt/m/n/12 https : / / public . lanl . gov / djidjev / papers / 2019 
+_ _QUBO _ Embeddings _
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 123--126
+[]\T1/cmr/m/n/12 D-Wave Sy-stems.  Mi-nor-mi-ner.  Avai-la-ble at [][]$\T1/cmtt
+/m/n/12 https : / / github . com /
+ []
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[84]
+Underfull \hbox (badness 2261) in paragraph at lines 188--193
+[]\T1/cmr/m/n/12 Tameem Al-bash and Da-niel Li-dar.  Adia-ba-tic quan-tum com-p
+u-ta-tion.
+ []
+
+)
+
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 15.59995pt, for example:
+(fancyhdr)                \setlength{\headheight}{15.59995pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-3.09995pt}.
+
+[85] (./main.aux (./chapters/Frontespizio.aux) (./chapters/Dedica.aux)
+(./chapters/Abstract.aux) (./chapters/Capitolo1.aux) (./chapters/Capitolo2.aux)
+(./chapters/Capitolo3.aux) (./chapters/Capitolo4.aux) (./chapters/Capitolo5.aux
+) (./chapters/Capitolo6.aux) (./chapters/Capitolo7.aux)
+(./chapters/Capitolo8.aux) (./chapters/Appendice.aux))
+ ***********
+LaTeX2e <2024-06-01> patch level 2
+L3 programming layer <2024-09-10>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 2.48409pt have occurred.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: DCD2B668CAF5830B10853C9A63E1BFA3;12325.
+ ) 
+Here is how much of TeX's memory you used:
+ 19353 strings out of 473579
+ 311542 string characters out of 5732263
+ 1360760 words of memory out of 5000000
+ 41351 multiletter control sequences out of 15000+600000
+ 577429 words of font info for 76 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 108i,14n,107p,1154b,2141s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/tex
+live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2024
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2024/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2024/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr6.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr9.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b><c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texl
+ive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2024/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2024/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb><c:/texlive/2024/texmf-dist
+/fonts/type1/public/cm-super/sfbi1200.pfb><c:/texlive/2024/texmf-dist/fonts/typ
+e1/public/cm-super/sfbx1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/
+cm-super/sfbx1440.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/s
+fbx1728.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pf
+b><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texl
+ive/2024/texmf-dist/fonts/type1/public/cm-super/sfbx2986.pfb><c:/texlive/2024/t
+exmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texlive/2024/texmf-dist/
+fonts/type1/public/cm-super/sfrm0900.pfb><c:/texlive/2024/texmf-dist/fonts/type
+1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/c
+m-super/sfrm1440.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sf
+rm2074.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb
+><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb><c:/texli
+ve/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb><c:/texlive/2024/te
+xmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (87 pages, 6590365 bytes).
+PDF statistics:
+ 1403 PDF objects out of 1440 (max. 8388607)
+ 1206 compressed objects within 13 object streams
+ 524 named destinations out of 1000 (max. 500000)
+ 546 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,43 @@
+% Modifica temporanea per l'appendice
+\titleformat{\chapter}[block]
+{\normalfont\huge\bfseries}
+{}
+{0em}
+{}
+
+\chapter{Appendice A: Codice di risoluzione del TSP} 
+Il codice riportato di seguito implementa una soluzione al problema del Commesso Viaggiatore utilizzando tecniche di \textbf{Quantum Annealing}, in particolare sfruttando l'architettura ibrida del Quantum Annealer della D-Wave. Per questo motivo, l'approccio adottato risulta essere leggermente diverso. La soluzione è applicata al problema trattato nel capitolo 6, sezione 4.
+
+\lstinputlisting[language=python]{listings/TSP.py}
+
+
+\chapter{Appendice B: Prova che QUBO e Ising sono Isomorfi}
+La dimostrazione è in Inglese.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 0.9\textwidth]{images/Prova1.png} 
+	\label{fig:Prova dell'isomorfismo tra Ising e QUBO Parte 1}
+\end{figure}
+
+\pagebreak
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.0\textwidth]{images/Prova2.png} 
+	\label{fig:Prova dell'isomorfismo tra Ising e QUBO Parte 2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.0\textwidth]{images/Espansione.png} 
+	\caption{"Third Term Expansion"} 
+	\label{fig:Third Term Expansion}
+\end{figure}
+
+% Ripristina lo stile originale per eventuali capitoli successivi
+\titleformat{\chapter}[block]
+{\normalfont\huge\bfseries}
+{Capitolo \thechapter:}
+{0.4em}
+{}

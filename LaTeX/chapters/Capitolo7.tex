@@ -1,0 +1,599 @@
+\chapter{Implementazione dell'Algoritmo di Grover attraverso il Quantum Annealing}
+\section{Introduzione all'Algoritmo di Grover}
+L'\textbf{algoritmo di Grover}, o algoritmo di ricerca quantistica, è una tecnica di ricerca quantistica ideata per identificare un elemento specifico in un database non ordinato. Fu ideato da \textit{Lov Grover} nel 1996 \cite{Label15}. Questo algoritmo è significativamente più efficiente rispetto ai metodi classici, poiché riduce il numero di query necessarie da $O(N)$, in media, a $O(\sqrt{N})$, dove $N$ è la dimensione del database. Si dice appunto che l’algoritmo di Grover fornisce un’\textbf{accelerazione quadratica}, che deriva dal fatto che $O(\sqrt{N})$ cresce molto più lentamente di $N$, offrendo un vantaggio significativo, specialmente per database molto grandi. 
+
+L'algoritmo è ideale per problemi che possono essere ridotti a una ricerca in un database non strutturato, come l'inversione di una funzione e la soluzione di equazioni con risultati multipli. 
+
+Come altri algoritmi quantistici, l’algoritmo di Grover inizia con una sovrapposizione uguale di tutti i possibili stati partendo da un registro composto da $n$ qubit. Questo implica che una stessa ampiezza pari a $\frac{1}{\sqrt{2^{n}}}$ è associata ad ogni possibile configurazione di qubit nel sistema e corrisponde ad una probabilità $\frac{1}{2^{n}}$ che il sistema sia in uno di quei $2^{n}$ stati. 
+
+L’algoritmo di Grover sfrutta l'\textbf{amplificazione di ampiezza}, cioè una proprietà caratteristica delle ampiezze quantistiche. In pratica si ha uno sfasamento selettivo di uno stato di un sistema quantistico. Uno sfasamento di $\pi$ equivale a moltiplicare l’ampiezza di quello stato per $-1$. Sebbene il segno dell’ampiezza cambi, la probabilità associata allo stato rimane invariata, in quanto dipende solo dal modulo dell’ampiezza. 
+
+\pagebreak
+
+Le successive trasformazioni sfruttano questa inversione di fase per amplificare gradualmente l’ampiezza dello stato desiderato, aumentando così la probabilità di osservarlo durante una misurazione. Questo approccio è reso possibile dal fatto che le ampiezze quantistiche contengono sia informazioni sulla probabilità che sulla fase dello stato, consentendo manipolazioni che vanno oltre ciò che è realizzabile nei sistemi classici.
+
+L'algoritmo di ricerca opera come segue \cite{Label16}:
+\begin{enumerate}
+	\item L'inizializzazione avviene ponendo gli $n$ qubit di un registro nello stato di sovrapposizione tramite la \textbf{trasformazione di Hadamard}:
+	$ \lvert \psi \rangle = \frac{1}{\sqrt{N}} \sum_{x=0}^{N-1} \lvert x \rangle $.
+	\item Si applica un'\textbf{iterazione di Grover} $G$, composta da:
+	\begin{enumerate}
+		\item \textit{Applicazione dell'oracolo} $O$.
+		\item \textit{Trasformata di Hadamard} $H^{\otimes n}$.
+		\item \textit{Fase condizionale, dove gli stati base} $ \lvert x \rangle $ \textit{ricevono una fase di} $-1$ \textit{tranne per} $ \lvert 0 \rangle $:
+		$
+		\lvert x \rangle \rightarrow -(-1)^{\delta_{x0}} \lvert x \rangle.
+		$
+		\item \textit{Un'altra trasformata di Hadamard} $H^{\otimes n}$.
+	\end{enumerate}
+\end{enumerate}
+
+Ogni passo può essere implementato in modo efficiente su un computer quantistico.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.0\textwidth]{images/Grover_Algorithm.png} 
+	\caption{Circuito schematico che rappresenta l'algoritmo di Grover.} 
+	\label{fig:Algoritmo di Grover}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 1.0\textwidth]{images/Grover_Iteration.png} 
+	\caption{Circuito per l'iterazione di Grover G.} 
+	\label{fig:Iterazione di Grover}
+\end{figure}
+
+\pagebreak
+\section{Porta di Hadamard}
+La \textbf{trasformazione di Hadamard} è una delle operazioni fondamentali nell'informatica quantistica e gioca un ruolo cruciale nella creazione di stati di sovrapposizione e nella manipolazione delle ampiezze di probabilità. La \textbf{porta di Hadamard} è la realizzazione pratica di questa trasformazione per un singolo qubit all'interno di un circuito quantistico. È una porta unitaria a un qubit e si rappresenta graficamente con il simbolo $H$. Il simbolo $H^{\otimes n}$ indica che stiamo usando $n$ porte di Hadamard. 
+
+Come già visto, la trasformazione di Hadamard può essere espressa come:
+\begin{equation*}
+	\lvert \psi \rangle = \frac{1}{\sqrt{N}} \sum_{x=0}^{N-1} \lvert x \rangle 
+\end{equation*}
+
+Quando si considera un registro di $n$ qubit, la trasformazione di Hadamard agisce su ogni qubit individualmente, e si rappresenta come il prodotto tensoriale (vedi \textbf{il quarto postulato della meccanica quantistica}) di $n$ matrici di Hadamard:
+\begin{equation*}
+	H^{\otimes n} = H \otimes H \otimes \dots \otimes H
+\end{equation*}
+
+Nell'algoritmo di Grover, la porta di Hadamard inizializza il registro di $n$ qubit in una sovrapposizione uniforme di tutti gli stati possibili, rappresentando un punto di partenza per il processo di amplificazione. 
+
+Durante le iterazioni di Grover, la porta di Hadamard è utilizzata per trasformare gli stati base in stati in cui è più facile applicare operazioni come la riflessione rispetto alla media. 
+
+Alla fine di un'iterazione di Grover, la porta di Hadamard può essere usata per riportare il sistema in un formato leggibile prima della misurazione. 
+
+Da un punto di vista fisico, la porta di Hadamard può essere vista come una rotazione di un qubit nello spazio delle fasi, che cambia la rappresentazione della funzione d'onda del sistema quantistico. È cruciale per sfruttare la natura probabilistica e interferenziale dei qubit. 
+
+Da un punto di vista matematico, la porta di Hadamard  trasforma lo stato quantistico dalla \textbf{base computazionale} alla \textbf{base di Fourier} e viceversa. La base di Fourier è un insieme di vettori che rappresentano stati periodici o oscillazioni sinusoidali con diverse frequenze e fasi. In un contesto quantistico, è una base alternativa per descrivere stati quantistici, in cui ogni vettore è una combinazione lineare di stati base con coefficienti complessi che variano in modo ciclico (esponenziali complesse). Serve a decomporre informazioni nei loro componenti di fase e frequenza, utile per analizzare e manipolare segnali periodici o stati quantistici.
+
+\pagebreak
+
+\section{Oracolo Quantistico}
+Un \textbf{oracolo} è un'entità teorica o una funzione utilizzata nei modelli di calcolo per fornire risposte immediate a domande specifiche. Si tratta di uno strumento concettuale che consente di analizzare algoritmi e la loro complessità, assumendo che l’oracolo possa risolvere problemi o verificare ipotesi in modo istantaneo, senza entrare nei dettagli del processo computazionale necessario per produrre tali risposte.
+
+Nel contesto della computazione classica, un oracolo è concepito come un'\textit{entità ideale}, priva di costo computazionale, che fornisce risposte binarie, come "sì" o "no", in relazione a un dato input. Tuttavia, la realizzazione pratica di un oracolo classico è estremamente complessa, se non addirittura impossibile, poiché richiederebbe capacità di calcolo illimitate o l'accesso a conoscenze predefinite.
+
+Nella computazione quantistica, il concetto di oracolo assume una forma più concreta grazie all'uso delle operazioni quantistiche. Un \textbf{oracolo quantistico} può essere implementato utilizzando \textbf{trasformazioni unitarie} che agiscono su stati quantistici. In particolare, le operazioni che modificano la fase di un qubit possono essere sfruttate per rappresentare una funzione oracolo. 
+
+Questa implementazione consente di codificare informazioni su un problema all'interno di una funzione unitaria che opera su uno spazio di Hilbert, offrendo la possibilità di integrare l’oracolo all'interno di algoritmi quantistici, come l'algoritmo di Grover. 
+
+Come input per l'algoritmo di Grover, supponiamo di avere una funzione \linebreak $ f: \{0,1\}^N \to \{0, 1\} $.  
+Nell'analogia del "database non strutturato", il dominio rappresenta gli indici di un database e $ f(x) = 1 $ se e solo se i dati a cui punta $ x $ soddisfano il criterio di ricerca. Inoltre, supponiamo che solo un indice soddisfi $ f(x) = 1 $ e chiamiamo questo indice $\beta$. Il nostro obiettivo è identificare $\beta$. Quindi:  
+\begin{equation*}
+	f(x) = 
+	\begin{cases} 
+		1 & \text{se } x = \beta, \\ 
+		0 & \text{se } x \neq \beta.
+	\end{cases}
+\end{equation*}
+
+L’oracolo quantistico è implementato come operatore unitario $U_f$, che agisce su uno stato quantistico $\lvert x \rangle$ secondo la regola: 
+\begin{equation*}
+	U_f \lvert x \rangle \otimes \lvert q \rangle = \lvert x \rangle \lvert q \oplus f(x) \rangle
+\end{equation*}
+Dove:
+\begin{itemize}
+	\item $x$ rappresenta un elemento del database;
+	\item $q$ è un qubit ausiliario;
+	\item $f(x)$ è una funzione booleana che restituisce 1 per l'elemento desiderato e 0 per gli altri;
+	\item $\oplus$ è l'operazione XOR;
+	\item $\otimes$ è il prodotto tensore.
+\end{itemize}
+
+Nell'algoritmo di Grover, l'oracolo è progettato per identificare un elemento specifico del database $\beta$:  
+\begin{equation*}
+	U_f \lvert x \rangle = (-1)^{f(x)} \lvert x \rangle
+\end{equation*}
+Questa operazione inverte la fase dello stato associato all'elemento desiderato ($\lvert \beta \rangle$), lasciando inalterati gli altri. 
+
+L'oracolo nell'algoritmo di Grover ha il compito di "\textit{marcare}" le soluzioni del problema di ricerca. Questo avviene modificando la fase degli stati quantistici che rappresentano le soluzioni. Consideriamo un problema di ricerca su $N$ elementi con $M$ soluzioni: su un computer quantistico, è sufficiente applicare l'oracolo $ O(\sqrt{N/M}) $ volte per individuare una soluzione. Tuttavia, descrivere l'oracolo senza spiegare come viene effettivamente implementato può sembrare astratto e controintuitivo. A prima vista, sembra che l'oracolo conosca già la risposta al problema di ricerca. Qual è, dunque, il beneficio di un algoritmo di ricerca quantistica che si basa su questo tipo di consultazione? \\
+
+\textit{La chiave per comprendere l'utilità dell'oracolo sta nel distinguere due concetti: \textbf{riconoscere una soluzione} e \textbf{conoscerla a priori}.} \cite{Label17}\\ 
+
+Un esempio semplice per illustrare questa distinzione è il problema della fattorizzazione. Supponiamo di avere un numero intero $m$ che sappiamo essere il prodotto di due numeri primi $p$ e $q$. Per determinare $p$ e $q$ su un computer classico, il metodo ovvio è testare tutti i numeri da $2$ a $\sqrt{m}$ per trovare il divisore più piccolo. Questo approccio comporta una serie di divisioni di prova (\textbf{trial divisions}), ciascuna delle quali verifica se un dato numero divide $m$ esattamente. Quando viene trovato il fattore minore, il fattore maggiore può essere determinato dividendo $m$ per esso.
+
+In un algoritmo classico, questo processo richiede circa $\sqrt{m}$ divisioni di prova. Al contrario, l'algoritmo di Grover consente di velocizzare significativamente questa ricerca. Utilizzando un oracolo quantistico che verifica se un dato $x$ divide $m$ esattamente, possiamo applicare l'algoritmo di ricerca quantistica per identificare il divisore più piccolo in $ O(m^{1/4}) $ consultazioni dell'oracolo. Questo rappresenta un miglioramento quadratico rispetto al metodo classico. Per far funzionare l'algoritmo, è necessario costruire un circuito efficiente che implementi l'oracolo. Si inizia definendo una funzione:  
+\begin{equation*}
+	f(x) = 
+	\begin{cases} 
+		1 & \text{se } x \bmod m = 0, \\ 
+		0 & \text{altrimenti.}
+	\end{cases}
+\end{equation*}
+
+\pagebreak
+
+La funzione $f(x)$ indica se una divisione di prova ha successo. Grazie alla \textbf{computazione reversibile}, che consente di preservare le informazioni durante ogni trasformazione e garantisce l'invertibilità delle operazioni tramite l'aggiunta di registri ausiliari e modifiche al design delle porte logiche, è possibile progettare un circuito classico reversibile che trasforma $(x,q)$ in $(x,q \oplus f(x))$, dove $q$ è un registro di output inizialmente impostato a 0. 
+
+Questo circuito, preservando il legame biunivoco tra input e output caratteristico della computazione reversibile, può essere tradotto direttamente in un circuito quantistico che opera sui registri $\lvert x \rangle \lvert q \rangle$, producendo $\lvert x \rangle \lvert q \oplus f(x) \rangle$, come richiesto dall'oracolo. Non ci soffermeremo ulteriormente sulla computazione reversibile per una questione di brevità. 
+
+Quindi l’oracolo è un componente operativo costruito ad \textit{hoc} per problemi specifici, come la ricerca nell'algoritmo di Grover. La sua implementazione è legata al problema che si vuole risolvere ed è uno strumento essenziale per sfruttare i vantaggi dell'interferenza quantistica. 
+
+Alla fine l'oracolo può essere concepito come una \textbf{scatola nera} o come una \textbf{query}, in quanto agisce come un'entità che fornisce risposte definite a una determinata domanda. 
+
+L'esempio della fattorizzazione è concettualmente interessante, ma non pratico: ci sono algoritmi classici per la fattorizzazione che funzionano molto più velocemente della ricerca attraverso tutti i possibili divisori, ma soprattutto non compete con l'algoritmo si Shor. La complessità dell'algoritmo di Shor è $O(log(N)^{3})$, che è molto più veloce rispetto a qualsiasi algoritmo classico e a Grover (per numeri di grandi dimensioni). Tuttavia, questo esempio, illustra il modo generale in cui può essere applicato l'algoritmo di ricerca quantistica.
+
+\pagebreak
+
+\section{Iterazione di Grover}
+Avendo un registro di $n$ qubit, è possibile applicare una \textbf{porta di Hadamard} a ciascun qubit per portarli in uno stato di sovrapposizione. Così viene inizializzato il nostro algoritmo. La sequenza di operazioni successive viene definita \textbf{iterazione di Grover}. 
+
+L'iterazione di Grover \cite{Label18} è un'operazione che viene ripetuta più volte dall'algoritmo e che può essere formalizzata nel seguente modo:  
+\begin{equation*}
+	G = (2 \lvert \psi \rangle \langle \psi \rvert - Id) O
+\end{equation*}
+dove:
+\begin{itemize}
+	\item $\psi$ è lo stato quantistico attuale, che rappresenta la sovrapposizione di tutti gli stati possibili del sistema;
+	\item $Id$ è l'operatore identità;
+	\item $O$ è l'operatore oracolo che agisce sullo stato quantistico per identificare la soluzione del problema.
+\end{itemize}
+
+Possiamo interpretarla anche come una rotazione in uno spazio bidimensionale. Consideriamo due stati normalizzati: 
+
+\begin{equation*}
+	\lvert \alpha \rangle\ = \frac{1}{\sqrt{N-M}} \sum_{x \notin S} \lvert x \rangle\, \quad \quad \quad
+	\lvert \beta \rangle\  = \frac{1}{\sqrt{M}} \sum_{x \in S} \lvert x \rangle\,
+\end{equation*}
+dove \(S\) è l'insieme delle soluzioni. Dato che $ x =  \sum_{x \notin S} \lvert x \rangle\ + \sum_{x \in S} \lvert x \rangle\ $ e applicando la trasformazione di Hadamard, si ha che lo stato iniziale può essere espresso come:
+
+\begin{equation*}
+	\lvert \psi \rangle\ = \sqrt{\frac{N-M}{N}} \lvert \alpha \rangle\ + \sqrt{\frac{M}{N}} \lvert \beta \rangle\ 
+\end{equation*}
+
+$G$ agisce come una rotazione in questo piano di due dimensioni. Ogni volta che applichiamo l'oracolo e l'operazione di diffusione $ 2\lvert \psi \rangle \langle\ \psi \lvert - Id$, otteniamo delle riflessioni successive, che alla fine ci avvicinano sempre di più allo stato $\lvert \beta \rangle$, cioè alla soluzione del problema. 
+
+\pagebreak
+
+In pratica l'iterazione di Grover funziona così:
+\begin{enumerate}
+	\item Viene applicato l'oracolo, che "segna" (modificando la fase di $\pi$ e quindi moltiplicando per $-1$) lo stato che rappresenta la soluzione del problema, lasciando invariati gli altri stati. 
+	\item Viene applicata una trasformazione di Hadamard, per trasformare lo stato quantistico dalla base computazionale alla base di Fourier. Per amplificare la probabilità dello stato target, serve calcolare e applicare l'inversione rispetto alla media. Questo calcolo avviene naturalmente nella base di Fourier, dove la trasformazione è più semplice da eseguire. 
+	\item Successivamente, viene applicata una riflessione rispetto allo \textit{stato medio} (tramite l'operatore di diffusione: $2 \lvert \psi \rangle \langle \psi \lvert - Id$), che aumenta la probabilità di misurare la soluzione corretta, aumentando l'ampiezza dello stato marcato dall'oracolo. Invece gli stati non appartenenti alla soluzione vengono ridotti di ampiezza. 
+	\item Dopo la riflessione rispetto alla media, la trasformazione di Hadamard viene applicata una seconda volta per ritornare dalla base di Fourier alla base computazionale. Questo consente di riportare lo stato quantistico alla base originale in cui i risultati possono essere misurati e conservare gli effetti delle precedenti operazioni. Dopo di che si reitera interamente il processo per $R$ volte. 
+	\item Dopo un certo numero di iterazioni $R$, la probabilità di trovare la soluzione aumenta e, al termine dell'algoritmo, si misura lo stato quantistico, ottenendo la soluzione del problema.
+\end{enumerate}
+
+Per determinare quante iterazioni dell'algoritmo di Grover siano necessarie per far convergere lo stato quantistico iniziale $\lvert \psi \rangle$ verso la soluzione $\lvert \beta \rangle$, occorre analizzare la dinamica di evoluzione dello stato nel corso delle iterazioni \cite{Label19}.
+
+Lo stato iniziale del sistema è definito come:
+\[
+\lvert \psi \rangle = \sqrt{\frac{N-M}{N}} \lvert \alpha \rangle + \sqrt{\frac{M}{N}} \lvert \beta \rangle,
+\]
+dove $\lvert \alpha \rangle$ rappresenta lo stato di non-soluzione, e $\lvert \beta \rangle$ è lo stato corrispondente alla soluzione del problema. L'algoritmo di Grover utilizza una serie di operazioni per "ruotare" lo stato iniziale verso lo stato $\lvert \beta \rangle$. La rotazione angolare necessaria per portare lo stato da $\lvert \psi \rangle$ a $\lvert \beta \rangle$ è data da un angolo di rotazione $\theta = \arccos(\sqrt{\frac{M}{N}})$, dove $M$ è il numero di soluzioni nel problema di ricerca e $N$ è il numero totale di possibili risultati. Essendo, sia $N$ che $M$, due numeri interi positivi, possiamo dire che $\theta$ è compreso tra $0$ e $\frac{\pi}{2}$ (compresi). 
+
+La funzione $\mathrm{CI}(x)$ restituisce l'intero più vicino al valore reale $x$, con la convenzione di arrotondare per difetto in caso di valori medi (es. $\mathrm{CI}(3.5) = 3$).
+
+\pagebreak
+
+Possiamo esprimere il numero di rotazioni $R$ necessarie per avvicinare lo stato $\lvert \psi \rangle$ a $\lvert \beta \rangle$ come:
+\begin{equation*}
+	R = \mathrm{CI}\left( \frac{\arccos(\sqrt{\frac{M}{N}})}{\theta} \right).
+\end{equation*}
+Ripetendo l’iterazione di Grover un numero di volte pari a $R$, quindi, lo stato $\lvert \psi \rangle$ viene ruotato di fino a raggiungere un angolo $\frac{\theta}{2} \leq \frac{\pi}{4}$ rispetto allo stato obiettivo $\lvert \beta \rangle$. A questo punto, l’osservazione dello stato del sistema nella base computazionale permette di ottenere una soluzione al problema di ricerca con una probabilità di successo almeno pari al $50\%$. 
+
+In determinate condizioni, è possibile migliorare ulteriormente questa probabilità. Ad esempio quando il numero di soluzioni $M$ è molto minore di $N$ ($M \ll N$), la probabilità di successo può essere ulteriormente migliorata, poiché l'angolo $\theta$ si approssima come:
+\begin{equation*}
+	\theta \approx \sin(\theta) \approx 2 \sqrt{\frac{M}{N}}.
+\end{equation*}
+In questo caso, l'errore angolare massimo nello stato finale è pari a $\frac{\theta}{2} \approx \sqrt{\frac{M}{N}}$, il che implica una probabilità di errore di almeno $\frac{M}{N}$.
+
+Si osservi che il numero di iterazioni $R$ dipende solo dal numero di soluzioni $M$, ma non dall’identità delle soluzioni stesse. Pertanto, una volta conosciuto il valore di $M$, è possibile applicare l'algoritmo di Grover per trovare la soluzione senza bisogno di ulteriori informazioni sulle soluzioni specifiche. 
+
+La formula di $R$ sopra riportata fornisce un'espressione esatta per il numero di chiamate all'oracolo necessarie per eseguire l'algoritmo di ricerca, ma sarebbe utile disporre di una versione semplificata che riassuma il comportamento essenziale di $R$. 
+
+Per ottenere un limite superiore approssimato, notiamo che dalla relazione $R = \mathrm{CI}\left( \frac{\arccos(\sqrt{M/N})}{\theta} \right)$ si ha che:
+\[
+R \leq \lceil \frac{\pi}{2\theta} \rceil,
+\]
+dove $\theta$ rappresenta l'angolo di rotazione. Questo perché al massimo la funzione arcoseno può raggiungere un valore di $\frac{\pi}{2}$. 
+
+\pagebreak
+
+Utilizzando il limite inferiore per $\theta$ e assumendo che $M \leq \frac{N}{2}$, si ottiene:
+$
+\frac{\theta}{2} \geq \sin(\frac{\theta}{2}) = \sqrt{\frac{M}{N}},
+$
+da cui si deduce il limite superiore sul numero di iterazioni necessarie:
+$
+R \leq \left\lceil \frac{\pi}{4} \sqrt{\frac{N}{M}} \right\rceil.
+$
+
+In altre parole, il numero di iterazioni $R$ richieste per ottenere una soluzione con alta probabilità cresce come $O(\sqrt{N/M})$, comportando così un miglioramento quadratico rispetto al metodo classico che richiederebbe $O(N/M)$ chiamate all'oracolo per risolvere il problema di ricerca.
+
+Possiamo quindi approssimare il numero di iterazioni attraverso la formula:
+\begin{equation*}
+	R = \left\lceil \frac{\pi}{4} \sqrt{\frac{N}{M}} \right\rceil
+\end{equation*}
+
+Cosa succede quando più della metà degli elementi sono soluzioni al problema di ricerca, cioè quando $M \geq \frac{N}{2}$?  
+
+L'angolo $\theta$ tra $\lvert \psi \rangle$ e $\lvert \alpha \rangle$ è definito dalla relazione:
+\begin{equation*}
+	\sin \theta = 2 \sqrt{\frac{M}{N} \frac{N - M}{N}} = 2 \frac{\sqrt{M(N-M)}}{N} 
+\end{equation*}
+Questo deriva dal calcolo della probabilità di trovare lo stato iniziale nel sottospazio target e nel sottospazio ortogonale $\lvert \alpha \rangle$ (rispetto a $\lvert \beta \rangle$), con la normalizzazione del sistema quantistico. 
+
+Prendendo l’arcoseno per ottenere l’angolo $\theta$ si ha:
+\begin{equation*}
+	\theta = \arcsin \left( 2 \frac{\sqrt{M(N-M)}}{N}  \right)
+\end{equation*}
+
+Da quest'ultima espressione, osserviamo che l'angolo $\theta$ diventa più piccolo man mano che $M$ varia da $\frac{N}{2}$ a $N$. Di conseguenza, il numero di iterazioni richieste dall'algoritmo di ricerca aumenta con $M$, per $M \geq \frac{N}{2}$.  
+
+Questa è una proprietà poco intuitiva per un algoritmo di ricerca: ci aspettiamo che il problema diventi più facile da risolvere quando il numero di soluzioni aumenta, non il contrario! 
+
+\pagebreak
+
+Se $M \geq \frac{N}{2}$ si può aggirare il problema usando uno di questi due metodi.  
+\begin{itemize}
+	\item Possiamo semplicemente selezionare un elemento a caso dallo spazio di ricerca e verificare se è una soluzione utilizzando l'oracolo. Questo approccio ha una probabilità di successo di almeno $50\%$, e richiede una sola consultazione dell'oracolo. Lo svantaggio è che potremmo non conoscere in anticipo il numero di soluzioni $M$.  
+	\item L'idea è di raddoppiare il numero di elementi nello spazio di ricerca aggiungendo $N$ elementi extra, nessuno dei quali è una soluzione. Di conseguenza, meno della metà degli elementi nel nuovo spazio di ricerca saranno soluzioni.  
+\end{itemize}
+
+Questo viene realizzato aggiungendo un singolo qubit all'indice di ricerca, raddoppiando il numero di elementi da cercare a $2N$. 
+
+Il nuovo problema di ricerca ha solo $M$ soluzioni su $2N$ elementi, quindi eseguendo l'algoritmo di ricerca, vediamo che al massimo sono richieste:
+\begin{equation*}
+	R = \frac{\pi}{4} \sqrt{\frac{2N}{M}}
+\end{equation*}
+
+E nel caso in cui non conosciamo $M$? Come facciamo a stimare $R$?
+
+Non approfondiremo molto questo caso. Diremo solo che esiste un algoritmo di \textbf{Quantum Counting} che se integrato all'algoritmo di Grover è in grado di stimare il numero $M$ di soluzioni. 
+
+In particolare, Quantum Counting si basa sulla \textbf{trasformata quantistica di Fourier} per ottenere una stima del valore di $M$. La tecnica si affida all'\textbf{interferenza} per ottenere informazioni statistiche sul numero di soluzioni a partire dall'oracolo di Grover, senza bisogno di esplorare ogni singola soluzione.  
+
+\section{Applicazione dell'Algoritmo di Grover}
+Consideriamo un sistema composto da 3 qubit. Lo stato del sistema può essere rappresentato come una sovrapposizione lineare di tutti gli $N=2^{3}=8$ stati, espressa dalla seguente equazione:
+\begin{equation*}
+	\lvert \psi \rangle = \alpha_{0} \lvert 000 \rangle + \alpha_{1} \lvert 001 \rangle + \alpha_{2} \lvert 010 \rangle + \alpha_{3} \lvert 011 \rangle + \alpha_{4} \lvert 100 \rangle + \alpha_{5} \lvert 101 \rangle + \alpha_{6} \lvert 110 \rangle + \alpha_{7} \lvert 111 \rangle
+\end{equation*}
+dove $\alpha_{i}$ è l’ampiezza dello stato $\lvert i \rangle$. Possiamo rappresentare quindi $N=2^{3}=8$ stati.
+
+Supponiamo di voler identificare, utilizzando l'algoritmo di Grover, uno specifico elemento del database rappresentato dallo stato $\lvert 011 \rangle$. Questo stato è l'obiettivo della nostra ricerca.
+
+\pagebreak
+
+Applicando la trasformazione di Hadamard, avremo che:
+\begin{equation*}
+	\alpha_{i} = \frac{1}{\sqrt{8}} = \frac{1}{2\sqrt{2}} \quad \forall i = {0, 1, \dots, 7} 
+\end{equation*}
+
+Nel contesto dell'algoritmo di Grover, il numero di stati target $M$ è pari a $1$, poiché il risultato desiderato è un unico stato. D'altra parte, il numero totale di stati $N$ è pari ad $8$. Poiché $M \leq \frac{N}{2}$, stimiamo il numero di iterazioni:
+\begin{equation*}
+	R = \left\lceil \frac{\pi}{4} \sqrt{\frac{8}{1}} \right\rceil = \left\lceil \frac{\pi}{4} \cdot 2 \cdot \sqrt{2} \right\rceil = \left\lceil \frac{\pi}{2} \cdot \sqrt{2} \right\rceil \approx \left\lceil 2.22 \right\rceil = 2
+\end{equation*}
+
+Applichiamo l'interazione di Grover al sistema
+\begin{equation*}
+	G \lvert \psi \rangle = (2 \lvert \psi \rangle \langle \psi \rvert - Id) O \lvert \psi \rangle
+\end{equation*}
+
+Il primo passo è usare l'oracolo per cambiare segno all’ampiezza dello stato $\lvert 011 \rangle$. Ponendo $\lvert x \rangle = O \lvert \psi \rangle$, abbiamo: 
+\begin{equation*}
+	\lvert x \rangle = \frac{1}{2\sqrt{2}} \lvert 000 \rangle + \frac{1}{2\sqrt{2}} \lvert 001 \rangle + \frac{1}{2\sqrt{2}} \lvert 010 \rangle - \frac{1}{2\sqrt{2}} \lvert 011 \rangle + \frac{1}{2\sqrt{2}} \lvert 100 \rangle + \frac{1}{2\sqrt{2}} \lvert 101 \rangle + \frac{1}{2\sqrt{2}} \lvert 110 \rangle + \frac{1}{2\sqrt{2}} \lvert 111 \rangle 
+\end{equation*}
+
+Dopo di che si applica l'operatore di diffusione $2 \lvert \psi \rangle \langle \psi \rvert - Id$ al vettore $\lvert x \rangle$. 
+
+Possiamo esprimere $\lvert x \rangle$ come la somma dello stato iniziale del sistema $\lvert \psi \rangle$ e una componente aggiuntiva che riflette l'effetto dell'oracolo. In pratica:
+\begin{equation*}
+	\lvert x \rangle = \lvert \psi \rangle - \frac{2}{2\sqrt{2}} \lvert 011 \rangle
+\end{equation*}
+
+Pertanto:
+\begin{equation*}
+	G \lvert \psi \rangle = (2 \lvert \psi \rangle \langle \psi \rvert - Id) \cdot (\lvert \psi \rangle - \frac{2}{2\sqrt{2}} \lvert 011 \rangle) = 2 \lvert \psi \rangle \langle \psi \mid \psi \rangle 
+	- \lvert \psi \rangle 
+	- \frac{2}{\sqrt{2}} \lvert \psi \rangle \langle \psi \mid 011 \rangle 
+	+ \frac{1}{\sqrt{2}} \lvert 011 \rangle
+\end{equation*}
+
+$\langle \psi \mid \psi \rangle$ è un prodotto scalare di $\lvert \psi \rangle$ con se stesso. Questo è semplicemente la norma quadrata dello stato $\lvert \psi \rangle$, che deve essere 1 per un sistema quantistico normalizzato.
+
+\begin{equation*}
+	\langle \psi \mid \psi \rangle = \left( \frac{1}{\sqrt{8}} \right)^2 \sum_{x=0}^{7} \langle x \mid x \rangle = \frac{1}{8} \sum_{x=0}^{7} 1 = 1
+\end{equation*}
+
+\pagebreak
+
+Quando calcoliamo il prodotto scalare $ \langle \psi \mid 011 \rangle $, stiamo cercando di ottenere la proiezione dello stato $ \lvert \psi \rangle $ su $ \lvert 011 \rangle $, ossia quanto lo stato $ \lvert \psi \rangle $ "contiene" $ \lvert 011 \rangle $. 
+
+Ogni prodotto scalare tra $ \langle x \mid 011 \rangle $ è 0, tranne quando $ x = 011 $, poiché lo stato $ \lvert 011 \rangle $ è ortogonale a tutti gli altri stati della base computazionale tranne se stesso. Quindi, il termine che conta è: $ \langle 011 \mid 011 \rangle = 1 $. Di conseguenza:
+
+\begin{equation*}
+	\langle \psi \mid 011 \rangle = \frac{1}{\sqrt{8}} \cdot 1 = \frac{1}{2\sqrt{2}} 
+\end{equation*}
+
+Questo è il prodotto scalare tra $ \lvert \psi \rangle $ e $ \lvert 011 \rangle $. Il valore che otteniamo, $ \frac{1}{\sqrt{8}} $, è proprio il coefficiente con cui lo stato $ \lvert 011 \rangle $ appare nella sovrapposizione di $ \lvert \psi \rangle $.
+
+Ritorniamo a dove eravamo prima:
+\begin{equation*}
+	G \lvert \psi \rangle = \dots = 2 \lvert \psi \rangle - \lvert \psi \rangle - \frac{2}{\sqrt{2}} \cdot 	\frac{1}{\sqrt{2}}\cdot \lvert \psi \rangle + \frac{1}{\sqrt{2}} \lvert 011 \rangle = \lvert \psi \rangle - \frac{1}{2} \lvert \psi \rangle + \frac{1}{\sqrt{2}} \lvert 011 \rangle = \frac{1}{2} \lvert \psi \rangle + \frac{1}{\sqrt{2}} \lvert 011 \rangle
+\end{equation*}
+
+Prendendo come risultato della prima iterazione di Grover $\lvert \psi_{1} \rangle$ abbiamo:
+\begin{equation*}
+	\lvert \psi_{1} \rangle = G \lvert \psi \rangle = \frac{1}{4 \sqrt{2}} \lvert 000 \rangle + \frac{1}{4 \sqrt{2}} \lvert 001 \rangle + \frac{1}{4 \sqrt{2}} \lvert 010 \rangle + \frac{5}{4 \sqrt{2}} \lvert 011 \rangle +
+\end{equation*}
+\begin{equation*}
+	+ \frac{1}{4 \sqrt{2}} \lvert 100 \rangle + \frac{1}{4 \sqrt{2}} \lvert 101 \rangle + \frac{1}{4 \sqrt{2}} \lvert 110 \rangle + \frac{1}{4 \sqrt{2}} \lvert 111 \rangle
+\end{equation*}
+
+
+Dobbiamo fare una seconda iterazione di Grover: 
+\begin{equation*}
+	\lvert \psi_{2} \rangle = G \lvert \psi_{1} \rangle = (2 \lvert \psi \rangle \langle \psi \rvert - Id) O \lvert \psi_{1} \rangle
+\end{equation*}
+Ci risparmiamo i calcoli, visto che sono analoghi a quelli visti precedentemente con la prima iterazione. Ci limitiamo a dire che, preso $y = O \lvert \psi_{1} \rangle$, abbiamo: 
+\begin{equation*}
+	\lvert y \rangle = \frac{1}{2} \lvert \psi \rangle - \frac{3}{2 \sqrt{2}} \lvert 011 \rangle
+\end{equation*}
+Infine il risultato che a noi interessa è: 
+\begin{equation*}
+	\lvert \psi_{2} \rangle = -\frac{1}{8 \sqrt{2}} \lvert 000 \rangle - \frac{1}{8 \sqrt{2}} \lvert 001 \rangle - \frac{1}{8 \sqrt{2}} \lvert 010 \rangle + \frac{11}{8 \sqrt{2}} \lvert 011 \rangle - \frac{1}{8 \sqrt{2}} \lvert 100 \rangle - \frac{1}{8 \sqrt{2}} \lvert 101 \rangle 
+\end{equation*}
+\begin{equation*}
+	- \frac{1}{8 \sqrt{2}} \lvert 110 \rangle - \frac{1}{8 \sqrt{2}} \lvert 111 \rangle
+\end{equation*}
+
+\pagebreak
+Abbiamo trovato il coefficiente di $\lvert 011 \rangle$, ossia $\alpha_{3} = \frac{11}{8 \sqrt{2}}$. Possiamo calcolare la probabilità di misurare lo stato corrispondente alla soluzione corretta: 
+\begin{equation*}
+	|\frac{11}{8 \sqrt{2}}|^{2} = \frac{121}{128} \approx 94.5\%
+\end{equation*}
+Di conseguenza, la probabilità di trovare uno stato errato è circa il $5,5\%$. 
+
+Un $94.5\%$ di possibilità di successo è circa 17 volte la probabilità di errore.  
+
+\section{Algoritmo di Grover con Quantum Annealing}
+L'algoritmo di Grover è concepito per essere implementato all'interno del paradigma del \textbf{Gate-Based Quantum Computing}, sfruttando circuiti quantistici che utilizzano porte logiche come quella di Hadamard. Tuttavia, nonostante questa connessione intrinseca con i circuiti quantistici basati su porte, è possibile adattare l'algoritmo di Grover anche al paradigma del \textbf{Quantum Annealing} \cite{Label20}. 
+
+Nel \textit{Quantum Annealing}, l'evoluzione dinamica del sistema è descritta dall'Hamiltoniano totale, la cui formulazione matematica è data dall'espressione:
+\begin{equation*}
+	H(t)=s(t) \cdot H_{f} + [1-s(t)] \cdot H_{i}
+\end{equation*}
+L'implementazione dell'algoritmo di Grover all'interno di questo paradigma richiede una progettazione accurata dell'Hamiltoniano iniziale $H_{i}$, dell'Hamiltoniano finale $H_{f}$ e della scheduling function $s(t)$ che regola la transizione tra $H_{i}$ e $H_{f}$. 
+
+Diciamo subito che nel \textit{Quantum Annealing}, l'oracolo non è implementato in modo diretto come nel caso Gate-Based, dove è definito come un'operazione unitaria (un "giro" del circuito quantistico). Qui, l'approccio è più legato all'evoluzione del sistema attraverso un Hamiltoniano, e l'oracolo deve essere incorporato in questo Hamiltoniano di evoluzione.
+
+Iniziamo costruendo l'Hamiltoniano iniziale. Definiamolo in modo che $\lvert \psi \rangle$ sia il suo stato fondamentale. Lo stato fondamentale di un Hamiltoniano $H$ è il vettore nello spazio di Hilbert associato al valore più basso dell'energia (autovalore minimo) del sistema. Definiamo $\lvert \psi \rangle$ come una sovrapposizione uniforme di tutti i vettori base $\lvert i \rangle _{n}$ in uno spazio di Hilbert di dimensione $N=2^{n}$ (vedi la \textbf{trasformazione di Hadamard}):
+\begin{equation*}
+	\lvert \psi \rangle \equiv \frac{1}{\sqrt{N}} \sum_{i=0}^{N-1} \lvert i \rangle_{n}
+\end{equation*}
+
+\pagebreak
+
+Torniamo all'implementazione. L'Hamiltoniano iniziale è definito come:
+\begin{equation*}
+	H_{i} = Id - \lvert \psi \rangle \langle \psi \rvert
+\end{equation*}
+
+dove:
+\begin{itemize}
+	\item $Id$ rappresenta l'operatore identità;
+	\item $\lvert \psi \rangle \langle \psi \rvert$ è il proiettore sullo stato $\lvert \psi \rangle$, ossia un operatore che lascia invariato $\lvert \psi \rangle$ e annulla ogni vettore ortogonale a $\lvert \psi \rangle$.
+\end{itemize}
+
+Questa costruzione garantisce che:
+\begin{itemize}
+	\item $ \lvert \psi \rangle $ sia uno stato proprio di $H_{i}$ con autovalore $0$:
+	\[
+	H_{i} \lvert \psi \rangle = \left( Id - \lvert \psi \rangle \langle \psi \rvert \right) \lvert \psi \rangle = \lvert \psi \rangle - \lvert \psi \rangle = 0.
+	\]
+	\item Gli stati ortogonali a $ \lvert \psi \rangle $ abbiano autovalore $1$. Se $\lvert \phi \rangle$ è uno stato ortogonale a $\lvert \psi \rangle$, allora:
+	\[
+	\langle \psi \lvert \phi \rangle = 0 \implies \lvert \psi \rangle \langle \psi \lvert \phi \rangle = 0 \implies H_{i} \lvert \phi \rangle = \lvert \phi \rangle.
+	\]
+\end{itemize}
+In pratica, la costruzione dell'Hamiltoniano iniziale non differisce sostanzialmente da quanto già visto in precedenza. Infatti, tutti i qubit del sistema sono ora in uno stato di sovrapposizione equiprobabile, che rappresenta sia la costruzione dell'Hamiltoniano iniziale, sia l'inizializzazione dell'algoritmo di Grover. 
+
+Passiamo a definire l'Hamiltoniano finale:
+\begin{equation*}
+	H_{f} = Id - \lvert \beta \rangle \langle \beta \rvert
+\end{equation*}
+dove $\lvert \beta \rangle$ rappresenta lo stato fondamentale, con autovalore $0$, di $H_{f}$, ergo l'elemento da cercare. Ciò è analogo a quello che abbiamo fatto con l'Hamiltoniano iniziale.
+
+Abbiamo visto che lo stato iniziale può essere espresso in questo modo:
+\begin{equation*}
+	\lvert \psi \rangle\ = \sqrt{\frac{N-M}{N}} \lvert \alpha \rangle\ + \sqrt{\frac{M}{N}} \lvert \beta \rangle\ 
+\end{equation*}
+dove:  
+\begin{itemize}
+	\item $\lvert \alpha \rangle$ rappresenta la sovrapposizione normalizzata di tutti gli stati che non sono soluzioni del problema ($x \notin S$); 
+	\item $\lvert \beta \rangle$ rappresenta la sovrapposizione normalizzata di tutti gli stati che sono soluzioni del problema ($x \in S$).  
+\end{itemize}
+
+\pagebreak
+
+Questi due stati formano una base in un sottospazio bidimensionale, in cui l'iterazione di Grover opera come una rotazione, progressivamente orientando lo stato iniziale $\lvert \psi \rangle$ verso $\lvert \beta \rangle$, cioè verso la soluzione. 
+
+Possiamo esprimere $\lvert \alpha \rangle$ in questo modo:
+\begin{equation*}
+	\lvert \alpha \rangle = \sqrt{\frac{N}{N-M}} \lvert \psi \rangle - \sqrt{\frac{M}{N-M}} \lvert \beta \rangle
+\end{equation*}
+Quando applichiamo l'iterazione di Grover, essa si traduce in una rotazione nel piano generato da $\lvert \alpha \rangle$ e $\lvert \beta \rangle$. Più precisamente, ogni iterazione effettua due riflessioni successive: la prima rispetto al sottospazio ortogonale a $\lvert \beta \rangle$, operata dall'oracolo $O$, e la seconda rispetto allo stato iniziale $\lvert \psi \rangle$, tramite l'operazione di diffusione $2 \lvert \psi \rangle \langle \psi \rvert - Id$. Queste riflessioni, combinate, producono una rotazione che riduce progressivamente l'angolo tra lo stato corrente e $\lvert \beta \rangle$. 
+
+\textbf{Per semplificare i calcoli poniamo M=1}.
+
+Quindi: 
+\begin{equation*}
+	H(t)=s(t) \cdot H_{f} + [1-s(t)]\cdot H_{i}
+\end{equation*}
+
+Introduciamo un importante concetto che useremo più avanti. La \textbf{Legge di Born} ci dice la probabilità di ottenere un risultato specifico quando si misura un sistema quantistico. Se un sistema è in uno stato quantistico $\lvert \psi \rangle$, e si misura una grandezza osservabile associata ad uno stato $\lvert \beta \rangle$, la probabilità di ottenere il risultato associato a $\lvert \beta \rangle$ è data da:
+
+\begin{equation*}
+	P(\beta) = |\langle \beta | \psi \rangle|^2.
+\end{equation*}
+
+Questa espressione dice che la probabilità di osservare lo stato $\lvert \beta \rangle$ durante una misura del sistema nello stato $\lvert \psi\rangle$ è il quadrato del modulo del prodotto scalare tra i due stati.
+
+Nel nostro caso: 
+\begin{equation*}
+	P(\beta) = |\langle \beta \mid \psi \rangle|^2 = \left| \frac{1}{\sqrt{N}} \sum_{i=0}^{N-1} \langle \beta | i \rangle \right|^2 = \left| \frac{1}{\sqrt{N}} \right|^2 = \frac{1}{N}.
+\end{equation*}
+Questo perché, se $\lvert \beta \rangle$ è uno degli stati base $\lvert j\rangle$, allora $\langle \beta \mid i \rangle$ è 1 solo quando $i = j$ e 0 altrimenti. Pertanto, il prodotto scalare sarà: $\frac{1}{\sqrt{N}}$. Questo perché c'è solo un singolo termine non nullo nella somma, quando $i = \beta$, e il suo valore è $\frac{1}{\sqrt{N}}$, che poi elevato al quadrato sarà $\frac{1}{N}$.
+
+\pagebreak
+
+Notiamo che $\langle \beta | \alpha \rangle = 0$, $(\alpha|\alpha) = 1$. Inoltre, usando $\langle \beta | \psi \rangle = \frac{1}{\sqrt{N}}$ (come abbiamo visto con la legge di Born) e esprimendo $\lvert \psi \rangle$ come combinazione lineare di $\lvert \alpha \rangle$ e $\lvert \beta \rangle$, otteniamo:
+\begin{align*}
+	H_{i} \lvert \alpha \rangle &= \frac{1}{N} \lvert \alpha \rangle - \frac{\sqrt{N-1}}{N} \lvert \beta \rangle, \\
+	H_{i} \lvert \beta \rangle &= \frac{N-1}{N} \lvert \beta \rangle - \frac{\sqrt{N-1}}{N} \lvert \alpha \rangle, \\
+	H_{f} \lvert \alpha \rangle &= \lvert \alpha \rangle, \\
+	H_{f} \lvert \beta \rangle &= 0.
+\end{align*}
+
+Per analizzare l'evoluzione dell'Hamiltoniano totale nel tempo, ci possiamo concentrare solo sul sottospazio bidimensionale $\{ \lvert \alpha \rangle; \lvert \beta \rangle \}$. In questo sottospazio l'Hamiltoniano agisce come un generatore di rotazioni. L'Hamiltoniano totale, in questo sottospazio, può essere rappresentato come una matrice quadrata: 
+
+\begin{equation*}
+	\begin{pmatrix}
+		\langle \alpha \lvert H(t) \rvert \alpha\rangle & \langle \alpha \lvert H(t) \rvert \beta \rangle \\
+		\langle \beta \lvert H(t) \rvert \alpha \rangle & \langle \beta \lvert H(t) \rvert \beta \rangle
+	\end{pmatrix}
+\end{equation*}
+
+Risolvendo queste operazioni, la matrice completa nel sottospazio è:
+\begin{equation*}
+	\hat{H}(t) =
+	\begin{pmatrix}
+		s(t) + \frac{1 - s(t)}{N} & -\frac{[1 - s(t)]\sqrt{N-1}}{N} \\
+		-\frac{[1 - s(t)]\sqrt{N-1}}{N} & \frac{[1 - s(t)](N-1)}{N}
+	\end{pmatrix}.
+\end{equation*}
+La matrice di $\hat{H}$ può essere separata in una parte diagonale e una parte non diagonale. La parte diagonale è proporzionale all'identità e rappresenta una trasformazione scalare, mentre la parte non diagonale descrive la rotazione tra gli stati, che dipende dai parametri $s(t)$ e $N$ (poiché $M=1$). Così facendo la matrice può essere espressa come:
+\begin{equation*}
+	\hat{H}(t)= 
+	\frac{1}{2}
+	\begin{pmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{pmatrix}
+	- \frac{1}{2}
+	\begin{pmatrix}
+		\frac{2[s(t) - 1]}{N} - 2s(t) + 1 & 2[1 - s(t)]\sqrt{\frac{N - 1}{N}} \\
+		2[1 - s(t)]\sqrt{\frac{N - 1}{N}} & \frac{2[1 - s(t)]}{N} + 2s(t) - 1
+	\end{pmatrix}.
+\end{equation*}
+
+Per caratterizzare la forza della rotazione in funzione dei parametri $s(t)$ e $N$, introduciamo il parametro $g(t)$. Questo parametro è definito come:
+\begin{equation*}
+	g(t) = \sqrt{\frac{4s(t)[s(t)-1](N-1)}{N} + 1}
+\end{equation*}
+Questo parametro è utilizzato per normalizzare la rotazione e ottenere i coseni e seni dell'angolo di rotazione, ma non è solo questo. Esso rappresenta anche il gap energetico tra $\lvert \alpha \rangle$ e $\lvert \beta \rangle$.
+
+\pagebreak
+
+Successivamente, possiamo definire i parametri angolari associati alla rotazione come segue:
+\begin{align*}
+	\cos\theta(t) &= \frac{1 - 2s(t) + \frac{2[s(t)-1]}{N}}{g(t)} \\
+	\sin\theta(t) &= \frac{2[1-s(t)]}{g(t)} \sqrt{\frac{N-1}{N}}
+\end{align*}
+
+In questo modo, l'Hamiltoniano $\hat{H}(t)$ può essere riscritto come:
+\begin{equation*}
+	\hat{H}(t) = 
+	\frac{1}{2} 
+	\begin{pmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{pmatrix}
+	- \frac{g(t)}{2}
+	\begin{pmatrix}
+		\cos \theta(t) & \sin \theta(t) \\
+		\sin \theta(t) & -\cos \theta(t)
+	\end{pmatrix}.
+\end{equation*}
+
+Se $s(t)$ una funzione lineare, il gap raggiunge il minimo quando $t=\frac{T}{2}$ e quindi $s=\frac{1}{2}$. 
+\begin{equation*}
+	g_{min} = g(\frac{1}{2}) = \frac{1}{\sqrt{N}}
+\end{equation*}
+Poiché il tempo di evoluzione è approssimativamente dato da $T \approx O\left(\frac{1}{g_{min}^2}\right)$, si potrebbe inizialmente concludere che il fattore di ritardo $T$ necessario è lineare, cioè $O(N)$. Tuttavia, conoscendo la funzione $g(t)$, possiamo ridurre il tempo di esecuzione a $O(\sqrt{N})$ \cite{Label21}.
+
+La formula $g(t)$ descrive come varia il gap energetico nel tempo, fornendo il valore del fattore di ritardo $T$ necessario in ogni istante. Questo consente di variare dinamicamente $T$, rispettando comunque le condizioni che garantiscono l'adiabaticità dell'evoluzione del sistema. Per ottenere un tempo di esecuzione $T \approx O(\sqrt{N})$, possiamo utilizzare la seguente scheduling function \cite{Label22}:
+\begin{equation*}
+	s(t) = \frac{1}{2} + \frac{1}{2\sqrt{N - 1}}  \tan \left( (2\frac{t}{T} - 1) \arctan \sqrt{N - 1} \right)
+\end{equation*}
+
+In questo modo, la formula completa per l'Hamiltoniano nel contesto dell'algoritmo di Grover, implementato tramite \textit{Quantum Annealing}, diventa:
+\begin{align*}
+	H(t) = [\frac{1}{2} + \frac{1}{2\sqrt{N - 1}}  \tan \left( (2 \frac{t}{T} - 1) \arctan \sqrt{N - 1} \right)][Id - \lvert \beta \rangle \langle \beta \rvert] - \\
+	[-\frac{1}{2} + \frac{1}{2\sqrt{N - 1}}  \tan \left( (2 \frac{t}{T} - 1) \arctan \sqrt{N - 1} \right)][Id - \lvert \psi \rangle \langle \psi \rvert]
+\end{align*}
+
+Per quanto riguarda invece il tempo di evoluzione $T$, possiamo calcolarlo nel seguente modo: 
+\begin{equation*}
+	T \approx \frac{N}{\sqrt{N-1}} arctan(\sqrt{N-1}) \rightarrow T \approx \frac{\pi}{2} \sqrt{N}
+\end{equation*}
+
+\pagebreak
+
+I risultati presentati si generalizzano facilmente nel caso in cui esistano $M \geq 1$ soluzioni. 
+
+Invece di evolvere in un sottospazio bidimensionale, il sistema evolve in un sottospazio di dimensione $M+1$, generato da $\{ \lvert \alpha \rangle; \lvert \beta \rangle \}$. L'Hamiltoniano totale può essere scritto in questa base come:
+\begin{equation*}
+	H(t) = 
+	\begin{pmatrix}
+		[1-s(t)]\left(1-\frac{1}{N}\right) & -\frac{[1-s(t)]}{N} & \cdots & -([1-s(t)])\sqrt{\frac{N-M}{N}} \\
+		-\frac{[1-s(t)]}{N} & ([1-s(t)])\left(1-\frac{1}{N}\right) & \cdots & -([1-s(t)])\sqrt{\frac{N-M}{N}} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		-([1-s(t)])\sqrt{\frac{N-M}{N}} & -([1-s(t)])\sqrt{\frac{N-M}{N}} & \cdots & s(t) + ([1-s(t)])\left(1-\frac{N-M}{N}\right)
+	\end{pmatrix}.
+\end{equation*}
+
+Questo Hamiltoniano può essere facilmente diagonalizzato. Si trova che ci sono $M-1$ autovalori uguali a $[1-s(t)]$ e due autovalori:
+\begin{equation*}
+	\lambda_{1,2}(t) = \frac{1}{2} \pm \frac{1}{2} \sqrt{[1-2s(t)]^2 + \frac{4M}{N}s(t)[1-s(t)]}
+\end{equation*}
+che determinano il minimo gap rilevante:
+\begin{equation*}
+	g(t) = \sqrt{[1-2s(t)]^2 + \frac{4M}{N}s(t)[1-s(t)])}
+\end{equation*}
+Gli altri $N-M-1$ autovalori sono irrilevanti per l'evoluzione adiabatica. 
+
+Come nel caso $M=1$, il gap raggiunge il minimo quando $t=\frac{T}{2}$ e quindi $s(\frac{T}{2})=\frac{1}{2}$, dove:
+\begin{equation*}
+	g_{min} \approx \sqrt{\frac{M}{N}}
+\end{equation*}
+che si riduce al caso di un singolo stato marcato per $M=1$. Pertanto, l'evoluzione adiabatica con il programma ottimale descritto nella sezione precedente porta a un tempo totale:
+\begin{equation*}
+	T \approx O(\sqrt{\frac{N}{M}})
+\end{equation*}
+
+\pagebreak
+
+\section{Perché implementare l'Algoritmo di Grover con il Quantum Annealing}
+Dopo aver introdotto l'algoritmo di Grover e aver discusso la sua implementazione attraverso il \textit{Quantum Annealing}, dimostrando che raggiunge una complessità $O(\sqrt{N})$, ci poniamo una domanda tanto banale quanto fondamentale. Perché implementare l'algoritmo di Grover con il Quantum Annealing?
+
+In primo luogo, perché così l'algoritmo sfrutta la dinamica di evoluzione continua, che si adatta perfettamente alle tecnologie di computer, come quelli della D-Wave, dove il sistema quantistico evolve attraverso un Hamiltoniano adiabatico. Questa evoluzione permette di risolvere i problemi in modo più semplice rispetto ai modelli basati su porte, i quali richiedono la costruzione di circuiti quantistici complessi che operano in maniera discreta e con un numero maggiore di porte logiche. 
+
+In secondo luogo l'uso del \textit{Quantum Annealing} consente di ridurre la necessità di una precisa temporizzazione delle operazioni quantistiche. Nella versione Gate-Based dell'algoritmo di Grover, le iterazioni devono essere regolate con precisione, e un errore temporale potrebbe compromettere significativamente l'efficacia dell'algoritmo. Al contrario, con il \textit{Quantum Annealing}, l'evoluzione del sistema è governata da un parametro continuo che, se progettato correttamente, garantisce una ricerca adiabaticamente ottimale senza dover necessariamente gestire la complessità di una sequenza di porte discrete. Questo approccio fornisce una robustezza maggiore rispetto a piccoli errori nelle implementazioni hardware, come quelli che potrebbero verificarsi in un contesto di calcolo quantistico basato su porte.
+
+Infine, un vantaggio importante riguarda la scalabilità del sistema. Sebbene l'algoritmo di Grover, implementato tramite porte quantistiche, possa affrontare determinati problemi in modo efficace per un numero relativamente ridotto di qubit, il \textit{Quantum Annealing} è particolarmente utile per sistemi con un numero molto elevato di variabili, che sono tipici di molte applicazioni pratiche. La capacità del \textit{Quantum Annealing} di eseguire ottimizzazioni globali senza l'intervento manuale di operazioni logiche complesse rende questo approccio adatto a sistemi ad alta dimensione, con una complessità computazionale che cresce meno rapidamente rispetto alle tecniche basate su porte. 
+
+Finora, l'algoritmo di Grover nell’Adiabatic Quantum Computing è rimasto confinato alla teoria, privo di implementazioni pratiche. Tuttavia, studi recenti suggeriscono che il \textit{Quantum Annealing} potrebbe permetterne l'implementazione, aprendo nuove possibilità per l'ottimizzazione di problemi complessi, pur essendo ancora in fase preliminare di ricerca. Questo approccio potrebbe superare le limitazioni degli algoritmi quantistici attuali, offrendo vantaggi nella risoluzione di problemi complessi.

@@ -1,0 +1,83 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: chapters/Frontespizio.aux
+A level-1 auxiliary file: chapters/Dedica.aux
+A level-1 auxiliary file: chapters/Abstract.aux
+A level-1 auxiliary file: chapters/Capitolo1.aux
+A level-1 auxiliary file: chapters/Capitolo2.aux
+A level-1 auxiliary file: chapters/Capitolo3.aux
+A level-1 auxiliary file: chapters/Capitolo4.aux
+A level-1 auxiliary file: chapters/Capitolo5.aux
+A level-1 auxiliary file: chapters/Capitolo6.aux
+A level-1 auxiliary file: chapters/Capitolo7.aux
+A level-1 auxiliary file: chapters/Capitolo8.aux
+A level-1 auxiliary file: chapters/Appendice.aux
+The style file: plain.bst
+Database file #1: chapters/Bibliografia.bib
+Warning--to sort, need author or key in Label7.5
+Warning--empty author in Label7.5
+Warning--empty journal in Label7.5
+Warning--empty journal in Label22
+Warning--empty journal in Label0
+Warning--empty journal in Label0.5
+Warning--empty journal in Label15
+Warning--empty journal in Label9
+Warning--empty year in Label9
+Warning--empty journal in Label11
+Warning--empty year in Label11
+Warning--empty journal in Label12
+Warning--empty journal in Label12.5
+Warning--empty year in Label12.5
+Warning--empty journal in Label12.25
+Warning--empty year in Label12.25
+Warning--empty journal in Label12.75
+Warning--empty year in Label12.75
+Warning--empty journal in Label9.25
+Warning--empty year in Label9.25
+Warning--empty journal in Label11.5
+Warning--empty journal in Label8.5
+Warning--empty journal in Label8
+Warning--empty journal in Label21
+You've used 33 entries,
+            2118 wiz_defined-function locations,
+            665 strings with 7621 characters,
+and the built_in function-call counts, 9583 in all, are:
+= -- 959
+> -- 321
+< -- 18
++ -- 133
+- -- 96
+* -- 515
+:= -- 1562
+add.period$ -- 111
+call.type$ -- 33
+change.case$ -- 147
+chr.to.int$ -- 0
+cite$ -- 57
+duplicate$ -- 472
+empty$ -- 740
+format.name$ -- 96
+if$ -- 2081
+int.to.chr$ -- 0
+int.to.str$ -- 33
+missing$ -- 33
+newline$ -- 180
+num.names$ -- 64
+pop$ -- 183
+preamble$ -- 1
+purify$ -- 114
+quote$ -- 0
+skip$ -- 391
+stack$ -- 0
+substring$ -- 445
+swap$ -- 141
+text.length$ -- 18
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 132
+warning$ -- 24
+while$ -- 92
+width$ -- 35
+write$ -- 356
+(There were 24 warnings)

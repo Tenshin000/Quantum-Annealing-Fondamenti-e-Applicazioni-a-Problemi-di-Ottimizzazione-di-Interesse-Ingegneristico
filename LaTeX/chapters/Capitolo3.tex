@@ -1,0 +1,136 @@
+\chapter{Quantum Bit}
+\section{Dal Bit al Qubit}
+Nella computazione classica, il \textbf{bit} è l'unità fondamentale dell'informazione e può assumere esclusivamente uno dei due stati definiti: 0 o 1. In ambito quantistico, l'analogo del bit è il \textbf{quantum bit}, o \textbf{qubit}, un'entità che sfrutta le proprietà della meccanica quantistica per rappresentare e processare informazioni. 
+
+A differenza del bit classico, il qubit non è limitato a due stati distinti, ma può esistere in una sovrapposizione di entrambi gli stati base. Formalmente, lo stato di un qubit \cite{Label5} è descritto come: 
+\begin{equation*}
+	\lvert \psi \rangle = \alpha \lvert 0 \rangle + \beta \lvert 1 \rangle
+\end{equation*}
+
+Dove:
+\begin{itemize}
+	\item $\lvert 0 \rangle$ e $\lvert 1 \rangle$ rappresentano gli stati base del qubit rappresentati nella notazione di Dirac tramite i ket;
+	\item $\alpha$ e $\beta$ sono numeri complessi che rappresentano l'ampiezza di probabilità degli stati $\lvert 0 \rangle$ e $\lvert 1 \rangle$, rispettivamente. 
+\end{itemize}
+
+Le ampiezze devono rispettare la condizione $|\alpha|^2 + |\beta|^2 = 1$, che garantisce che la somma delle probabilità sia sempre pari a 1. 
+
+La rappresentazione dello stato del qubit si inserisce nel contesto del \textbf{primo postulato della meccanica quantistica}, secondo cui un sistema quantistico è descritto da un vettore di stato appartenente a uno spazio di Hilbert complesso. Questo vettore contiene tutte le informazioni relative al qubit, inclusa la probabilità di osservare specifici stati base durante una misurazione. 
+
+La realizzazione fisica di un qubit richiede l'impiego di un sistema quantistico che possa essere manipolato per rappresentare, controllare e misurare stati quantistici. Una delle implementazioni fisiche più comuni si basa sullo spin elettronico, ovvero il momento angolare intrinseco associato a un singolo elettrone. Gli elettroni sono intrappolati in strutture di semiconduttori, che sfruttano la tecnologia già esistente nel mondo dei chip classici.  In questo contesto, il qubit è codificato nei due possibili orientamenti dello spin dell'elettrone. 
+
+Gli stati $\lvert 0 \rangle$ e $\lvert 1 \rangle$ sono rappresentati, rispettivamente, dagli stati di spin "up" ($\uparrow$) e spin "down" ($\downarrow$). Lo spin può essere manipolato tramite campi magnetici o impulsi elettrici. Sebbene siano possibili diverse implementazioni fisiche dei qubit, nel contesto della presente analisi sul \textit{Quantum Annealing} si adotterà quella basata sullo spin elettronico. 
+
+\section{Proprietà del Qubit}
+Il qubit possiede proprietà intrinseche che derivano direttamente dai principi fondamentali della meccanica quantistica e che meritano un'analisi più approfondita.
+
+\subsection{Sovrapposizione}
+La prima proprietà fondamentale del qubit, l'abbiamo già introdotta ed è la \textbf{sovrapposizione} \cite{Label6}. Questa proprietà consente a un singolo qubit di rappresentare un insieme più ampio di informazioni rispetto a un bit classico, grazie alla possibilità di trovarsi in una sovrapposizione degli stati base 0 e 1. Tuttavia ciò non implica che sia possibile accedere simultaneamente a entrambi gli stati base durante un'operazione di misurazione. 
+
+In base al \textbf{terzo postulato della meccanica quantistica}, la misurazione di un qubit proietta lo stato quantistico in uno dei suoi stati base, distruggendo la sovrapposizione preesistente. In particolare, il risultato della misurazione sarà $0$ con probabilità $|\alpha|^2$, o $1$ con probabilità $|\beta|^2$. 
+
+Un esempio classico di stato di sovrapposizione di un qubit, fondamentale nel calcolo quantistico, è il seguente:
+\begin{equation*}
+	\lvert \psi \rangle = \frac{\lvert 0 \rangle +\lvert 1 \rangle}{\sqrt{2}}
+\end{equation*}
+Questo stato è noto come stato di sovrapposizione equiprobabile ed è una combinazione lineare in cui il qubit ha una probabilità del $50\%$ di collassare nello stato $\lvert 0 \rangle$ e una probabilità del $50\%$ di collassare nello stato $\lvert 1 \rangle$  quando viene misurato nella base computazionale. Il fattore $\frac{1}{\sqrt{2}}$ è necessario per soddisfare la condizione di normalizzazione: $|\alpha|^2 + |\beta|^2 = 1$. 
+
+\pagebreak 
+
+\subsection{Entanglement}
+L'\textbf{entanglement} è una delle proprietà più straordinarie della meccanica quantistica, che si manifesta quando due o più qubit vengono correlati in un modo che il loro stato complessivo non può essere descritto indipendentemente. Quando due o più qubit sono in uno stato di entanglement, lo stato di ciascun qubit dipende istantaneamente dallo stato dell'altro, indipendentemente dalla distanza che li separa, grazie alla natura non-locale della meccanica quantistica. Questo fenomeno, descritto da \textit{Einstein} come "spooky action at a distance", non ha equivalenti nel mondo classico. 
+
+Per comprendere meglio questo fenomeno, consideriamo il caso di due qubit descritti da uno spazio di Hilbert, che include tutti i possibili stati combinati. Gli stati base di due qubit possono essere scritti come: 
+\begin{align*}
+	\lvert 00 \rangle \text{  } \lvert 01 \rangle \text{  } \lvert 10 \rangle \text{  } \lvert 11 \rangle 
+\end{align*}
+
+Qualsiasi stato sovrapposto può essere descritto come:
+\begin{equation*}
+\lvert \psi \rangle = \alpha \lvert 00 \rangle + \beta \lvert 01 \rangle + \gamma \lvert 10 \rangle + \delta \lvert 11 \rangle
+\end{equation*}
+
+Tuttavia, nel caso dell'entanglement, lo stato complessivo del sistema non può essere scritto come un semplice prodotto di stati di ciascun qubit. Lo abbiamo visto con il \textbf{quarto postulato della meccanica quantistica}. 
+
+Gli \textbf{stati di Bell} rappresentano un esempio classico di stati entangled e sono definiti come stati di sovrapposizione massimale tra due qubit. Essi costituiscono il paradigma fondamentale per lo studio dell'entanglement quantistico. Gli stati di Bell, che sono i seguenti, rappresentano i più semplici esempi di stati entangled: 
+\\\\
+\begin{equation*}
+	\lvert \Phi^+ \rangle = \frac{1}{\sqrt{2}} \left( \lvert 00 \rangle + \lvert 11 \rangle \right)
+\end{equation*}
+\begin{equation*}
+	\lvert \Phi^- \rangle = \frac{1}{\sqrt{2}} \left( \lvert 00 \rangle - \lvert 11 \rangle \right)
+\end{equation*}
+\begin{equation*}
+	\lvert \Psi^+ \rangle = \frac{1}{\sqrt{2}} \left( \lvert 01 \rangle + \lvert 10 \rangle \right)
+\end{equation*}
+\begin{equation*}
+	\lvert \Psi^- \rangle = \frac{1}{\sqrt{2}} \left( \lvert 01 \rangle - \lvert 10 \rangle \right)
+\end{equation*}
+\\
+
+Quando si misura un sistema entangled, il processo di misurazione di un qubit influenza direttamente lo stato del secondo qubit. 
+
+\pagebreak
+
+In uno stato di Bell come \( \lvert \Phi^+ \rangle \) o \( \lvert \Phi^- \rangle \), i due qubit sono "allineati", ossia misurare uno stato come \( \lvert 0 \rangle \) implica che l'altro sarà misurato come \( \lvert 0 \rangle \), e se uno è \( \lvert 1 \rangle \), anche l'altro lo sarà. 
+In uno stato come \( \lvert \Psi^+ \rangle \) o  \( \lvert \Psi^- \rangle \), i due qubit sono in stati opposti: se misuriamo uno come \( \lvert 0 \rangle \), l'altro sarà \( \lvert 1 \rangle \) e viceversa. 
+
+In pratica gli stati di Bell descrivono come due qubit possono essere entangled. 
+
+\subsection{Interferenza}
+I qubit possono anche manifestare il fenomeno dell'interferenza, che si verifica quando le ampiezze di probabilità degli stati si combinano in modi che possono aumentare o ridurre la probabilità di determinati risultati. Essendo l'equazione di Schrödinger un'equazione d'onda, l'interferenza può essere sfruttata per: 
+\begin{itemize}
+	\item Ridurre la probabilità che lo stato finale non sia indesiderato (\textbf{interferenza quantistica distruttiva});
+	\item Aumentare la probabilità di trovare i qubit su uno stato finale che codifica la soluzione al problema dato (\textbf{interferenza quantistica costruttiva}).
+\end{itemize}
+Le tecniche di interferenza sono utilizzate nei circuiti quantistici per manipolare gli stati dei qubit, rendendo alcune configurazioni più probabili di altre. Questo permette di amplificare le probabilità degli stati desiderati e ridurre quelle degli stati indesiderati, migliorando l'efficienza degli algoritmi quantistici. 
+
+\subsection{Effetto Tunnel}
+Un'altra proprietà fondamentale del qubit è l'\textbf{effetto tunnel}, che riveste un ruolo cruciale nel contesto del \textit{Quantum Annealing}. L'effetto tunnel consente a un sistema quantistico, come quello associato a un qubit, di attraversare una barriera energetica anche quando, secondo la meccanica classica, la sua energia non sarebbe sufficiente a superarla. In un problema di ottimizzazione, ciò implica che, se una soluzione prossima al minimo globale è separata da una barriera energetica più alta rispetto a un minimo locale, il sistema quantistico può passare attraverso tale barriera, consentendo di raggiungere il minimo globale. 
+
+\pagebreak
+
+\section{Sfera di Bloch}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width= 0.5\textwidth]{images/Bloch_Sphere.png}  
+	\label{fig:Sfera di Bloch}
+\end{figure}
+
+Il comportamento di un qubit può essere rappresentato graficamente sulla \textbf{Sfera di Bloch}, una rappresentazione geometrica che ne illustra l'orientamento in uno spazio tridimensionale \cite{Label7}. La sfera ha raggio unitario, con gli stati base $\lvert 0 \rangle $ e $\lvert 1 \rangle $ situati rispettivamente ai poli nord e sud della sfera, mentre gli stati sovrapposti sono rappresentati da punti sulla superficie della sfera, dove ciascun punto corrisponde a una possibile combinazione degli stati base.  
+
+Ogni stato del qubit può essere descritto nella forma parametrica: 
+\begin{equation*}
+|\psi\rangle = \cos\left(\frac{\theta}{2}\right) |0\rangle + e^{i\varphi} \sin\left(\frac{\theta}{2}\right) |1\rangle
+\end{equation*}
+Dove:
+\begin{itemize}
+	\item $\theta$ è l'angolo di latitudine (o angolo zenitale) che misura la distanza angolare dallo stato $\lvert 0 \rangle$ (polo nord);
+	\item $\varphi$ è l'angolo di longitudine (o angolo azimutale) che determina la fase relativa tra gli stati $\lvert 0 \rangle$ e $\lvert 1 \rangle$.
+\end{itemize}
+Pertanto, un generico vettore di stato $\lvert \psi \rangle$ è rappresentato sulla Sfera di Bloch e può essere caratterizzato da un vettore unitario, individuato dai due angoli $\theta$ e $\varphi$. Questa rappresentazione geometrica aiuta a visualizzare la manipolazione e l'evoluzione di un qubit in un sistema quantistico, specialmente quando si applicano operazioni (ad esempio con porte quantistiche) che modificano l'orientamento del qubit sulla sfera di Bloch.
+
+La sfera di Bloch visualizza anche il processo di misurazione. In base al \textbf{terzo postulato}, una misurazione lungo un asse specifico provoca il collasso dello stato del qubit in uno degli stati base associati a quell'asse.
+
+\section{Vantaggi computazionali del Qubit}
+La capacità dei qubit di esistere in più stati contemporaneamente, combinata con fenomeni come l'entanglement e l'interferenza, conferisce ai sistemi quantistici un'enorme potenza computazionale. 
+
+In un sistema classico, per rappresentare $n$ bit sono necessarie $2^{n} $ possibili combinazioni di stati, ma solo uno di questi stati può essere rappresentato e processato in un dato momento. Questo limita la capacità di esplorare soluzioni simultaneamente, costringendo il sistema a una ricerca sequenziale. 
+
+In un sistema quantistico, invece, $n$ qubit possono rappresentare simultaneamente una sovrapposizione di $2^{n} $ stati distinti. Grazie a ciò, un singolo qubit può trovarsi in una combinazione di entrambi gli stati base ($\lvert 0 \rangle$ e $\lvert 1 \rangle$), e quindi un sistema di $n$ qubit può rappresentare simultaneamente tutte le possibili configurazioni di n bit. Ciò implica che un computer quantistico con un numero relativamente ridotto di qubit ha il potenziale di esplorare uno spazio di soluzioni esponenzialmente più vasto rispetto a un computer classico.
+
+Inoltre, grazie all'entanglement quantistico, i qubit non solo esistono in sovrapposizione, ma possono anche essere correlati in modi che non hanno analoghi nei sistemi classici. Questa interazione permette a un computer quantistico di eseguire operazioni su più stati contemporaneamente, rendendo possibili calcoli molto più complessi in tempi significativamente più brevi.
+
+Pertanto, un algoritmo quantistico può risolvere problemi complessi, come la fattorizzazione di numeri grandi o la ricerca in spazi di soluzione molto ampi, molto più velocemente di quanto potrebbe fare un algoritmo classico. 
+
+Un esempio concreto del potenziale dei computer quantistici è la loro capacità di generare numeri casuali. Nei computer classici, la generazione di numeri casuali è generalmente realizzata tramite algoritmi deterministici noti come generatori di numeri pseudo-casuali. Tali algoritmi, a partire da un valore iniziale chiamato "\textit{seme}" (\textbf{seed}), producono una sequenza di numeri che simula la casualità, ma che in realtà è completamente deterministica. Ciò significa che, dato lo stesso seme, verrà sempre generata la stessa sequenza di numeri. 
+
+\pagebreak
+
+Nei computer quantistici, invece, la generazione di numeri casuali può essere intrinseca al processo stesso, grazie alla natura probabilistica della meccanica quantistica. Questo processo è fondamentalmente non deterministico, poiché il risultato della misurazione è casuale e non può essere previsto con certezza. Sebbene la generazione di numeri casuali possa sembrare un argomento banale, essa riveste un'importanza cruciale, poiché costituisce la base per numerosi algoritmi di crittografia. 
+
+Nonostante la potenza computazionale offerta dai qubit, i bit classici rimangono fondamentali nei computer quantistici. Un problema significativo nel contesto del calcolo quantistico è rappresentato dalla \textbf{decoerenza quantistica}, che si riferisce alla perdita di coerenza degli stati quantistici a causa di interazioni con l'ambiente esterno, come fluttuazioni termiche o l'influenza di campi elettromagnetici. Ad esempio, una piccola fluttuazione termica può generare l'emissione di un fotone a bassa energia, che interagendo con il qubit ne altera lo stato e ne compromette l'affidabilità del risultato del calcolo.
+
+Sebbene il processo di elaborazione avvenga tramite qubit, l'output finale deve essere convertito in bit classici. Questa conversione è necessaria anche perché i dispositivi di output, come memorie e schermi, operano nel dominio classico e non sono in grado di interpretare direttamente gli stati quantistici. Pertanto, i bit classici svolgono un ruolo cruciale nel rendere i risultati delle operazioni quantistiche comprensibili e utilizzabili nell'ambito delle tecnologie computazionali tradizionali. 
+
+
