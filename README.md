@@ -1,0 +1,2 @@
+# Quantum-Annealing-Fondamenti-e-Applicazioni-a-Problemi-di-Ottimizzazione-di-Interesse-Ingegneristico
+Tesi triennale sul Quantum Annealing, con una sintesi dei principi teorici del modello Ising/QUBO e degli aspetti hardware, insieme a due applicazioni pratiche: la formulazione del Travelling Salesman Problem per annealer quantistici e l’analisi di un’implementazione dell’algoritmo di Grover tramite QA.
